@@ -7,10 +7,10 @@ package trees
 //  @return bool
 //
 func VerifySequenceOfBST(sequence []int) bool {
-	if sequence == nil {
-		return false
-	}
-	return verifyIfBST(sequence)
+    if sequence == nil {
+        return false
+    }
+    return verifyIfBST(sequence)
 }
 
 //
@@ -21,28 +21,28 @@ func VerifySequenceOfBST(sequence []int) bool {
 //  @return bool
 //
 func verifyIfBST(sequence []int) bool {
-	n := len(sequence)
-	if n < 2 {
-		return true
-	}
-	mid := sequence[n-1]
-	left := make([]int, 0)
-	right := make([]int, 0)
-	flag := -1
-	for i := 0; i < n-1; i++ {
-		if sequence[i] < mid {
-			if flag == -1 {
-				left = append(left, sequence[i])
-			} else {
-				return false
-			}
-		} else {
-			if flag == -1 {
-				flag = 0
-			}
-			right = append(right, sequence[i])
-		}
-	}
-
-	return verifyIfBST(left) && verifyIfBST(right)
+    n := len(sequence)
+    if n < 2 {
+        return true
+    }
+    mid := sequence[n-1]
+    left := make([]int, 0)
+    right := make([]int, 0)
+    flag := -1
+    for i := 0; i < n-1; i++ {
+        if sequence[i] < mid {
+            if flag == -1 {
+                left = append(left, sequence[i])
+            } else {
+                return false
+            }
+        } else {
+            if flag == -1 {
+                flag = 0
+            }
+            right = append(right, sequence[i])
+        }
+    }
+    
+    return verifyIfBST(left) && verifyIfBST(right)
 }

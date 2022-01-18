@@ -1,6 +1,7 @@
-package main
+package link
 
 import "sort"
+
 //
 //  spiralOrder
 //  @Description: NC51 合并k个已排序的链表

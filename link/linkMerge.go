@@ -1,4 +1,4 @@
-package main
+package link
 
 func linkMerge(pHead1 *ListNode, pHead2 *ListNode) *ListNode {
     node := &ListNode{}

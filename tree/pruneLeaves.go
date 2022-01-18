@@ -8,22 +8,22 @@ package trees
 //  @return *TreeNode
 //
 func pruneLeaves(root *TreeNode) *TreeNode {
-	// 空节点 或者 叶子节点
-	if root == nil || (root.Left == nil && root.Right == nil) {
-		return nil
-	}
-	// 左孩子是叶子节点
-	if root.Left != nil && root.Left.Left == nil && root.Left.Right == nil {
-		return nil
-	}
-	// 右孩子是叶子节点
-	if root.Right != nil && root.Right.Left == nil && root.Right.Right == nil {
-		return nil
-	}
-
-	root.Left = pruneLeaves(root.Left)
-	root.Right = pruneLeaves(root.Right)
-	return root
+    // 空节点 或者 叶子节点
+    if root == nil || (root.Left == nil && root.Right == nil) {
+        return nil
+    }
+    // 左孩子是叶子节点
+    if root.Left != nil && root.Left.Left == nil && root.Left.Right == nil {
+        return nil
+    }
+    // 右孩子是叶子节点
+    if root.Right != nil && root.Right.Left == nil && root.Right.Right == nil {
+        return nil
+    }
+    
+    root.Left = pruneLeaves(root.Left)
+    root.Right = pruneLeaves(root.Right)
+    return root
 }
 
 //
@@ -34,5 +34,5 @@ func pruneLeaves(root *TreeNode) *TreeNode {
 //  @return *TreeNode
 //
 func pruneTree(root *TreeNode) *TreeNode {
-	return root
+    return root
 }

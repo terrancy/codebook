@@ -3,8 +3,8 @@ package trees
 import "math"
 
 func isSearchBinaryTree(root *TreeNode) bool {
-	min := math.MinInt32
-	return isSBT(root, &min)
+    min := math.MinInt32
+    return isSBT(root, &min)
 }
 
 //
@@ -15,16 +15,16 @@ func isSearchBinaryTree(root *TreeNode) bool {
 //  @return bool
 //
 func isSBT(root *TreeNode, min *int) bool {
-	if root == nil {
-		return true
-	}
-	flag := isSBT(root.Left, min)
-	if flag == false {
-		return false
-	}
-	if *min > root.Val {
-		return false
-	}
-	*min = root.Val
-	return isSBT(root.Right, min)
+    if root == nil {
+        return true
+    }
+    flag := isSBT(root.Left, min)
+    if flag == false {
+        return false
+    }
+    if *min > root.Val {
+        return false
+    }
+    *min = root.Val
+    return isSBT(root.Right, min)
 }

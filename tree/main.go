@@ -33,18 +33,18 @@ package trees
 //}
 
 func main() {
-	// 中根 + 先根
-	//pre := []int{1, 2, 4, 7, 3, 5, 6, 8}
-	//mid := []int{4, 7, 2, 1, 5, 3, 8, 6}
-	//root := dspPreMidBuildTreeII(pre, mid)
-	//temp := Serialize(root)
-	//fmt.Println(temp)
-
-	// 中根 + 后根
-	//mid := []int{2, 1, 4, 3, 5}
-	//post := []int{2, 4, 5, 3, 1}
-	//root := dspPostMidBuildTreeII(post, mid)
-	//temp := Serialize(root)
-	//fmt.Println(temp)
-
+    // 中根 + 先根
+    //pre := []int{1, 2, 4, 7, 3, 5, 6, 8}
+    //mid := []int{4, 7, 2, 1, 5, 3, 8, 6}
+    //root := dspPreMidBuildTreeII(pre, mid)
+    //temp := Serialize(root)
+    //fmt.Println(temp)
+    
+    // 中根 + 后根
+    //mid := []int{2, 1, 4, 3, 5}
+    //post := []int{2, 4, 5, 3, 1}
+    //root := dspPostMidBuildTreeII(post, mid)
+    //temp := Serialize(root)
+    //fmt.Println(temp)
+    
 }

@@ -1,4 +1,4 @@
-package main
+package link
 
 func addInList(head1 *ListNode, head2 *ListNode) *ListNode {
     if head1 == nil && head2 == nil {
@@ -62,7 +62,7 @@ func towSum(data1, data2 []int) []int {
         } else {
             b = 0
         }
-    
+        
         sum = plus + a + b
         plus = int(sum / 10)
         data[i] = sum % 10

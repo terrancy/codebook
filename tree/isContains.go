@@ -8,10 +8,10 @@ package trees
 //  @return bool
 //
 func IsContains(root1, root2 *TreeNode) bool {
-	if root1 == nil {
-		return false
-	}
-	return IsSame(root1, root2) || IsContains(root1.Left, root2) || IsContains(root1.Right, root2)
+    if root1 == nil {
+        return false
+    }
+    return IsSame(root1, root2) || IsContains(root1.Left, root2) || IsContains(root1.Right, root2)
 }
 
 //
@@ -22,13 +22,13 @@ func IsContains(root1, root2 *TreeNode) bool {
 //  @return bool
 //
 func IsSame(root1, root2 *TreeNode) bool {
-	if root1 == nil && root2 == nil {
-		return true
-	}
-
-	if root1 == nil || root2 == nil {
-		return false
-	}
-
-	return root1.Val == root2.Val && IsSame(root1.Right, root2.Right) && IsSame(root1.Left, root2.Left)
+    if root1 == nil && root2 == nil {
+        return true
+    }
+    
+    if root1 == nil || root2 == nil {
+        return false
+    }
+    
+    return root1.Val == root2.Val && IsSame(root1.Right, root2.Right) && IsSame(root1.Left, root2.Left)
 }

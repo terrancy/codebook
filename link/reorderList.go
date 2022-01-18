@@ -1,4 +1,4 @@
-package main
+package link
 
 func reorderList(head *ListNode) {
     if head == nil || head.Next == nil {

@@ -9,19 +9,19 @@ package trees
 //  @return *TreeNode
 //
 func convertBST(root *TreeNode) *TreeNode {
-	sum := 0
-	dspConvertBST(root, &sum)
-	return root
+    sum := 0
+    dspConvertBST(root, &sum)
+    return root
 }
 
 func dspConvertBST(root *TreeNode, sum *int) *TreeNode {
-	if root == nil {
-		return root
-	}
-	dspConvertBST(root.Right, sum)
-	*sum += root.Val
-	root.Val = *sum
-	dspConvertBST(root.Left, sum)
-
-	return root
+    if root == nil {
+        return root
+    }
+    dspConvertBST(root.Right, sum)
+    *sum += root.Val
+    root.Val = *sum
+    dspConvertBST(root.Left, sum)
+    
+    return root
 }
