@@ -53,11 +53,11 @@ func reverseLastPartII(head *ListNode) *ListNode {
         cnt++
     }
     half := 1 + (cnt+1)>>1
-    head = reverseBetween(head, half, cnt)
+    head = ReverseBetween(head, half, cnt)
     return head
 }
 
-func reorderListII(head *ListNode) {
+func ReorderListII(head *ListNode) {
     if head == nil || head.Next == nil {
         return
     }

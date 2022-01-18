@@ -17,7 +17,7 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
     
     cur = head
     for i := 0; n >= k; i++ {
-        cur = reverseBetween(cur, i*k+1, (i+1)*k)
+        cur = ReverseBetween(cur, i*k+1, (i+1)*k)
         n = n - k
     }
     return cur

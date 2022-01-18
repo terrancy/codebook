@@ -8,7 +8,7 @@ package link
 //  @param n
 //  @return *ListNode
 //
-func reverseBetween(head *ListNode, m int, n int) *ListNode {
+func ReverseBetween(head *ListNode, m int, n int) *ListNode {
     if head == nil || head.Next == nil {
         return head
     }

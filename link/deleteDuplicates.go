@@ -6,7 +6,7 @@ package link
 //  @param head
 //  @return *ListNode
 //
-func deleteDuplicates(head *ListNode) *ListNode {
+func DeleteDuplicates(head *ListNode) *ListNode {
     if head == nil || head.Next == nil {
         return head
     }
@@ -29,7 +29,7 @@ func deleteDuplicates(head *ListNode) *ListNode {
 //  @param head
 //  @return *ListNode
 //
-func deleteDuplicatesII(head *ListNode) *ListNode {
+func DeleteDuplicatesII(head *ListNode) *ListNode {
     if head == nil || head.Next == nil {
         return head
     }

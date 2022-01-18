@@ -10,7 +10,7 @@ type ListNode struct {
     Next *ListNode
 }
 
-func makeListNode(data []int) *ListNode {
+func MakeListNode(data []int) *ListNode {
     head := &ListNode{}
     n := len(data)
     if n == 0 {
@@ -50,7 +50,7 @@ func circleSingleListNode(n int) *ListNode {
 //  @param head
 //  @return []int
 //
-func list2Array(head *ListNode) []int {
+func Serialize(head *ListNode) []int {
     if head == nil {
         return nil
     }
@@ -70,8 +70,8 @@ func list2Array(head *ListNode) []int {
 //  @Description: 将链表数据打印出来
 //  @param head
 //
-func showData(head *ListNode, isPrint bool) []int {
-    data := list2Array(head)
+func ShowData(head *ListNode, isPrint bool) []int {
+    data := Serialize(head)
     if isPrint == false {
         return data
     }
