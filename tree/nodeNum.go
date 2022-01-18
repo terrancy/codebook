@@ -1,4 +1,4 @@
-package main
+package trees
 
 //
 //  nodeNum
@@ -7,12 +7,12 @@ package main
 //  @return int
 //
 func nodeNum(head *TreeNode) int {
-    return countNode(head)
+	return countNode(head)
 }
 
 func countNode(head *TreeNode) int {
-    if head == nil {
-        return 0
-    }
-    return 1 + countNode(head.Left) + countNode(head.Right)
+	if head == nil {
+		return 0
+	}
+	return 1 + countNode(head.Left) + countNode(head.Right)
 }

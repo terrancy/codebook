@@ -1,4 +1,4 @@
-package main
+package trees
 
 // 这里主要介绍二叉树中关于和为某一个值的路径的问题。分为三类
 
@@ -13,18 +13,18 @@ package main
 //  @return bool
 //
 func hasPathSum(root *TreeNode, sum int) bool {
-    return hasPathSum(root, sum)
+	return hasPathSum(root, sum)
 }
 
 func dspHasPathSum(root *TreeNode, sum int) bool {
-    if root == nil {
-        return false
-    }
-    if root.Left == nil && root.Right == nil && root.Val == sum {
-        return true
-    }
-    sum -= root.Val
-    return dspHasPathSum(root, sum) || dspHasPathSum(root, sum)
+	if root == nil {
+		return false
+	}
+	if root.Left == nil && root.Right == nil && root.Val == sum {
+		return true
+	}
+	sum -= root.Val
+	return dspHasPathSum(root, sum) || dspHasPathSum(root, sum)
 }
 
 //
@@ -38,26 +38,26 @@ func dspHasPathSum(root *TreeNode, sum int) bool {
 //  @return [][]int
 //
 func findPathII(root *TreeNode, sum int) [][]int {
-    res := make([][]int, 0)
-    dspFindPathII(root, sum, []int{}, &res)
-    return res
+	res := make([][]int, 0)
+	dspFindPathII(root, sum, []int{}, &res)
+	return res
 }
 
 func dspFindPathII(root *TreeNode, sum int, path []int, res *[][]int) {
-    if root == nil {
-        return
-    }
-    
-    // 先序遍历
-    path = append(path, root.Val)
-    if root.Left == nil && root.Right == nil && root.Val == sum {
-        tmp := make([]int, len(path))
-        copy(tmp, path)
-        *res = append(*res, tmp)
-        return
-    }
-    dspFindPathII(root.Left, sum-root.Val, path, res)
-    dspFindPathII(root.Right, sum-root.Val, path, res)
+	if root == nil {
+		return
+	}
+
+	// 先序遍历
+	path = append(path, root.Val)
+	if root.Left == nil && root.Right == nil && root.Val == sum {
+		tmp := make([]int, len(path))
+		copy(tmp, path)
+		*res = append(*res, tmp)
+		return
+	}
+	dspFindPathII(root.Left, sum-root.Val, path, res)
+	dspFindPathII(root.Right, sum-root.Val, path, res)
 }
 
 //
@@ -72,9 +72,9 @@ func dspFindPathII(root *TreeNode, sum int, path []int, res *[][]int) {
 //  @return int
 //
 func findPathIII(root *TreeNode, sum int) int {
-    cnt := 0
-    dspFindPathTotalIII(root, sum, &cnt)
-    return cnt
+	cnt := 0
+	dspFindPathTotalIII(root, sum, &cnt)
+	return cnt
 }
 
 //
@@ -85,15 +85,15 @@ func findPathIII(root *TreeNode, sum int) int {
 //  @param cnt
 //
 func dspFindPathIII(root *TreeNode, sum int, cnt *int) {
-    if root == nil {
-        return
-    }
-    if root.Val == sum {
-        *cnt++
-    }
-    sum -= root.Val
-    dspFindPathIII(root.Left, sum, cnt)
-    dspFindPathIII(root.Right, sum, cnt)
+	if root == nil {
+		return
+	}
+	if root.Val == sum {
+		*cnt++
+	}
+	sum -= root.Val
+	dspFindPathIII(root.Left, sum, cnt)
+	dspFindPathIII(root.Right, sum, cnt)
 }
 
 //
@@ -104,10 +104,10 @@ func dspFindPathIII(root *TreeNode, sum int, cnt *int) {
 //  @param cnt
 //
 func dspFindPathTotalIII(root *TreeNode, sum int, cnt *int) {
-    if root == nil {
-        return
-    }
-    dspFindPathIII(root, sum, cnt)
-    dspFindPathTotalIII(root.Left, sum, cnt)
-    dspFindPathTotalIII(root.Right, sum, cnt)
+	if root == nil {
+		return
+	}
+	dspFindPathIII(root, sum, cnt)
+	dspFindPathTotalIII(root.Left, sum, cnt)
+	dspFindPathTotalIII(root.Right, sum, cnt)
 }
