@@ -1,4 +1,4 @@
-package main
+package strings
 
 func Permutation(str string) []string {
     n := len(str)

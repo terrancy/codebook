@@ -2,9 +2,20 @@ package test
 
 import (
     "awesome/link"
-    "fmt"
     "testing"
 )
+
+//
+//  TestLinkReverse
+//  @Description: 链表翻转
+//  @param t
+//
+func TestLinkReverse(t *testing.T) {
+    data := []int{1, 2, 3, 4, 5, 6, 7}
+    head := link.MakeListNode(data)
+    dummy := link.LinkReverse(head)
+    link.ShowData(dummy)
+}
 
 //
 //  TestDeleteDuplicates
@@ -14,9 +25,8 @@ import (
 func TestDeleteDuplicates(t *testing.T) {
     data := []int{1, 2, 2}
     head := link.MakeListNode(data)
-    node := link.DeleteDuplicates(head)
-    tmp := link.Serialize(node)
-    fmt.Print(tmp)
+    dummy := link.DeleteDuplicates(head)
+    link.ShowData(dummy)
 }
 
 //
@@ -27,9 +37,8 @@ func TestDeleteDuplicates(t *testing.T) {
 func TestDeleteDuplicatesII(t *testing.T) {
     data := []int{1, 2, 2}
     head := link.MakeListNode(data)
-    node := link.DeleteDuplicatesII(head)
-    tmp := link.Serialize(node)
-    fmt.Print(tmp)
+    dummy := link.DeleteDuplicatesII(head)
+    link.ShowData(dummy)
 }
 
 //
@@ -40,7 +49,30 @@ func TestDeleteDuplicatesII(t *testing.T) {
 func TestReverseBetween(t *testing.T) {
     data := []int{1, 2, 3, 4, 5}
     head := link.MakeListNode(data)
-    node := link.ReverseBetween(head, 2, 4)
-    tmp := link.Serialize(node)
-    fmt.Println(tmp)
+    dummy := link.ReverseBetween(head, 2, 4)
+    link.ShowData(dummy)
+}
+
+//
+//  TestInsertSortList
+//  @Description: NC244 对链表进行插入排序
+//  @param t
+//
+func TestInsertSortList(t *testing.T) {
+    data := []int{2, 4, 1}
+    head := link.MakeListNode(data)
+    dummy := link.InsertionSortList(head)
+    link.ShowData(dummy)
+}
+
+//
+//  TestSwapLinkedPair
+//  @Description: NC186 两两交换链表的节点
+//  @param t
+//
+func TestSwapLinkedPair(t *testing.T) {
+    data := []int{1, 2, 3, 4}
+    head := link.MakeListNode(data)
+    dummy := link.SwapLinkedPair(head)
+    link.ShowData(dummy)
 }

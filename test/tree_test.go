@@ -36,18 +36,27 @@ func TestIsContains(t *testing.T) {
     fmt.Println(ans)
 }
 
+//
+//  TestBuildTree
+//  @Description: 构建二叉树
+//  @param t
+//
 func TestBuildTree(t *testing.T) {
     // 中根 + 先根
-    //pre := []int{1, 2, 4, 7, 3, 5, 6, 8}
-    //mid := []int{4, 7, 2, 1, 5, 3, 8, 6}
-    //root := trees.DspPreMidBuildTreeII(pre, mid)
-    //temp := trees.Serialize(root)
-    //fmt.Println(temp)
+    t.Run("preTest", func(t *testing.T) {
+        pre := []int{1, 2, 4, 7, 3, 5, 6, 8}
+        mid := []int{4, 7, 2, 1, 5, 3, 8, 6}
+        root := trees.DspPreMidBuildTreeII(pre, mid)
+        temp := trees.Serialize(root)
+        fmt.Println(temp)
+    })
     
     // 中根 + 后根
-    //mid := []int{2, 1, 4, 3, 5}
-    //post := []int{2, 4, 5, 3, 1}
-    //root := trees.DspPostMidBuildTreeII(post, mid)
-    //temp := trees.Serialize(root)
-    //fmt.Println(temp)
+    t.Run("PostTest", func(t *testing.T) {
+        mid := []int{2, 1, 4, 3, 5}
+        post := []int{2, 4, 5, 3, 1}
+        root := trees.DspPostMidBuildTreeII(post, mid)
+        temp := trees.Serialize(root)
+        fmt.Println(temp)
+    })
 }

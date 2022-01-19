@@ -1,4 +1,4 @@
-package main
+package strings
 
 //
 //  kmp 算法
@@ -7,7 +7,7 @@ package main
 //  @param patten ababab
 //  @return int
 //
-func kmp(target string, patten string) int {
+func KMP(target string, patten string) int {
     n := len(patten)
     m := len(target)
     cnt := 0

@@ -1,4 +1,4 @@
-package main
+package strings
 //
 //  LongRepeatedSubstring
 //  @Description: 最长重复子串

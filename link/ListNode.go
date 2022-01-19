@@ -1,9 +1,6 @@
 package link
 
-import (
-    "encoding/json"
-    "fmt"
-)
+import "fmt"
 
 type ListNode struct {
     Val  int
@@ -70,18 +67,7 @@ func Serialize(head *ListNode) []int {
 //  @Description: 将链表数据打印出来
 //  @param head
 //
-func ShowData(head *ListNode, isPrint bool) []int {
+func ShowData(head *ListNode) {
     data := Serialize(head)
-    if isPrint == false {
-        return data
-    }
-    if len(data) == 0 {
-        data = []int{}
-    }
-    json, err := json.Marshal(data)
-    if err != nil {
-        fmt.Printf("%v\n", err)
-    }
-    fmt.Println(string(json))
-    return nil
+    fmt.Println(data)
 }

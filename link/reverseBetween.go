@@ -25,9 +25,8 @@ func ReverseBetween(head *ListNode, m int, n int) *ListNode {
     
     // 翻转四联式
     cur := pre.Next
-    next := &ListNode{}
     for i := 0; i < n-m; i++ {
-        next = cur.Next
+        next := cur.Next
         cur.Next = next.Next
         next.Next = pre.Next
         pre.Next = next
