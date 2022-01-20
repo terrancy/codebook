@@ -76,3 +76,50 @@ func TestSwapLinkedPair(t *testing.T) {
     dummy := link.SwapLinkedPair(head)
     link.ShowData(dummy)
 }
+
+//
+//  sortLinkedList
+//  @Description: NC207 排序奇升偶降链表
+//
+func TestSortLinkedList(t *testing.T) {
+    data := []int{1, 3, 2, 2, 3, 1}
+    head := link.MakeListNode(data)
+    dummy := link.SortLinkedList(head)
+    link.ShowData(dummy)
+}
+
+//
+//  TestRotateLinkedList
+//  @Description: NC211 旋转链表
+//  @param t
+//
+func TestRotateLinkedList(t *testing.T) {
+    data := []int{1, 2, 3}
+    head := link.MakeListNode(data)
+    dummy := link.RotateLinkedList(head, 1000000000)
+    link.ShowData(dummy)
+}
+
+//
+//  TestPlusOne
+//  @Description: 链表加1
+//  @param t
+//
+func TestPlusOne(t *testing.T) {
+    data := []int{9, 9, 9}
+    head := link.MakeListNode(data)
+    dummy := link.PlusOne(head)
+    link.ShowData(dummy)
+}
+
+//
+//  TestOddEvenList
+//  @Description: 链表奇偶重排
+//  @param t
+//
+func TestOddEvenList(t *testing.T) {
+    data := []int{1, 4, 6, 3, 7}
+    head := link.MakeListNode(data)
+    dummy := link.OddEvenListII(head)
+    link.ShowData(dummy)
+}

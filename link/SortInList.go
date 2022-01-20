@@ -8,7 +8,7 @@ import "sort"
 //  @param head
 //  @return *ListNode
 //
-func sortInList(head *ListNode) *ListNode {
+func SortInList(head *ListNode) *ListNode {
     data := make([]int, 0)
     for head != nil {
         data = append(data, head.Val)

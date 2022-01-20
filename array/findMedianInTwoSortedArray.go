@@ -1,4 +1,4 @@
-package main
+package array
 
 //
 //  findMedianInTwoSortedArray NC36 在两个长度相等的排序数组中找到上中位数

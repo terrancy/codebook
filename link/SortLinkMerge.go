@@ -1,6 +1,13 @@
 package link
 
-func linkMerge(pHead1 *ListNode, pHead2 *ListNode) *ListNode {
+//
+//  linkMerge
+//  @Description: 两个有序链表合并
+//  @param pHead1
+//  @param pHead2
+//  @return *ListNode
+//
+func SortLinkMerge(pHead1 *ListNode, pHead2 *ListNode) *ListNode {
     node := &ListNode{}
     pHead := node
     for pHead1 != nil && pHead2 != nil {

@@ -1,4 +1,4 @@
-package main
+package array
 
 func findMedianInTwoSortedArrayBS(arr1 []int, arr2 []int) int {
     n := len(arr1)

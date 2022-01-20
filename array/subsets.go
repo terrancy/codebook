@@ -1,4 +1,4 @@
-package main
+package array
 
 func subsets(nums []int) [][]int {
     n := len(nums)

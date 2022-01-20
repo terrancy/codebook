@@ -1,4 +1,4 @@
-package main
+package array
 
 func maxLength(arr []int) int {
     // write code here

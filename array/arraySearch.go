@@ -1,4 +1,4 @@
-package main
+package array
 
 //
 //  arraySearch: NC29 二维数组中的查找
