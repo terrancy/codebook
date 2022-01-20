@@ -16,3 +16,14 @@ func TestMajorityElement(t *testing.T) {
     res := array.MajorityElement(data)
     fmt.Println(res)
 }
+
+//
+//  TestReOrderArray
+//  @Description: NC77 调整数组顺序使奇数位于偶数前面(一)
+//  @param t
+//
+func TestReOrderArray(t *testing.T) {
+    data := []int{1, 3, 5, 6, 7}
+    res := array.ReOrderArrayII(data)
+    fmt.Println(res)
+}
