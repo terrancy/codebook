@@ -1,5 +1,11 @@
 package array
 
+//
+//  subsets
+//  @Description:
+//  @param nums
+//  @return [][]int
+//
 func subsets(nums []int) [][]int {
     n := len(nums)
     if n == 0 {

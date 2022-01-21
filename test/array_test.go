@@ -27,3 +27,26 @@ func TestReOrderArray(t *testing.T) {
     res := array.ReOrderArrayII(data)
     fmt.Println(res)
 }
+
+//
+//  TestMaxLengthRepeatLess
+//  @Description: NC41 最长无重复子数组
+//  @param t
+//
+func TestMaxLengthRepeatLess(t *testing.T) {
+    data := []int{2, 2, 3, 4, 3}
+    res := array.MaxLengthRepeatLess(data)
+    fmt.Println(res)
+}
+
+//
+//  TestFindMedianInTwoSortedArrayBS
+//  @Description: NC36 在两个长度相等的排序数组中找到上中位数
+//  @param t
+//
+func TestFindMedianInTwoSortedArrayBS(t *testing.T) {
+    data1 := []int{1, 2, 3, 4}
+    data2 := []int{3, 4, 5, 6}
+    res := array.FindMedianInTwoSortedArrayBS(data1, data2)
+    fmt.Println(res)
+}

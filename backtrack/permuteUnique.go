@@ -1,6 +1,8 @@
-package main
+package backtrack
 
-import "sort"
+import (
+    "sort"
+)
 
 //
 //  permuteUnique
@@ -9,7 +11,7 @@ import "sort"
 //  @param num
 //  @return [][]int
 //
-func permuteUnique(num []int) [][]int {
+func PermuteUnique(num []int) [][]int {
     sort.Ints(num)
     use := make([]bool, len(num))
     res := make([][]int, 0)

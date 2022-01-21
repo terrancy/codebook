@@ -1,6 +1,9 @@
 package array
 
-import "sort"
+import (
+    "awesome"
+    "sort"
+)
 
 //
 //  maxSubsequence
@@ -24,13 +27,7 @@ func maxSubsequence(arr []int) int {
         } else {
             cnt = 1
         }
-        maxLen = maxInt(maxLen, cnt)
+        maxLen = awesome.MaxInt(maxLen, cnt)
     }
     return maxLen
 }
-
-//func main() {
-//    data := []int{1, 1, 1}
-//    ret := maxSubsequence(data)
-//    print(ret)
-//}

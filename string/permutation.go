@@ -1,5 +1,11 @@
 package strings
 
+//
+//  Permutation
+//  @Description:
+//  @param str
+//  @return []string
+//
 func Permutation(str string) []string {
     n := len(str)
     if n == 0 {

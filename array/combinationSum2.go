@@ -11,7 +11,7 @@ import (
 //  @param target
 //  @return [][]int
 //
-func combinationSum2(num []int, target int) [][]int {
+func CombinationSum2(num []int, target int) [][]int {
     sort.Ints(num)
     temp := make([]int, 0)
     res := make([][]int, 0)
@@ -19,6 +19,15 @@ func combinationSum2(num []int, target int) [][]int {
     return res
 }
 
+//
+//  backtrace
+//  @Description: 回溯
+//  @param num
+//  @param target
+//  @param temp
+//  @param res
+//  @param start
+//
 func backtrace(num []int, target int, temp *[]int, res *[][]int, start int) {
     if target == 0 {
         t := make([]int, len(*temp))
