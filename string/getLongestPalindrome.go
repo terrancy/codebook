@@ -8,7 +8,7 @@ package strings
 //  @param str
 //  @return string
 //
-func GetLongestPalindrome(str string) int {
+func LongestPalindrome(str string) int {
     n := len(str)
     maxLen := 1
     

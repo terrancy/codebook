@@ -50,3 +50,25 @@ func TestFindMedianInTwoSortedArrayBS(t *testing.T) {
     res := array.FindMedianInTwoSortedArrayBS(data1, data2)
     fmt.Println(res)
 }
+
+//
+//  TestTwoSum
+//  @Description:NC61 两数之和
+//  @param t
+//
+func TestTwoSum(t *testing.T) {
+    data := []int{20, 70, 110, 150}
+    res := array.TwoSum(data, 90)
+    fmt.Println(res)
+}
+
+//
+//  TestTreeSum
+//  @Description: NC54 数组中相加和为0的三元组
+//  @param t
+//
+func TestTreeSum(t *testing.T) {
+    data := []int{-10, 0, 10, 20, -10, -40}
+    res := array.ThreeSumII(data)
+    fmt.Println(res)
+}

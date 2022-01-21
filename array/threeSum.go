@@ -4,7 +4,13 @@ import (
     "sort"
 )
 
-func threeSum(num []int) [][]int {
+//
+//  ThreeSum
+//  @Description: NC54 数组中相加和为0的三元组
+//  @param num
+//  @return [][]int
+//
+func ThreeSum(num []int) [][]int {
     n := len(num)
     if n < 3 {
         return nil
@@ -69,7 +75,13 @@ func threeSum(num []int) [][]int {
     return ans
 }
 
-func threeSumII(num []int) [][]int {
+//
+//  ThreeSumII
+//  @Description: NC54 数组中相加和为0的三元组
+//  @param num
+//  @return [][]int
+//
+func ThreeSumII(num []int) [][]int {
     n := len(num)
     // 边界过滤
     if n < 3 {
@@ -118,15 +130,3 @@ func threeSumII(num []int) [][]int {
     }
     return ans
 }
-
-//func main() {
-//    data := []int{-10, 0, 10, 20, -10, -40}
-//    //data := []int{0, 0, 0, 0}
-//    res := threeSumII(data)
-//    json, err := json.Marshal(res)
-//    if err != nil {
-//        println("错误")
-//    } else {
-//        println(string(json))
-//    }
-//}

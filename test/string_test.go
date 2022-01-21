@@ -34,8 +34,29 @@ func TestPermutation(t *testing.T) {
 //  @Description: 最长回文子串
 //  @param t
 //
-func TestGetLongestPalindrome(t *testing.T) {
+func TestLongestPalindrome(t *testing.T) {
     str := "ccbcabaabba"
-    res := strings.GetLongestPalindrome(str)
+    res := strings.LongestPalindrome(str)
+    fmt.Println(res)
+}
+
+//
+//  TestLongRepeatedSubstring
+//  @Description: NC142 最长重复子串
+//  @param t
+//
+func TestLongRepeatedSubstring(t *testing.T) {
+    str := "abcab"
+    res := strings.LongRepeatedSubstring(str)
+    fmt.Println(res)
+}
+//
+//  TestFirstNotRepeatingChar
+//  @Description: NC31 第一个只出现一次的字符
+//  @param t
+//
+func TestFirstNotRepeatingChar(t *testing.T) {
+    str := "google"
+    res := strings.FirstNotRepeatingChar(str)
     fmt.Println(res)
 }
