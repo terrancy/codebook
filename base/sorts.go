@@ -1,0 +1,130 @@
+package base
+
+// 冒泡排序、快速排序、插入排序、选择排序、堆排序
+//
+//  BubbleSort
+//  @Description: 冒泡排序 O(N2)
+//  @Solution: 两两比较把较大的放后面,这样每次循环把最大的放后面
+//  @param nums
+//  @return []int
+//
+func BubbleSort(nums []int) []int {
+    n := len(nums)
+    for i := 0; i < n; i++ {
+        for j := 0; j < n-i-1; j++ {
+            if nums[j] > nums[j+1] {
+                nums[j], nums[j+1] = nums[j+1], nums[j]
+            }
+        }
+    }
+    return nums
+}
+
+//
+//  SelectSort
+//  @Description: 选择排序
+//  @Solution: 每次遍历选择最小值放前面
+//  @param nums
+//  @return []int
+//
+func SelectSort(nums []int) []int {
+    n := len(nums)
+    for i := 0; i < n; i++ {
+        for j := i + 1; j < n; j++ {
+            if nums[i] > nums[j] {
+                nums[i], nums[j] = nums[j], nums[i]
+            }
+        }
+    }
+    return nums
+}
+
+//
+//  quickSort
+//  @Description: 快速排序
+//  @Solution: 以首个为基准分为两个数组,递归调用再合并.类似中根遍历.注意递归边界!!
+//  @param nums
+//  @return []int
+//
+func QuickSort(nums []int, ) []int {
+    n := len(nums)
+    if n == 0 {
+        return nil
+    }
+    left, right := make([]int, 0), make([]int, 0)
+    for i := 1; i < n; i++ {
+        if nums[i] < nums[0] {
+            left = append(left, nums[i])
+        } else {
+            right = append(right, nums[i])
+        }
+    }
+    
+    left = QuickSort(left)
+    left = append(left, nums[0])
+    right = QuickSort(right)
+    
+    return append(left, right...)
+}
+
+//
+//  InsertSort
+//  @Description: 插入排序
+//  @Solution: 将待排序的元素插入已排序的序列中.
+//  @param nums
+//  @return []int
+//
+func InsertSort(nums []int) []int {
+    n := len(nums)
+    for i := 1; i < n; i++ {
+        preIdx := i - 1
+        cur := nums[i]
+        for preIdx >= 0 && nums[preIdx] > cur {
+            nums[preIdx+1] = nums[preIdx]
+            preIdx--
+        }
+        nums[preIdx+1] = cur
+    }
+    return nums
+}
+
+//
+//  HeapSort
+//  @Description: 堆排序
+//  @param nums
+//  @return []int
+//
+func HeapSort(nums []int) []int {
+    n := len(nums)
+    for i := n/2 - 1; i >= 0; i-- {
+        adjustHeap(nums, n, i)
+    }
+    for i := n - 1; i > 0; i-- {
+        nums[0], nums[i] = nums[i], nums[0]
+        n--
+        adjustHeap(nums, n, 0)
+    }
+    return nums
+}
+
+//
+//  adjustHeap
+//  @Description: 小根堆调整
+//  @param nums
+//  @param n
+//  @param pos
+//
+func adjustHeap(nums []int, n int, pos int) {
+    largeIndex := pos
+    if 2*pos+1 < n && nums[2*pos+1] > nums[largeIndex] {
+        largeIndex = 2*pos + 1
+    }
+    if 2*pos+2 < n && nums[2*pos+2] > nums[largeIndex] {
+        largeIndex = 2*pos + 2
+    }
+    
+    if largeIndex != pos {
+        nums[pos], nums[largeIndex] = nums[largeIndex], nums[pos]
+        adjustHeap(nums, n, largeIndex)
+    }
+}
