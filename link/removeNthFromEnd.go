@@ -7,7 +7,7 @@ package link
 //  @param n
 //  @return *ListNode
 //
-func removeNthFromEnd(pHead *ListNode, n int) *ListNode {
+func RemoveNthFromEnd(pHead *ListNode, n int) *ListNode {
     if pHead == nil || pHead.Next == nil {
         return nil
     }
@@ -19,4 +19,25 @@ func removeNthFromEnd(pHead *ListNode, n int) *ListNode {
         pKthNode.Next = pKthNode.Next.Next
     }
     return pHead
+}
+
+func RemoveNthFromEndII(pHead *ListNode, n int) *ListNode {
+    if pHead == nil || pHead.Next == nil {
+        return pHead
+    }
+    cur := pHead
+    for i := 0; i < n; i++ {
+        if cur == nil {
+            return nil
+        }
+        cur = cur.Next
+    }
+    dummy := &ListNode{Next: pHead}
+    pre := dummy
+    for cur != nil {
+        cur = cur.Next
+        pre = pre.Next
+    }
+    pre.Next = pre.Next.Next
+    return dummy.Next
 }

@@ -60,3 +60,14 @@ func TestBuildTree(t *testing.T) {
         fmt.Println(temp)
     })
 }
+
+//
+//  TestVerifySequenceOfBST
+//  @Description: JZ33 二叉搜索树的后序遍历序列
+//  @param t
+//
+func TestVerifySequenceOfBST(t *testing.T) {
+    data := []int{7, 4, 6, 5, 9, 11, 10, 8}
+    res := trees.VerifySequenceOfBST(data)
+    fmt.Println(res)
+}

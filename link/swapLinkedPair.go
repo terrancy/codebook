@@ -29,6 +29,16 @@ func SwapLinkedPair(head *ListNode) *ListNode {
 }
 
 //
+//  SwapLinkedPairII
+//  @Description:
+//  @param head
+//  @return *ListNode
+//
+func SwapLinkedPairII(head *ListNode) *ListNode {
+    return ReverseKGroup(head, 2)
+}
+
+//
 //  SwapLinkedPairDG
 //  @Description: NC186 递归:两两交换链表的节点
 //  @param head

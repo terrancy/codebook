@@ -65,10 +65,3 @@ func isPailII(head *ListNode) bool {
     }
     return true
 }
-
-//func main() {
-//    data := []int{1, 2, 3, 2, 1}
-//    head := makeListNode(data)
-//    isPail := isPail(head)
-//    println(isPail)
-//}

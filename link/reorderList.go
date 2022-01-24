@@ -80,10 +80,3 @@ func ReorderListII(head *ListNode) {
     }
     data[i].Next = nil
 }
-
-//func main() {
-//    data := []int{1, 2, 3, 4}
-//    head := makeListNode(data)
-//    reorderListII(head)
-//    showData(head, true)
-//}

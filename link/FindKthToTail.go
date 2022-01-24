@@ -46,10 +46,3 @@ func FindKthToTailII(pHead *ListNode, k int) *ListNode {
     
     return data[k]
 }
-
-//func main() {
-//    data := []int{2}
-//    head := makeListNode(data)
-//    cur := FindKthToTail(head, 8)
-//    showData(cur, true)
-//}

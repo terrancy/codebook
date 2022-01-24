@@ -57,6 +57,17 @@ func TestInsertSort(t *testing.T) {
 //
 func TestHeapSort(t *testing.T) {
     nums := []int{5, 2, 3, 1, 4}
-    res := base.HeapSort(nums)
+    res := base.HeapSortDESC(nums)
+    fmt.Println(res)
+}
+
+//
+//  TestHeapSort
+//  @Description: 堆排序
+//  @param t
+//
+func TestFindLastKth(t *testing.T) {
+    nums := []int{5, 2, 3, 1, 4}
+    res := base.FindLastKth(nums, 3)
     fmt.Println(res)
 }

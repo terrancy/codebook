@@ -13,7 +13,18 @@ import (
 func TestLinkReverse(t *testing.T) {
     data := []int{1, 2, 3, 4, 5, 6, 7}
     head := link.MakeListNode(data)
-    dummy := link.LinkReverse(head)
+    dummy := link.Reverse(head)
+    link.ShowData(dummy)
+}
+
+//
+//  TestHalfReverse
+//  @Description:
+//
+func TestHalfReverse(t *testing.T) {
+    data := []int{1, 2, 3, 4, 5, 6, 7}
+    head := link.MakeListNode(data)
+    dummy := link.HalfReverse(head)
     link.ShowData(dummy)
 }
 
@@ -40,6 +51,17 @@ func TestDeleteDuplicatesII(t *testing.T) {
     dummy := link.DeleteDuplicatesII(head)
     link.ShowData(dummy)
 }
+//
+//  TestRemoveNthFromEnd
+//  @Description: NC53 删除链表的倒数第n个节点
+//  @param t
+//
+func TestRemoveNthFromEnd(t *testing.T) {
+    data := []int{1, 2}
+    head := link.MakeListNode(data)
+    dummy := link.RemoveNthFromEndII(head, 2)
+    link.ShowData(dummy)
+}
 
 //
 //  TestReverseBetween
@@ -47,9 +69,16 @@ func TestDeleteDuplicatesII(t *testing.T) {
 //  @param t
 //
 func TestReverseBetween(t *testing.T) {
-    data := []int{1, 2, 3, 4, 5}
+    data := []int{1, 2}
     head := link.MakeListNode(data)
-    dummy := link.ReverseBetween(head, 2, 4)
+    dummy := link.ReverseBetweenII(head, 1, 2)
+    link.ShowData(dummy)
+}
+
+func TestReverseKGroup(t *testing.T) {
+    data := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+    head := link.MakeListNode(data)
+    dummy := link.ReverseKGroupII(head, 2)
     link.ShowData(dummy)
 }
 

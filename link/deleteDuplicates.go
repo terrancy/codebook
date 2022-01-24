@@ -10,7 +10,6 @@ func DeleteDuplicates(head *ListNode) *ListNode {
     if head == nil || head.Next == nil {
         return head
     }
-    
     cur := head
     for cur != nil && cur.Next != nil {
         // 删除重复值
@@ -33,10 +32,8 @@ func DeleteDuplicatesII(head *ListNode) *ListNode {
     if head == nil || head.Next == nil {
         return head
     }
-    
-    preHead := &ListNode{}
-    preHead.Next = head
-    pre := preHead
+    dummy := &ListNode{Next:head}
+    pre := dummy
     cur := head
     isDeleted := false
     for cur != nil && cur.Next != nil {
@@ -57,5 +54,5 @@ func DeleteDuplicatesII(head *ListNode) *ListNode {
     if isDeleted == true {
         pre.Next = nil
     }
-    return preHead.Next
+    return dummy.Next
 }
