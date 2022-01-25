@@ -54,7 +54,46 @@ func TestTopKStrings(t *testing.T) {
 //  @Description: NC32 求平方根
 //  @param t
 //
-func TestSqrt(t *testing.T) {
-    res := others.Sqrt(5)
+func TestSQRT(t *testing.T) {
+    res := others.SQRT(5)
+    fmt.Println(res)
+}
+
+//
+//  TestNumIslands
+//  @Description: NC109 岛屿数量
+//  @param t
+//
+func TestNumIslands(t *testing.T) {
+    grid := [][]byte{
+        {'1', '1', '0', '0', '0'},
+        {'0', '1', '0', '1', '1'},
+        {'0', '0', '0', '1', '1'},
+        {'0', '0', '0', '0', '0'},
+        {'0', '0', '1', '1', '1'},
+    }
+    cnt := others.NumIslands(grid)
+    fmt.Println(cnt)
+}
+
+//
+//  TestIsPokerContinuous
+//  @Description: NC63 扑克牌顺子
+//  @param t
+//
+func TestIsPokerContinuous(t *testing.T) {
+    data := []int{6, 0, 2, 0, 4}
+    res := others.IsPokerContinuous(data)
+    fmt.Println(res)
+}
+
+//
+//  TestIsPalindrome
+//  @Description: NC56 回文数字
+//  @param t
+//
+func TestIsPalindrome(t *testing.T) {
+    num := 121
+    res := others.IsPalindromeII(num)
     fmt.Println(res)
 }

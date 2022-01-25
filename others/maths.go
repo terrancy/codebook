@@ -1,12 +1,12 @@
 package others
 
 //
-//  Sqrt
+//  SQRT
 //  @Description: NC32 求平方根
 //  @param num
 //  @return int
 //
-func Sqrt(num int) int {
+func SQRT(num int) int {
     if num < 2 {
         return num
     }
