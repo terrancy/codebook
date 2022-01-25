@@ -1,5 +1,7 @@
 package others
 
+// 缓存相关
+
 //
 //  Lru
 //  @Description: NC93 设计LRU缓存结构
@@ -8,7 +10,7 @@ package others
 //  @return []int
 //
 func Lru(operators [][]int, k int) []int {
-
+    return []int{}
 }
 
 //

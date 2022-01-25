@@ -8,14 +8,14 @@ package base
 //
 //  BubbleSort
 //  @Description: 冒泡排序 O(N2)
-//  @Solution: 两两比较把较大的放后面,这样每次循环把最大的放后面
+//  @Solution: 两两交换,最大的放后面
 //  @param nums
 //  @return []int
 //
 func BubbleSort(nums []int) []int {
     n := len(nums)
-    for i := 0; i < n; i++ {
-        for j := 0; j < n-i-1; j++ {
+    for i := n - 1; i >= 0; i-- {
+        for j := 0; j < i; j++ {
             if nums[j] > nums[j+1] {
                 nums[j], nums[j+1] = nums[j+1], nums[j]
             }
@@ -27,7 +27,7 @@ func BubbleSort(nums []int) []int {
 //
 //  SelectSort
 //  @Description: 选择排序
-//  @Solution: 每次遍历选择最小值放前面
+//  @Solution: 两两交换,最小的放前面
 //  @param nums
 //  @return []int
 //
