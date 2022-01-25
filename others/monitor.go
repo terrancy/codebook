@@ -1,6 +1,7 @@
 package others
 
 import (
+    "awesome"
     "sort"
     "strconv"
 )
@@ -86,4 +87,34 @@ func IsPalindromeII(x int) bool {
         }
     }
     return true
+}
+
+//
+//  UglyNumber
+//  @Description: JZ49 丑数
+//  @Description: 三指针动态规划法
+//  @param index
+//  @return int
+//
+func UglyNumber(index int) int {
+    if index < 4 {
+        return index
+    }
+    dp := []int{1}
+    p1, p2, p3 := 0, 0, 0
+    for i := 1; i < index; i++ {
+        lastUglyNumber := dp[len(dp)-1]
+        for lastUglyNumber >= dp[p1]*2 {
+            p1++
+        }
+        for lastUglyNumber >= dp[p2]*3 {
+            p2++
+        }
+        for lastUglyNumber >= dp[p3]*5 {
+            p3++
+        }
+        minNumber := awesome.MinInt(awesome.MinInt(dp[p1]*2, dp[p2]*3), dp[p3]*5)
+        dp = append(dp, minNumber)
+    }
+    return dp[index-1]
 }

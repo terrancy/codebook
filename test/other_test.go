@@ -97,3 +97,24 @@ func TestIsPalindrome(t *testing.T) {
     res := others.IsPalindromeII(num)
     fmt.Println(res)
 }
+
+//
+//  TestUglyNumber
+//  @Description: 丑数
+//  @param t
+//
+func TestUglyNumber(t *testing.T) {
+    res := others.UglyNumber(7)
+    fmt.Println(res)
+}
+
+//
+//  TestMinNumberInRotateArray
+//  @Description: NC71 旋转数组的最小数字
+//  @param t
+//
+func TestMinNumberInRotateArray(t *testing.T) {
+    data := []int{3, 4, 5, 1, 2}
+    res := others.MinNumberInRotateArray(data)
+    fmt.Println(res)
+}

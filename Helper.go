@@ -7,6 +7,13 @@ func MaxInt(a, b int) int {
     return b
 }
 
+func MinInt(a, b int) int {
+    if a > b {
+        return b
+    }
+    return a
+}
+
 func arrayReverse(data []int) []int {
     n := len(data)
     for i, j := 0, n-1; i < j; i, j = i+1, j-1 {
