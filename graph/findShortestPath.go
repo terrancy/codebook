@@ -1,5 +1,7 @@
 package graph
 
+// 单源最短路径算法相关
+
 //
 //  FindShortestPath
 //  @Description: NC158 单源最短路
@@ -12,5 +14,5 @@ package graph
 //  @return int
 //
 func FindShortestPath(n int, m int, graph [][]int) int {
-    
+    return n
 }
