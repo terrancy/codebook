@@ -60,23 +60,6 @@ func TestSQRT(t *testing.T) {
 }
 
 //
-//  TestNumIslands
-//  @Description: NC109 岛屿数量
-//  @param t
-//
-func TestNumIslands(t *testing.T) {
-    grid := [][]byte{
-        {'1', '1', '0', '0', '0'},
-        {'0', '1', '0', '1', '1'},
-        {'0', '0', '0', '1', '1'},
-        {'0', '0', '0', '0', '0'},
-        {'0', '0', '1', '1', '1'},
-    }
-    cnt := others.NumIslands(grid)
-    fmt.Println(cnt)
-}
-
-//
 //  TestIsPokerContinuous
 //  @Description: NC63 扑克牌顺子
 //  @param t
@@ -137,5 +120,36 @@ func TestTargetNumberInRotateArray(t *testing.T) {
 //
 func TestGcd(t *testing.T) {
     res := others.GcdII(3, 4)
+    fmt.Println(res)
+}
+
+//
+//  TestMaxNums
+//  @Description:NC111 最大数
+//  @param t
+//
+func TestMaxNums(t *testing.T) {
+    data := []int{2, 20, 23, 4, 8}
+    res := others.MaxNums(data)
+    fmt.Println(res)
+}
+
+//
+//  TestNumberOfZeroFactorial
+//  @Description: NC129 阶乘末尾0的数量
+//  @param t
+//
+func TestNumberOfZeroFactorial(t *testing.T) {
+    res := others.NumberOfZeroFactorial(1000000000)
+    fmt.Println(res)
+}
+
+//
+//  TestBigNumberPlus
+//  @Description: NC1 大数加法
+//  @param t
+//
+func TestBigNumberPlus(t *testing.T) {
+    res := others.BigNumberPlus("1", "99")
     fmt.Println(res)
 }

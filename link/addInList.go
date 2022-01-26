@@ -1,5 +1,14 @@
 package link
 
+import "awesome"
+
+//
+//  addInList
+//  @Description:
+//  @param head1
+//  @param head2
+//  @return *ListNode
+//
 func addInList(head1 *ListNode, head2 *ListNode) *ListNode {
     if head1 == nil && head2 == nil {
         return nil
@@ -46,23 +55,17 @@ func addInList(head1 *ListNode, head2 *ListNode) *ListNode {
 //
 func towSum(data1, data2 []int) []int {
     n, m := len(data1), len(data2)
-    k := maxInt(n, m)
+    k := awesome.MaxInt(n, m)
     data := make([]int, k)
-    sum, plus := 0, 0
-    a, b := 0, 0
+    plus := 0
     for i := 0; i < k; i++ {
-        sum = 0
+        a, b, sum := 0, 0, 0
         if i < n {
             a = data1[n-1-i]
-        } else {
-            a = 0
         }
         if i < m {
             b = data2[m-1-i]
-        } else {
-            b = 0
         }
-        
         sum = plus + a + b
         plus = int(sum / 10)
         data[i] = sum % 10
@@ -72,23 +75,3 @@ func towSum(data1, data2 []int) []int {
     }
     return data
 }
-
-//func dataSwag(data1, data2 []int) ([]int, []int) {
-//    n, m := len(data1), len(data2)
-//    temp := make([]int, 0)
-//    if n < m {
-//        temp = data1
-//        data1 = data2
-//        data2 = temp
-//    }
-//    return data1, data2
-//}
-
-//func main() {
-//    data1 := []int{9, 3, 7}
-//    node1 := makeListNode(data1)
-//    data2 := []int{6, 3}
-//    node2 := makeListNode(data2)
-//    data := addInList(node1, node2)
-//    showData(data, true)
-//}

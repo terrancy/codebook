@@ -1,5 +1,11 @@
 package others
 
+import (
+    "awesome"
+    "sort"
+    "strconv"
+)
+
 //
 //  SQRT
 //  @Description: NC32 求平方根
@@ -58,4 +64,106 @@ func GcdII(a int, b int) int {
         return a
     }
     return GcdII(b, a%b)
+}
+
+//
+//  MaxNums
+//  @Description: NC111 最大数
+//  @Description: 给定一个长度为n的数组nums，数组由一些非负整数组成，现需要将他们进行排列并拼接，每个数不可拆分，使得最后的结果最大
+//  @param nums
+//  @return string
+//
+func MaxNums(nums []int) string {
+    str := make([]string, 0)
+    for _, num := range nums {
+        str = append(str, strconv.Itoa(num))
+    }
+    // 按照拼接的字符排序
+    sort.Slice(str, func(i, j int) bool {
+        str1 := str[i] + str[j]
+        str2 := str[j] + str[i]
+        num1, _ := strconv.Atoi(str1)
+        num2, _ := strconv.Atoi(str2)
+        return num1 > num2
+    })
+    res := ""
+    for _, val := range str {
+        res += val
+    }
+    if res[0] == '0' {
+        return "0"
+    }
+    return res
+}
+
+//
+//  NumberOfZeroFactorial
+//  @Description: NC129 阶乘末尾0的数量
+//  @Description: 给定一个非负整数 n ，返回 n! 结果的末尾为 0 的数量
+//  @Tips: 有5因子的数比有2因子的数要少，所以我们就看能拆出来多少5就可以了，因为肯定能有足够数量的因子2来匹配
+//  @Tips: 这样的话 1\sim n1∼n 中有n/5个5的倍数，n/25个25的倍数，n/125个125的倍数!!
+//  @Tips: 25 = 5 * 5.对于5而言只算1个25.但是有2个5呢!!这里就要用25再回来.同理,125也是一样
+//  @param n
+//  @return int64
+//
+func NumberOfZeroFactorial(n int64) int64 {
+    if n < 5 {
+        return 0
+    }
+    var ans, factor int64 = 0, 5
+    for n >= factor {
+        ans += n / factor
+        factor *= 5
+    }
+    return ans
+}
+
+//
+//  TwoSum
+//  @Description: NC1 大数加法
+//  @Description: 以字符串的形式读入两个数字，编写一个函数计算它们的和，以字符串形式返回
+//  @param data1
+//  @param data2
+//  @return []int
+//
+func BigNumberPlus(s, t string) string {
+    n, m := len(s), len(t)
+    if m == 0 {
+        return s
+    }
+    if n == 0 {
+        return t
+    }
+    k := awesome.MaxInt(n, m)
+    data := make([]byte, k+1)
+    plus := 0
+    for i := 0; i < k; i++ {
+        a, b := 0, 0
+        if i < n {
+            a = int(s[n-1-i] - '0')
+        }
+        if i < m {
+            b = int(t[m-1-i] - '0')
+        }
+        sum := plus + a + b
+        plus = sum / 10
+        data[k-i] = byte(sum%10 + '0')
+    }
+    if plus == 1 {
+        data[0] = '1'
+        return string(data)
+    }
+    return string(data[1:])
+}
+
+//
+//  BigNumberProduct
+//  @Description: NC10 大数乘法
+//  @Description: 以字符串的形式读入两个数字，编写一个函数计算它们的乘积，以字符串形式返回。
+//  @param s
+//  @param t
+//  @return string
+//
+func BigNumberProduct(s string, t string) string {
+    return s
 }
