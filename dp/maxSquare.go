@@ -1,4 +1,4 @@
-package main
+package dp
 
 func solve(matrix [][]byte) int {
     n := len(matrix)

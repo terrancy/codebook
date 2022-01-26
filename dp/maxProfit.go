@@ -1,4 +1,4 @@
-package main
+package dp
 
 func maxProfit(prices []int) int {
     n := len(prices)

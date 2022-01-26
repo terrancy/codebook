@@ -1,4 +1,4 @@
-package main
+package dp
 
 func uniquePaths(m int, n int) int {
     temp := minInt(m, n)
