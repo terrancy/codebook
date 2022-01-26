@@ -118,3 +118,24 @@ func TestMinNumberInRotateArray(t *testing.T) {
     res := others.MinNumberInRotateArray(data)
     fmt.Println(res)
 }
+
+//
+//  TestTargetNumberInRotateArray
+//  @Description: NC48 在旋转过的有序数组中寻找目标值
+//  @param t
+//
+func TestTargetNumberInRotateArray(t *testing.T) {
+    data := []int{1, 3}
+    res := others.TargetNumberInRotateArrayII(data, 3)
+    fmt.Println(res)
+}
+
+//
+//  TestGcd
+//  @Description: NC151 最大公约数
+//  @param t
+//
+func TestGcd(t *testing.T) {
+    res := others.GcdII(3, 4)
+    fmt.Println(res)
+}
