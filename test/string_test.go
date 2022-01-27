@@ -50,6 +50,7 @@ func TestLongRepeatedSubstring(t *testing.T) {
     res := strings.LongRepeatedSubstring(str)
     fmt.Println(res)
 }
+
 //
 //  TestFirstNotRepeatingChar
 //  @Description: NC31 第一个只出现一次的字符
@@ -58,5 +59,16 @@ func TestLongRepeatedSubstring(t *testing.T) {
 func TestFirstNotRepeatingChar(t *testing.T) {
     str := "google"
     res := strings.FirstNotRepeatingChar(str)
+    fmt.Println(res)
+}
+
+//
+//  TestCheckIpAddress
+//  @Description: NC113 验证IP地址
+//  @param t
+//
+func TestCheckIpAddress(t *testing.T) {
+    str := "127.0.0.1"
+    res := strings.CheckIpAddress(str)
     fmt.Println(res)
 }

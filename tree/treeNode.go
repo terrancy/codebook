@@ -2,10 +2,25 @@ package trees
 
 import "awesome"
 
+//
+//  TreeNode
+//  @Description: 二叉树树节点
+//
 type TreeNode struct {
     Val   int
     Left  *TreeNode
     Right *TreeNode
+}
+
+//
+//  TreeLinkNode
+//  @Description: 指向父节点的二叉树节点
+//
+type TreeLinkNode struct {
+    Val   int
+    Left  *TreeLinkNode
+    Right *TreeLinkNode
+    Next  *TreeLinkNode
 }
 
 //

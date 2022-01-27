@@ -153,3 +153,15 @@ func TestBigNumberPlus(t *testing.T) {
     res := others.BigNumberPlus("1", "99")
     fmt.Println(res)
 }
+
+//
+//  TestBigNumberProduct
+//  @Description: NC10 大数乘法
+//  @param t
+//
+func TestBigNumberProduct(t *testing.T) {
+    source := "11"
+    target := "99"
+    res := others.BigNumberProduct(source, target)
+    fmt.Printf("%s*%s=%s", source, target, res)
+}

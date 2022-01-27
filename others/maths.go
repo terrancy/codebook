@@ -165,5 +165,41 @@ func BigNumberPlus(s, t string) string {
 //  @return string
 //
 func BigNumberProduct(s string, t string) string {
-    return s
+    if s == "0" || t == "0" {
+        return "0"
+    }
+    if s == "1" {
+        return t
+    }
+    if t == "1" {
+        return s
+    }
+    m := len(s)
+    n := len(t)
+    ns := make([]int, m)
+    nt := make([]int, n)
+    for i := 0; i < m; i++ {
+        ns[i] = int(s[i] - '0')
+    }
+    for i := 0; i < n; i++ {
+        nt[i] = int(t[i] - '0')
+    }
+    raw := make([]int, m+n)
+    for i := m - 1; i >= 0; i-- {
+        for j := n - 1; j >= 0; j-- {
+            raw[i+j+1] += ns[i] * nt[j]
+        }
+    }
+    k := len(raw)
+    res := make([]rune, k)
+    carry := 0
+    for i := k - 1; i >= 0; i-- {
+        tmp := carry + raw[i]
+        carry = tmp / 10
+        res[i] = rune(tmp%10 + '0')
+    }
+    if res[0] == '0' {
+        return string(res[1:])
+    }
+    return string(res)
 }
