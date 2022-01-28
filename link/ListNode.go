@@ -2,9 +2,23 @@ package link
 
 import "fmt"
 
+//
+//  ListNode
+//  @Description: 简单链表
+//
 type ListNode struct {
     Val  int
     Next *ListNode
+}
+
+//
+//  RandomListNode
+//  @Description: 复杂链表
+//
+type RandomListNode struct {
+    Label  int
+    Next   *RandomListNode
+    Random *RandomListNode
 }
 
 func BuildListNode(data []int) *ListNode {
@@ -16,6 +30,20 @@ func BuildListNode(data []int) *ListNode {
     cur := head
     for _, val := range data {
         temp := &ListNode{val, nil}
+        cur.Next = temp
+        cur = cur.Next
+    }
+    return head.Next
+}
+func BuildRandomListNode(data []int) *RandomListNode {
+    head := &RandomListNode{}
+    n := len(data)
+    if n == 0 {
+        return head
+    }
+    cur := head
+    for _, val := range data {
+        temp := &RandomListNode{Label: val}
         cur.Next = temp
         cur = cur.Next
     }

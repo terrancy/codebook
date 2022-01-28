@@ -51,6 +51,7 @@ func TestDeleteDuplicatesII(t *testing.T) {
     dummy := link.DeleteDuplicatesII(head)
     link.ShowData(dummy)
 }
+
 //
 //  TestRemoveNthFromEnd
 //  @Description: NC53 删除链表的倒数第n个节点
@@ -143,7 +144,7 @@ func TestPlusOne(t *testing.T) {
 
 //
 //  TestOddEvenList
-//  @Description: 链表奇偶重排
+//  @Description: NC133 链表的奇偶重排
 //  @param t
 //
 func TestOddEvenList(t *testing.T) {
@@ -151,4 +152,15 @@ func TestOddEvenList(t *testing.T) {
     head := link.BuildListNode(data)
     dummy := link.OddEvenListII(head)
     link.ShowData(dummy)
+}
+
+//
+//  TestCopyRandomList
+//  @Description:JZ35 复杂链表的复制
+//  @param t
+//
+func TestCopyRandomList(t *testing.T) {
+    data := []int{1, 2, 3, 4, 5}
+    head := link.BuildRandomListNode(data)
+    link.CopyRandomList(head)
 }
