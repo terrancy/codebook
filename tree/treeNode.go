@@ -24,12 +24,12 @@ type TreeLinkNode struct {
 }
 
 //
-//  makeTreeNode
+//  BuildTreeNode
 //  @Description: 通过数组层序遍历构建"满二叉树"
 //  @param data
 //  @return *TreeNode
 //
-func MakeTreeNode(data []int) *TreeNode {
+func BuildTreeNode(data []int) *TreeNode {
     // 数组优化
     data = dataOptimize(data)
     n := len(data)

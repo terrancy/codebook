@@ -7,7 +7,7 @@ type ListNode struct {
     Next *ListNode
 }
 
-func MakeListNode(data []int) *ListNode {
+func BuildListNode(data []int) *ListNode {
     head := &ListNode{}
     n := len(data)
     if n == 0 {

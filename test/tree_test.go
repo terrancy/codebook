@@ -14,7 +14,7 @@ import (
 //
 func TestSerialize(t *testing.T) {
     data := []int{8, 6, 10, 5, 7, 9, 11}
-    root := trees.MakeTreeNode(data)
+    root := trees.BuildTreeNode(data)
     temp := trees.Serialize(root)
     fmt.Println(temp)
     str := trees.Array2String(temp)
@@ -30,8 +30,8 @@ func TestSerialize(t *testing.T) {
 func TestIsContains(t *testing.T) {
     data1 := []int{1, 2, 3, 4, 5, 6, 7, awesome.INF, 8, 9}
     data2 := []int{2, 4, 5, awesome.INF, 8, 9}
-    root1 := trees.MakeTreeNode(data1)
-    root2 := trees.MakeTreeNode(data2)
+    root1 := trees.BuildTreeNode(data1)
+    root2 := trees.BuildTreeNode(data2)
     ans := trees.IsContains(root1, root2)
     fmt.Println(ans)
 }

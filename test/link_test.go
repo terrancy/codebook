@@ -12,7 +12,7 @@ import (
 //
 func TestLinkReverse(t *testing.T) {
     data := []int{1, 2, 3, 4, 5, 6, 7}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.Reverse(head)
     link.ShowData(dummy)
 }
@@ -23,7 +23,7 @@ func TestLinkReverse(t *testing.T) {
 //
 func TestHalfReverse(t *testing.T) {
     data := []int{1, 2, 3, 4, 5, 6, 7}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.HalfReverse(head)
     link.ShowData(dummy)
 }
@@ -35,7 +35,7 @@ func TestHalfReverse(t *testing.T) {
 //
 func TestDeleteDuplicates(t *testing.T) {
     data := []int{1, 2, 2}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.DeleteDuplicates(head)
     link.ShowData(dummy)
 }
@@ -47,7 +47,7 @@ func TestDeleteDuplicates(t *testing.T) {
 //
 func TestDeleteDuplicatesII(t *testing.T) {
     data := []int{1, 2, 2}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.DeleteDuplicatesII(head)
     link.ShowData(dummy)
 }
@@ -58,7 +58,7 @@ func TestDeleteDuplicatesII(t *testing.T) {
 //
 func TestRemoveNthFromEnd(t *testing.T) {
     data := []int{1, 2}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.RemoveNthFromEndII(head, 2)
     link.ShowData(dummy)
 }
@@ -70,14 +70,14 @@ func TestRemoveNthFromEnd(t *testing.T) {
 //
 func TestReverseBetween(t *testing.T) {
     data := []int{1, 2}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.ReverseBetweenII(head, 1, 2)
     link.ShowData(dummy)
 }
 
 func TestReverseKGroup(t *testing.T) {
     data := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.ReverseKGroupII(head, 2)
     link.ShowData(dummy)
 }
@@ -89,7 +89,7 @@ func TestReverseKGroup(t *testing.T) {
 //
 func TestInsertSortList(t *testing.T) {
     data := []int{2, 4, 1}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.InsertionSortList(head)
     link.ShowData(dummy)
 }
@@ -101,7 +101,7 @@ func TestInsertSortList(t *testing.T) {
 //
 func TestSwapLinkedPair(t *testing.T) {
     data := []int{1, 2, 3, 4}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.SwapLinkedPair(head)
     link.ShowData(dummy)
 }
@@ -112,7 +112,7 @@ func TestSwapLinkedPair(t *testing.T) {
 //
 func TestSortLinkedList(t *testing.T) {
     data := []int{1, 3, 2, 2, 3, 1}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.SortLinkedList(head)
     link.ShowData(dummy)
 }
@@ -124,7 +124,7 @@ func TestSortLinkedList(t *testing.T) {
 //
 func TestRotateLinkedList(t *testing.T) {
     data := []int{1, 2, 3}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.RotateLinkedList(head, 1000000000)
     link.ShowData(dummy)
 }
@@ -136,7 +136,7 @@ func TestRotateLinkedList(t *testing.T) {
 //
 func TestPlusOne(t *testing.T) {
     data := []int{9, 9, 9}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.PlusOne(head)
     link.ShowData(dummy)
 }
@@ -148,7 +148,7 @@ func TestPlusOne(t *testing.T) {
 //
 func TestOddEvenList(t *testing.T) {
     data := []int{1, 4, 6, 3, 7}
-    head := link.MakeListNode(data)
+    head := link.BuildListNode(data)
     dummy := link.OddEvenListII(head)
     link.ShowData(dummy)
 }
