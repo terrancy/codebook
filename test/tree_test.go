@@ -71,3 +71,32 @@ func TestVerifySequenceOfBST(t *testing.T) {
     res := trees.VerifySequenceOfBST(data)
     fmt.Println(res)
 }
+
+//
+//  TestHadSubTree
+//  @Description:JZ26 树的子结构
+//  @param t
+//
+func TestHasSubTree(t *testing.T) {
+    data := []int{8, 8, 7, 9, 2, awesome.INF, awesome.INF, awesome.INF, awesome.INF, 4, 7}
+    tmp := []int{8, 9, 2}
+    head := trees.BuildTreeNode(data)
+    subHead := trees.BuildTreeNode(tmp)
+    res := trees.HasSubTree(head, subHead)
+    if res == true {
+        fmt.Println("yes")
+    } else {
+        fmt.Println("no")
+    }
+}
+
+//
+//  TestConvertTree2DualLink
+//  @Description: JZ36 二叉搜索树与双向链表
+//  @param t
+//
+func TestConvertTree2DualLink(t *testing.T) {
+    data := []int{10, 6, 14, 4, 8, 12, 16}
+    head := trees.BuildTreeNode(data)
+    trees.ConvertTree2DualLinkII(head)
+}

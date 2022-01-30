@@ -8,5 +8,46 @@ package trees
 //  @return *TreeLinkNode
 //
 func GetNext(pNode *TreeLinkNode) *TreeLinkNode {
-    return pNode
+    if pNode == nil {
+        return nil
+    }
+    cur := pNode
+    for cur != nil {
+        cur = cur.Next
+    }
+    return cur
+}
+
+//
+//  inOrderGetNext
+//  @Description: 中根遍历获取目标值
+//  @param root
+//  @param target
+//  @return *TreeLinkNode
+//
+func inOrderGetNext(root *TreeLinkNode, target *TreeLinkNode) *TreeLinkNode {
+    return root
+}
+
+func GetNextII(pNode *TreeLinkNode) *TreeLinkNode {
+    if pNode == nil {
+        return nil
+    }
+    // 如果当前结点的右子树不为空
+    if pNode.Right != nil {
+        pNode = pNode.Right
+        for pNode.Left != nil {
+            pNode = pNode.Left
+        }
+        return pNode
+    }
+    
+    // 当前结点无右子树时,可能是父节点的左子树或者右子树
+    for pNode.Next != nil {
+        if pNode.Next.Left == pNode {
+            return pNode.Next
+        }
+        pNode = pNode.Next
+    }
+    return nil
 }

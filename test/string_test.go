@@ -72,3 +72,14 @@ func TestCheckIpAddress(t *testing.T) {
     res := strings.CheckIpAddress(str)
     fmt.Println(res)
 }
+
+//
+//  TestReverseSentence
+//  @Description: JZ73 翻转单词序列
+//  @param t
+//
+func TestReverseSentence(t *testing.T) {
+    str := "nowcoder. a am I"
+    res := strings.ReverseSentence(str)
+    fmt.Println(res)
+}
