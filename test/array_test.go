@@ -72,3 +72,25 @@ func TestTreeSum(t *testing.T) {
     res := array.ThreeSumII(data)
     fmt.Println(res)
 }
+
+//
+//  TestInversePairs
+//  @Description: JZ51 数组中的逆序对
+//  @param t
+//
+func TestInversePairs(t *testing.T) {
+    data := []int{1, 2, 3, 4, 5, 6, 7, 0}
+    res := array.InversePairsQuickSort(data)
+    fmt.Println(res)
+}
+
+//
+//  TestFindRepeatNumber
+//  @Description: JZ3 数组中重复的数字
+//  @param t
+//
+func TestFindRepeatNumber(t *testing.T) {
+    data := []int{2, 3, 1, 0, 2, 5, 3}
+    res := array.FindRepeatNumber(data)
+    fmt.Println(res)
+}

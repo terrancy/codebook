@@ -165,3 +165,14 @@ func TestBigNumberProduct(t *testing.T) {
     res := others.BigNumberProduct(source, target)
     fmt.Printf("%s*%s=%s", source, target, res)
 }
+
+//
+//  TestFindNthDigit
+//  @Description: JZ44 数字序列中某一位的数字
+//  @param t
+//
+func TestFindNthDigit(t *testing.T) {
+    n := 13
+    res := others.FindNthDigit(n)
+    fmt.Println(res)
+}

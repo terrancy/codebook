@@ -118,3 +118,22 @@ func UglyNumber(index int) int {
     }
     return dp[index-1]
 }
+
+//
+//  FindNthDigit
+//  @Description: JZ44 数字序列中某一位的数字
+//  @param n
+//  @return int
+//
+func FindNthDigit(n int) int {
+    start := 1
+    digit := 1
+    for n > 9*start*digit {
+        n -= 9 * start * digit
+        start *= 10
+        digit += 1
+    }
+    num := start + (n-1)/digit
+    idx := (n - 1) % digit
+    return int(strconv.Itoa(num)[idx] - '0')
+}
