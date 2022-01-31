@@ -30,3 +30,22 @@ func TestThrowEggs(t *testing.T) {
     ans := dp.ThrowEggsII(105, 2)
     fmt.Println(ans)
 }
+
+//
+//  TestCuttingRopes
+//  @Description: JZ14 剪绳子 - 动态规划
+//  @param t
+//
+func TestCuttingRopesDP(t *testing.T) {
+    ans := dp.CuttingRopesDP(100)
+    fmt.Println(ans)
+}
+//
+//  TestCuttingRopesGreedy
+//  @Description: Z14 剪绳子 - 贪心算法
+//  @param t
+//
+func TestCuttingRopesGreedy(t *testing.T) {
+    ans := dp.CuttingRosesGreedy(120)
+    fmt.Println(ans)
+}

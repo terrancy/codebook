@@ -1,5 +1,7 @@
 package dp
 
+import "awesome"
+
 func solve(matrix [][]byte) int {
     n := len(matrix)
     if n == 0 {
@@ -16,9 +18,9 @@ func solve(matrix [][]byte) int {
             } else if i == 0 || j == 0 {
                 dp[i][j] = intVal(matrix[i][j])
             } else {
-                dp[i][j] = minInt(minInt(dp[i-1][j-1], dp[i][j-1]), dp[i-1][j]) + 1
+                dp[i][j] = awesome.MinInt(awesome.MinInt(dp[i-1][j-1], dp[i][j-1]), dp[i-1][j]) + 1
             }
-            max = maxInt(max, dp[i][j])
+            max = awesome.MaxInt(max, dp[i][j])
         }
     }
     return max * max

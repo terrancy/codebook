@@ -1,6 +1,7 @@
 package dp
 
 import (
+    "awesome"
     "math"
 )
 
@@ -53,10 +54,10 @@ func ThrowEggsII(n int, k int) int {
         dp2 := make([]int, n+1)
         x := 1
         for j := 1; j < n; j++ {
-            for x < j && maxInt(dp[x-1], dp2[j-x]) > maxInt(dp[x], dp2[j-x-1]) {
+            for x < j && awesome.MaxInt(dp[x-1], dp2[j-x]) > awesome.MaxInt(dp[x], dp2[j-x-1]) {
                 x++
             }
-            dp2[j] = maxInt(dp[x-1], dp2[j-x]) + 1
+            dp2[j] = awesome.MaxInt(dp[x-1], dp2[j-x]) + 1
         }
         dp = dp2
     }

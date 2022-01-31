@@ -1,10 +1,15 @@
 package dp
-
+//
+//  uniquePaths
+//  @Description:
+//  @param m
+//  @param n
+//  @return int
+//
 func uniquePaths(m int, n int) int {
-    temp := minInt(m, n)
-    m = maxInt(m, n)
-    n = temp
-    
+    if m < n {
+        n, m = m, n
+    }
     dp := make([]int, m)
     for i := 0; i < m; i++ {
         dp[i] = 1

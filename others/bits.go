@@ -102,3 +102,53 @@ func ScaleConvert(num int, scale int) string {
     }
     return negative + ans
 }
+
+//
+//  addNumber
+//  @Description: JZ65 不用加减乘除做加法
+//  @param num1
+//  @param num2
+//  @return int
+//
+func AddNumber(num1, num2 int) int {
+    for num2 != 0 {
+        c := (num1 & num2) << 1
+        num1 ^= num2
+        num2 = c
+    }
+    return num1
+}
+
+//
+//  MyPow
+//  @Description: JZ16 数值的整数次方
+//  @param x
+//  @param n
+//  @return float64
+//
+func MyPow(x float64, n int) float64 {
+    if x == 0 || x == 1 {
+        return x
+    }
+    if n == 0 {
+        return 1
+    }
+    if n > 0 {
+        return jzPow(x, n)
+    } else {
+        n = -n
+        return 1 / jzPow(x, n)
+    }
+}
+
+func jzPow(x float64, n int) float64 {
+    if n == 0 {
+        return 1
+    }
+    half := jzPow(x, n/2)
+    if n%2 == 0 {
+        return half * half
+    } else {
+        return half * half * x
+    }
+}

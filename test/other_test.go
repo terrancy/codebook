@@ -176,3 +176,26 @@ func TestFindNthDigit(t *testing.T) {
     res := others.FindNthDigit(n)
     fmt.Println(res)
 }
+
+//
+//  TestAddNumber
+//  @Description: JZ65 不用加减乘除做加法
+//  @param t
+//
+func TestAddNumber(t *testing.T) {
+    a, b := 1001, 2020
+    res := others.AddNumber(a, b)
+    fmt.Println(res)
+}
+
+//
+//  TestMyPow
+//  @Description:
+//  @param t
+//
+func TestMyPow(t *testing.T) {
+    var x float64 = 100
+    var n = 2
+    res := others.MyPow(x, n)
+    fmt.Println(res)
+}
