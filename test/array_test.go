@@ -29,6 +29,17 @@ func TestReOrderArray(t *testing.T) {
 }
 
 //
+//  TestReOrderArrayRepeated
+//  @Description: 调整数组顺序使奇数位于偶数前面(二)
+//  @param t
+//
+func TestReOrderArrayRepeated(t *testing.T) {
+    data := []int{11, 2, 3, 4, 5, 4, 7, 0}
+    res := array.ReOrderArrayRepeatedII(data)
+    fmt.Println(res)
+}
+
+//
 //  TestMaxLengthRepeatLess
 //  @Description: NC41 最长无重复子数组
 //  @param t
@@ -92,5 +103,11 @@ func TestInversePairs(t *testing.T) {
 func TestFindRepeatNumber(t *testing.T) {
     data := []int{2, 3, 1, 0, 2, 5, 3}
     res := array.FindRepeatNumber(data)
+    fmt.Println(res)
+}
+
+func TestPrintMinNumber(t *testing.T) {
+    data := []int{3, 32, 321}
+    res := array.PrintMinNumber(data)
     fmt.Println(res)
 }
