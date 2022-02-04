@@ -2,7 +2,7 @@ package trees
 
 import "math"
 
-func isSearchBinaryTree(root *TreeNode) bool {
+func IsSearchBinaryTree(root *TreeNode) bool {
     min := math.MinInt32
     return isSBT(root, &min)
 }

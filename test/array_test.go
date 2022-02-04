@@ -106,8 +106,24 @@ func TestFindRepeatNumber(t *testing.T) {
     fmt.Println(res)
 }
 
+//
+//  TestPrintMinNumber
+//  @Description: ERR!!
+//  @param t
+//
 func TestPrintMinNumber(t *testing.T) {
     data := []int{3, 32, 321}
     res := array.PrintMinNumber(data)
+    fmt.Println(res)
+}
+
+//
+//  TestPrintNumbers
+//  @Description: JZ17 打印从1到最大的n位数
+//  @param t
+//
+func TestPrintNumbers(t *testing.T) {
+    n := 2
+    res := array.PrintNumbers(n)
     fmt.Println(res)
 }

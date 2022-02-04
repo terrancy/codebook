@@ -100,3 +100,15 @@ func TestConvertTree2DualLink(t *testing.T) {
     head := trees.BuildTreeNode(data)
     trees.ConvertTree2DualLinkII(head)
 }
+
+//
+//  TestIsSymmetric
+//  @Description: JZ28 对称的二叉树
+//  @param t
+//
+func TestIsSymmetric(t *testing.T) {
+    data := []int{2, 3, 3, 4, 5, 5, 4, awesome.INF, awesome.INF, 8, 9, awesome.INF, awesome.INF, 9, 8}
+    root := trees.BuildTreeNode(data)
+    res := trees.IsSymmetric(root)
+    fmt.Println(res)
+}

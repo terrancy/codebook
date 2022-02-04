@@ -4,7 +4,12 @@ import (
     "sort"
     "strconv"
 )
-
+//
+//  PrintMinNumber
+//  @Description:
+//  @param numbers
+//  @return string
+//
 func PrintMinNumber(numbers []int) string {
     str := make([]string, 0)
     for _, val := range numbers {

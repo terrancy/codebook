@@ -1,5 +1,7 @@
 package strings
 
+import "awesome"
+
 //
 //  Permutation
 //  @Description:
@@ -12,7 +14,7 @@ func Permutation(str string) []string {
         return nil
     }
     // 排序
-    bytes := stringSort(str)
+    bytes := awesome.StringSort(str)
     visited := make([]bool, n)
     res := make([]string, 0)
     backtrack(bytes, visited, &res, []byte(""))

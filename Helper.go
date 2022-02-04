@@ -1,5 +1,13 @@
 package awesome
 
+import (
+    "sort"
+)
+
+// 一些最值
+// math.MaxInt32, math.MinInt32
+
+// 比较最值
 func MaxInt(a, b int) int {
     if a > b {
         return a
@@ -14,10 +22,43 @@ func MinInt(a, b int) int {
     return a
 }
 
-func arrayReverse(data []int) []int {
+// 翻转问题
+
+//
+//  arrayReverse
+//  @Description: 数组翻转
+//  @param data
+//  @return []int
+//
+func DataReverse(data []int) []int {
     n := len(data)
     for i, j := 0, n-1; i < j; i, j = i+1, j-1 {
         data[i], data[j] = data[j], data[i]
     }
     return data
+}
+
+func DataSort(data []int) []int {
+    n := len(data)
+    if n < 2 {
+        return data
+    }
+    sort.Slice(data, func(i, j int) bool {
+        return data[i] > data[j]
+    })
+    return data
+}
+
+//
+//  stringSort
+//  @Description: 字符排序
+//  @param str
+//  @return string
+//
+func StringSort(str string) []byte {
+    bytes := []byte(str)
+    sort.Slice(bytes, func(i, j int) bool {
+        return bytes[i] < bytes[j]
+    })
+    return bytes
 }

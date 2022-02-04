@@ -46,3 +46,24 @@ func verifyIfBST(sequence []int) bool {
     
     return verifyIfBST(left) && verifyIfBST(right)
 }
+
+func verifyIfBSTII(data []int) bool {
+    n := len(data)
+    if n < 2 {
+        return true
+    }
+    flag := false
+    idx := 0
+    for i := 0; i < n-1; i++ {
+        // 右子树
+        if flag == true && data[i] < data[n-1] {
+            return false
+        }
+        // 左子树
+        if flag == false && data[i] > data[n-1] {
+            flag = true
+            idx = i
+        }
+    }
+    return verifyIfBSTII(data[:idx]) && verifyIfBST(data[idx:n-1])
+}

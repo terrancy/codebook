@@ -36,3 +36,21 @@ func dspLowestCommonAncestor(root *TreeNode, p int, q int) *TreeNode {
     }
     return root
 }
+
+//
+//  BSTLowestCommonAncestor
+//  @Description:
+//  @param root
+//  @param p
+//  @param q
+//  @return *TreeNode
+//
+func BSTLowestCommonAncestor(root *TreeNode, p int, q int) *TreeNode {
+    if root.Val > p && root.Val > q {
+        return BSTLowestCommonAncestor(root.Left, p, q)
+    }
+    if root.Val < p && root.Val < q {
+        return BSTLowestCommonAncestor(root.Right, p, q)
+    }
+    return root
+}

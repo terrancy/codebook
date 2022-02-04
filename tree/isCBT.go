@@ -1,6 +1,6 @@
 package trees
 
-func isCompleteTree(root *TreeNode) bool {
+func IsCompleteTree(root *TreeNode) bool {
     if root == nil {
         return false
     }
