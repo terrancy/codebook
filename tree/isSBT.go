@@ -28,3 +28,62 @@ func isSBT(root *TreeNode, min *int) bool {
     *min = root.Val
     return isSBT(root.Right, min)
 }
+
+//
+//  KthNode
+//  @Description: 二叉搜索树第K小(大)的值
+//  @param root
+//  @param k
+//  @return bool
+//
+var res, cnt = -1, 0
+
+func KthNode(root *TreeNode, k int) int {
+    // 第K大
+    inorderKthMax(root, k)
+    // 第K小
+    //inorderKthMin(root, k)
+    return res
+}
+
+//
+//  inorderKthMax
+//  @Description: 第K大
+//  @param root
+//  @param k
+//
+func inorderKthMax(root *TreeNode, k int) {
+    if root == nil {
+        return
+    }
+    inorderKthMax(root.Right, k)
+    cnt++
+    if cnt == k {
+        res = root.Val
+    }
+    if cnt >= k {
+        return
+    }
+    inorderKthMax(root.Left, k)
+}
+
+//
+//  inorderKthMin
+//  @Description: 第K小
+//  @param root
+//  @param k
+//
+func inorderKthMin(root *TreeNode, k int) {
+    if root == nil {
+        return
+    }
+    inorderKthMin(root.Left, k)
+    cnt++
+    if cnt == k {
+        res = root.Val
+    }
+    if cnt >= k {
+        return
+    }
+    inorderKthMin(root.Right, k)
+}
