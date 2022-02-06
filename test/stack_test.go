@@ -1,6 +1,7 @@
 package test
 
 import (
+    "awesome/queue"
     "awesome/stack"
     "fmt"
     "testing"
@@ -27,4 +28,17 @@ func TestIsPopOrder(t *testing.T) {
     target := []int{4, 5, 3, 2, 1}
     res := stack.IsPopOrder(source, target)
     fmt.Println(res)
+}
+
+// ============ 队列 ============
+
+//
+//  TestMaxInWindows
+//  @Description: NC82 滑动窗口的最大值 => 单调队列
+//  @param t
+//
+func TestMaxInWindows(t *testing.T) {
+    num := []int{2, 3, 4, 2, 6, 2, 5, 1}
+    ans := queue.MaxInWindows(num, 3)
+    fmt.Println(ans)
 }

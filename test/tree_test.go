@@ -112,3 +112,10 @@ func TestIsSymmetric(t *testing.T) {
     res := trees.IsSymmetric(root)
     fmt.Println(res)
 }
+
+func TestKthNode(t *testing.T) {
+    data := []int{5, 3, 6, 2, 4, awesome.INF, awesome.INF, 1}
+    root := trees.BuildTreeNode(data)
+    res := trees.KthNode(root, 3)
+    fmt.Println(res)
+}

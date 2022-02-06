@@ -7,7 +7,7 @@ import (
 
 //
 //  maxSubsequence
-//  @Description:
+//  @Description: 连续子数组的最大长度
 //  @param arr
 //  @return int
 //
