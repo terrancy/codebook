@@ -38,6 +38,27 @@ func DataReverse(data []int) []int {
     return data
 }
 
+//
+//  DataDualReverse
+//  @Description: 二维数组翻转
+//  @param data
+//  @return [][]int
+//
+func DataDualReverse(data [][]int) [][]int {
+    for i, j := 0, len(data)-1; i < j; i, j = i+1, j-1 {
+        data[i], data[j] = data[j], data[i]
+    }
+    return data
+}
+
+// 排序相关
+
+//
+//  DataSort
+//  @Description: 数组排序
+//  @param data
+//  @return []int
+//
 func DataSort(data []int) []int {
     n := len(data)
     if n < 2 {

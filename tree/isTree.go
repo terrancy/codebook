@@ -6,7 +6,7 @@ import (
 
 //
 //  IsSymmetric
-//  @Description: JZ28 对称的二叉树
+//  @Description: JZ28 对称的二叉树 - 层序遍历
 //  @param root
 //  @return bool
 //
@@ -62,7 +62,7 @@ func checkIsSymmetric(data []int) bool {
 
 //
 //  IsSymmetricII
-//  @Description: 先根遍历
+//  @Description: JZ28 对称的二叉树 - 先根遍历
 //  @param root
 //  @return bool
 //

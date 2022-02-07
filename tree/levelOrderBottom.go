@@ -1,6 +1,14 @@
 package trees
 
-func levelOrderBottom(root *TreeNode) [][]int {
+import "awesome"
+
+//
+//  LevelOrderBottom
+//  @Description: 自底向上打印
+//  @param root
+//  @return [][]int
+//
+func LevelOrderBottom(root *TreeNode) [][]int {
     if root == nil {
         return nil
     }
@@ -22,5 +30,5 @@ func levelOrderBottom(root *TreeNode) [][]int {
         }
         data = append(data, tmp)
     }
-    return arrayReverse(data)
+    return awesome.DataDualReverse(data)
 }

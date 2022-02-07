@@ -47,6 +47,12 @@ func verifyIfBST(sequence []int) bool {
     return verifyIfBST(left) && verifyIfBST(right)
 }
 
+//
+//  verifyIfBSTII
+//  @Description: 判断一个数组的是否为搜索树的中序遍历序列
+//  @param data
+//  @return bool
+//
 func verifyIfBSTII(data []int) bool {
     n := len(data)
     if n < 2 {

@@ -1,5 +1,7 @@
 package trees
 
+import "awesome"
+
 //
 //  widthOfBinaryTree
 //  @Description: NC204 二叉树的最大宽度
@@ -17,7 +19,7 @@ func widthOfBinaryTree(root *TreeNode) int {
     maxWidth := 1
     for size := 0; len(queue) > 0; {
         size = len(queue)
-        maxWidth = maxInt(maxWidth, queue[len(queue)-1].Val-queue[0].Val+1)
+        maxWidth = awesome.MaxInt(maxWidth, queue[len(queue)-1].Val-queue[0].Val+1)
         for size > 0 {
             node, queue = queueShift(queue)
             if node.Left != nil {

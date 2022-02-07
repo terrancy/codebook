@@ -119,3 +119,15 @@ func TestKthNode(t *testing.T) {
     res := trees.KthNode(root, 3)
     fmt.Println(res)
 }
+
+//
+//  TestMaxPathSum
+//  @Description: NC6 二叉树中的最大路径和
+//  @param t
+//
+func TestMaxPathSum(t *testing.T) {
+    data := []int{-10, 9, 20, awesome.INF, awesome.INF, 15, 7}
+    root := trees.BuildTreeNode(data)
+    res := trees.MaxPathSum(root)
+    fmt.Println(res)
+}

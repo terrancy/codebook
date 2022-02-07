@@ -1,5 +1,10 @@
 package trees
-
+//
+//  IsCompleteTree
+//  @Description: 判断是否是完全二叉树
+//  @param root
+//  @return bool
+//
 func IsCompleteTree(root *TreeNode) bool {
     if root == nil {
         return false
