@@ -131,3 +131,29 @@ func TestMaxPathSum(t *testing.T) {
     res := trees.MaxPathSum(root)
     fmt.Println(res)
 }
+
+//
+//  TestPruneTree
+//  @Description: 814. 二叉树剪枝 || 剑指 Offer II 047. 二叉树剪枝
+//  @param t
+//
+func TestPruneTree(t *testing.T) {
+    data := []int{1, 0, 1, 0, 0, 0, 1}
+    root := trees.BuildTreeNode(data)
+    node := trees.PruneTree(root)
+    res := trees.Serialize(node)
+    fmt.Println(res)
+}
+
+//
+//  TestFindTarget
+//  @Description: 剑指 Offer II 056. 二叉搜索树中两个节点之和
+//  @param t
+//
+func TestFindTarget(t *testing.T) {
+    data := []int{8, 6, 10, 5, 7, 9, 11}
+    k := 12
+    root := trees.BuildTreeNode(data)
+    res := trees.FindTarget(root, k)
+    fmt.Println(res)
+}

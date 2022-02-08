@@ -1,7 +1,12 @@
 package dp
 
 import "awesome"
-
+//
+//  maxProfit
+//  @Description:
+//  @param prices
+//  @return int
+//
 func maxProfit(prices []int) int {
     n := len(prices)
     if n < 2 {

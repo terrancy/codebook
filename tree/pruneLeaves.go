@@ -28,11 +28,19 @@ func pruneLeaves(root *TreeNode) *TreeNode {
 
 //
 //  pruneTree
-//  @Description: 814. 二叉树剪枝
+//  @Description: 814. 二叉树剪枝 || 剑指 Offer II 047. 二叉树剪枝
 //  @Link: https://leetcode-cn.com/problems/binary-tree-pruning/
 //  @param root
 //  @return *TreeNode
 //
-func pruneTree(root *TreeNode) *TreeNode {
+func PruneTree(root *TreeNode) *TreeNode {
+    if root == nil {
+        return nil
+    }
+    root.Left = PruneTree(root.Left)
+    root.Right = PruneTree(root.Right)
+    if root.Left == nil && root.Right == nil && root.Val == 0 {
+        return nil
+    }
     return root
 }

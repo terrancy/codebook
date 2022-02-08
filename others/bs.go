@@ -1,5 +1,7 @@
 package others
 
+import "awesome/array"
+
 //
 //  MinNumberInRotateArray
 //  @Description: NC71 旋转数组的最小数字
@@ -91,4 +93,15 @@ func TargetNumberInRotateArrayII(nums []int, target int) int {
         }
     }
     return -1
+}
+
+//
+//  FindMedianInTwoSortedArrayBS
+//  @Description: NC36 在两个长度相等的排序数组中找到上中位数
+//  @param arr1
+//  @param arr2
+//  @return int
+//
+func FindMedianInTwoSortedArrayBS(arr1 []int, arr2 []int) int {
+    return array.FindMedianInTwoSortedArrayBS(arr1, arr2)
 }
