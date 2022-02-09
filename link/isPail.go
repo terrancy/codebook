@@ -65,3 +65,40 @@ func isPailII(head *ListNode) bool {
     }
     return true
 }
+
+//
+//  isPailIII
+//  @Description: NC96 判断一个链表是否为回文结构
+//  @Solution: 1. 获取前驱节点 2. 链表翻转 3.数据对比
+//  @Warning: 1. pre := dummy 2. if cur!=nil pre = pre.Next
+//  @param head
+//  @return bool
+//
+func isPailIII(head *ListNode) bool {
+    if head == nil || head.Next == nil {
+        return true
+    }
+    // pre 前驱节点
+    dummy := &ListNode{Next: head}
+    pre, cur := dummy, head
+    for cur != nil && cur.Next != nil {
+        pre = pre.Next
+        cur = cur.Next.Next
+    }
+    // 细节
+    if cur != nil {
+        pre = pre.Next
+    }
+    // 翻转
+    pre.Next = Reverse(pre.Next)
+    // 回文判断
+    left, right := head, pre.Next
+    for right != nil {
+        if left.Val != right.Val {
+            return false
+        }
+        left = left.Next
+        right = right.Next
+    }
+    return true
+}
