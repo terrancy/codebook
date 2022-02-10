@@ -44,34 +44,6 @@ func SelectSort(nums []int) []int {
 }
 
 //
-//  quickSort
-//  @Description: 快速排序
-//  @Solution: 以首个为基准分为两个数组,递归调用再合并.类似中根遍历.注意递归边界!!
-//  @param nums
-//  @return []int
-//
-func QuickSort(nums []int, ) []int {
-    n := len(nums)
-    if n == 0 {
-        return nil
-    }
-    left, right := make([]int, 0), make([]int, 0)
-    for i := 1; i < n; i++ {
-        if nums[i] < nums[0] {
-            left = append(left, nums[i])
-        } else {
-            right = append(right, nums[i])
-        }
-    }
-    
-    left = QuickSort(left)
-    left = append(left, nums[0])
-    right = QuickSort(right)
-    
-    return append(left, right...)
-}
-
-//
 //  InsertSort
 //  @Description: 插入排序
 //  @Solution: 将待排序的元素插入已排序的序列中.
@@ -91,6 +63,184 @@ func InsertSort(nums []int) []int {
     }
     return nums
 }
+
+//////////////////////////////////////////////////////
+// 快速排序
+//////////////////////////////////////////////////////
+
+//
+//  quickSort
+//  @Description: 朴素快速排序
+//  @Solution: 以首个为基准分为两个数组,递归调用再合并.类似中根遍历.注意递归边界!!
+//  @param nums
+//  @return []int
+//
+func QuickSortOld(nums []int) []int {
+    n := len(nums)
+    if n == 0 {
+        return nil
+    }
+    left, right := make([]int, 0), make([]int, 0)
+    for i := 1; i < n; i++ {
+        if nums[i] < nums[0] {
+            left = append(left, nums[i])
+        } else {
+            right = append(right, nums[i])
+        }
+    }
+    
+    left = QuickSortOld(left)
+    left = append(left, nums[0])
+    right = QuickSortOld(right)
+    
+    return append(left, right...)
+}
+
+//
+//  QuickSortII
+//  @Description: 快排优化
+//  @Solution: 1.基准选中 2.尾递归优化 3.重复数值的处理
+//  @param nums
+//  @param left 左边界
+//  @param right 有边界
+//
+func QuickSort(nums []int, left int, right int) {
+    for left < right {
+        mid := partition(nums, left, right)
+        QuickSort(nums, left, mid-1)
+        left = mid + 1
+    }
+}
+
+//
+//  partition
+//  @Description: 获取基准值
+//  @param nums
+//  @param left
+//  @param right
+//  @return int
+//
+func partition(nums []int, left int, right int) int {
+    // 三数取中
+    mid := left + (right-left)>>1
+    pivot := threeSumMedian(nums[left], nums[right], nums[mid])
+    // 替换
+    nums[left], pivot = pivot, nums[left]
+    // 基准分区，重复数值的处理
+    for left < right {
+        for left < right && pivot <= nums[right] {
+            right--
+        }
+        nums[left] = nums[right]
+        for left < right && pivot >= nums[left] {
+            left++
+        }
+        nums[right] = nums[left]
+    }
+    nums[left] = pivot
+    return left
+}
+
+//
+//  QuickSortII
+//  @Description: 快排优化
+//  @Solution: 1.基准选中 2.尾递归优化 3.重复数值的处理
+//  @param nums
+//  @param left 左边界
+//  @param right 有边界
+//
+func QuickSortII(nums []int, left int, right int) {
+    partitionII(nums, left, right)
+    //for left < right {
+    //    // 重复值处理
+    //    leftMid, rightMid := partitionII(nums, left, right)
+    //    QuickSortII(nums, left, leftMid)
+    //    left = rightMid
+    //}
+}
+
+//
+//  partitionII
+//  @Description: 重复数值的优化
+//  @Link: https://www.cnblogs.com/vipchenwei/p/7460293.html
+//  @param nums
+//  @param left
+//  @param right
+//  @return int
+//
+func partitionII(nums []int, left int, right int) (int, int) {
+    first, last := left, right
+    // 三数取中
+    mid := left + (right-left)>>1
+    pivot := threeSumMedian(nums[left], nums[right], nums[mid])
+    // 基准分区，重复数值的处理
+    leftLen, rightLen := 0, 0
+    leftPos, rightPos := left, right
+    nums[left], pivot = pivot, nums[left]
+    for left < right {
+        for left < right && pivot <= nums[right] {
+            if pivot == nums[right] {
+                nums[rightPos], nums[right] = nums[right], nums[rightPos]
+                rightPos--
+                rightLen++
+            }
+            right--
+        }
+        nums[left] = nums[right]
+        for left < right && pivot >= nums[left] {
+            if pivot == nums[left] {
+                nums[leftPos], nums[left] = nums[left], nums[leftPos]
+                leftPos++
+                leftLen++
+            }
+            left++
+        }
+        nums[right] = nums[left]
+    }
+    nums[left] = pivot
+    
+    i, j := left-1, first
+    for j < leftPos && nums[i] != pivot {
+       nums[i], nums[j] = nums[j], nums[i]
+       i--
+       j++
+    }
+    i, j = left+1, last
+    for j > rightPos && nums[i] != pivot {
+       nums[i], nums[j] = nums[j], nums[i]
+       i++
+       j--
+    }
+    
+    return left - 1 - leftLen, left + 1 + rightLen
+}
+
+//
+//  threeSumMedian
+//  @Description: 三数取中
+//  @param a
+//  @param b
+//  @param c
+//  @return int
+//
+func threeSumMedian(a, b, c int) int {
+    if b > a {
+        a, b = b, a
+    }
+    if a < c {
+        return a
+    } else {
+        if b > c {
+            return b
+        } else {
+            return c
+        }
+    }
+}
+
+//////////////////////////////////////////////////////
+// 堆排序
+//////////////////////////////////////////////////////
 
 //
 //  HeapSortASC

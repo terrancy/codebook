@@ -33,9 +33,33 @@ func TestSelectSort(t *testing.T) {
 //  @Description: 快排
 //  @param t
 //
+func TestQuickSortOld(t *testing.T) {
+    nums := []int{5, 2, 3, 1, 4}
+    res := base.QuickSortOld(nums)
+    fmt.Println(res)
+}
+
+//
+//  TestQuickSort
+//  @Description: 快排
+//  @param t
+//
 func TestQuickSort(t *testing.T) {
     nums := []int{5, 2, 3, 1, 4}
-    res := base.QuickSort(nums)
+    base.QuickSort(nums, 0, len(nums)-1)
+    res := nums
+    fmt.Println(res)
+}
+
+//
+//  TestQuickSort
+//  @Description: 快排
+//  @param t
+//
+func TestQuickSortII(t *testing.T) {
+    nums := []int{5, 2, 1, 3, 4, 3, 3}
+    base.QuickSortII(nums, 0, len(nums)-1)
+    res := nums
     fmt.Println(res)
 }
 
