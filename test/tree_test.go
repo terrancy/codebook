@@ -157,3 +157,15 @@ func TestFindTarget(t *testing.T) {
     res := trees.FindTarget(root, k)
     fmt.Println(res)
 }
+
+//
+//  TestBstFromPreorder
+//  @Description: 1008. 前序遍历构造二叉搜索树
+//  @param t
+//
+func TestBstFromPreorder(t *testing.T) {
+    data := []int{8, 10}
+    root := trees.BstFromPreorder(data)
+    res := trees.Serialize(root)
+    fmt.Println(res)
+}

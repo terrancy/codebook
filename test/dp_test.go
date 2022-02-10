@@ -17,6 +17,39 @@ func TestFib(t *testing.T) {
 }
 
 //
+//  TestMaxSubArrayII
+//  @Description: JZ85 连续子数组的最大和(二)
+//  @param t
+//
+func TestMaxSubArrayII(t *testing.T) {
+    data := []int{1, -2, 3, 10, -4, 7, 2, -5}
+    res := dp.MaxSubArrayII(data)
+    fmt.Println(res)
+}
+
+//
+//  TestMaxProfit
+//  @Description: JZ63 买卖股票的最好时机(一)
+//  @param t
+//
+func TestMaxProfit(t *testing.T) {
+    data := []int{8, 9, 2, 5, 4, 7, 1}
+    res := dp.MaxProfit(data)
+    fmt.Println(res)
+}
+
+//
+//  TestMaxProfit
+//  @Description: JZ63 买卖股票的最好时机(一)
+//  @param t
+//
+func TestMaxProfitII(t *testing.T) {
+    data := []int{8, 5, 1, 7, 10, 12}
+    res := dp.MaxProfitII(data)
+    fmt.Println(res)
+}
+
+//
 //  TestLongCommonSubstring
 //  @Description: 最长公共子串
 //  @param t

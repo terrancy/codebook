@@ -55,7 +55,7 @@ func getIdx(data []int, target int) int {
 //  @param num
 //  @return *TreeNode
 //
-func sortedArrayToBST(num []int) *TreeNode {
+func SortedArrayToBST(num []int) *TreeNode {
     n := len(num)
     if n == 0 {
         return nil
@@ -65,7 +65,42 @@ func sortedArrayToBST(num []int) *TreeNode {
     }
     mid := (n + 1) >> 1
     root := &TreeNode{Val: num[mid]}
-    root.Left = sortedArrayToBST(num[:mid])
-    root.Right = sortedArrayToBST(num[mid+1:])
+    root.Left = SortedArrayToBST(num[:mid])
+    root.Right = SortedArrayToBST(num[mid+1:])
     return root
+}
+
+//
+//  bstFromPreorder
+//  @Description: LC1008. 前序遍历构造二叉搜索树
+//  @param preorder
+//  @return *TreeNode
+//
+func BstFromPreorder(preorder []int) *TreeNode {
+    if len(preorder) == 0 {
+        return nil
+    }
+    val := preorder[0]
+    root := &TreeNode{Val: val}
+    idx := getPreorderIdx(preorder)
+    root.Left = BstFromPreorder(preorder[1:idx])
+    root.Right = BstFromPreorder(preorder[idx:])
+    return root
+}
+
+//
+//  getPreorderIdx
+//  @Description: 获取idx
+//  @param data
+//  @return int
+//
+func getPreorderIdx(data []int) int {
+    // 有左右子树
+    for idx, val := range data {
+        if val > data[0] {
+            return idx
+        }
+    }
+    // 右子树位空 || 左子树为空
+    return len(data)
 }
