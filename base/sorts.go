@@ -125,7 +125,8 @@ func partition(nums []int, left int, right int) int {
     mid := left + (right-left)>>1
     pivot := threeSumMedian(nums[left], nums[right], nums[mid])
     // 替换
-    nums[left], pivot = pivot, nums[left]
+    idx := getPivotIdx(nums, left, right, mid, pivot)
+    nums[left], nums[idx] = nums[idx], nums[left]
     // 基准分区，重复数值的处理
     for left < right {
         for left < right && pivot <= nums[right] {
@@ -201,18 +202,27 @@ func partitionII(nums []int, left int, right int) (int, int) {
     
     i, j := left-1, first
     for j < leftPos && nums[i] != pivot {
-       nums[i], nums[j] = nums[j], nums[i]
-       i--
-       j++
+        nums[i], nums[j] = nums[j], nums[i]
+        i--
+        j++
     }
     i, j = left+1, last
     for j > rightPos && nums[i] != pivot {
-       nums[i], nums[j] = nums[j], nums[i]
-       i++
-       j--
+        nums[i], nums[j] = nums[j], nums[i]
+        i++
+        j--
     }
     
     return left - 1 - leftLen, left + 1 + rightLen
+}
+
+func getPivotIdx(nums []int, a, b, c, target int) int {
+    for _, idx := range []int{a, b, c} {
+        if target == nums[idx] {
+            return idx
+        }
+    }
+    return -1
 }
 
 //
