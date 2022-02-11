@@ -17,7 +17,7 @@ func BTPermutation(str string) []string {
 
 //
 //  BTPermuteUnique
-//  @Description: NC42 有重复项数字的所有排列
+//  @Description: NC42 有重复项数字的全排列
 //  @param num
 //  @return [][]int
 //

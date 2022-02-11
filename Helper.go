@@ -51,6 +51,24 @@ func DataDualReverse(data [][]int) [][]int {
     return data
 }
 
+//
+//  StrReverse
+//  @Description: 字符翻转
+//  @param str
+//  @return string
+//
+func StrReverse(str string) string {
+    n := len(str)
+    if n < 2 {
+        return str
+    }
+    nums := []byte(str)
+    for l, r := 0, len(str)-1; l < r; l, r = l+1, r-1 {
+        nums[l], nums[r] = nums[r], nums[l]
+    }
+    return string(nums)
+}
+
 // 排序相关
 
 //
@@ -71,13 +89,17 @@ func DataSort(data []int) []int {
 }
 
 //
-//  stringSort
+//  StrSort
 //  @Description: 字符排序
 //  @param str
 //  @return string
 //
-func StringSort(str string) []byte {
+func StrSort(str string) []byte {
+    n := len(str)
     bytes := []byte(str)
+    if n < 2 {
+        return bytes
+    }
     sort.Slice(bytes, func(i, j int) bool {
         return bytes[i] < bytes[j]
     })

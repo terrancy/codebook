@@ -14,7 +14,7 @@ func Permutation(str string) []string {
         return nil
     }
     // 排序
-    bytes := awesome.StringSort(str)
+    bytes := awesome.StrSort(str)
     visited := make([]bool, n)
     res := make([]string, 0)
     backtrack(bytes, visited, &res, []byte(""))

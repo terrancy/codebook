@@ -55,14 +55,3 @@ func backtrace(num []int, target int, temp *[]int, res *[][]int, start int) {
     }
     return
 }
-
-//func main() {
-//    num := []int{100, 10, 20, 70, 60, 10, 50}
-//    target := 80
-//    res := combinationSum2(num, target)
-//    resJson, err := json.Marshal(res)
-//    if err != nil {
-//        fmt.Println("json转换失败")
-//    }
-//    println(resJson)
-//}

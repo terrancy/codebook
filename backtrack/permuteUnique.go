@@ -6,7 +6,7 @@ import (
 
 //
 //  permuteUnique
-//  @Description: NC42 有重复项数字的所有排列
+//  @Description: NC42 有重复项数字的全排列
 //  @Description: 给出一组可能包含重复项的数字，返回该组数字的所有排列。结果以字典序升序排列
 //  @param num
 //  @return [][]int
