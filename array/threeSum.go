@@ -78,6 +78,7 @@ func ThreeSum(num []int) [][]int {
 //
 //  ThreeSumII
 //  @Description: NC54 数组中相加和为0的三元组
+//  @Solution: 1.排序判断最小值; 2. 去重
 //  @param num
 //  @return [][]int
 //
@@ -89,41 +90,31 @@ func ThreeSumII(num []int) [][]int {
     }
     // 排序
     sort.Ints(num)
-    var i, j, sum int
     ans := make([][]int, 0)
     // 遍历
     for k := 0; k < n-2; k++ {
         // 去重
-        for k > 0 && k < n-2 {
-            if num[k-1] != num[k] {
-                break
-            }
+        for k > 0 && k < n-2 && num[k-1] == num[k] {
             k++
         }
-        i = k + 1
-        j = n - 1
-        for i < j {
-            sum = num[i] + num[j] + num[k]
+        for i, j := k+1, n-1; i < j; {
+            sum := num[i] + num[j] + num[k]
             // 相等入栈
             if sum == 0 {
                 ans = append(ans, []int{num[k], num[i], num[j]})
             }
             // 小于右移
             if sum <= 0 {
-                for i < j {
+                i++
+                for i < j && num[i] == num[i-1] {
                     i++
-                    if num[i-1] != num[i] {
-                        break
-                    }
                 }
             }
             // 大于左移
             if sum >= 0 {
-                for i < j {
+                j--
+                for i < j && num[j] == num[j+1] {
                     j--
-                    if num[j+1] != num[j] {
-                        break
-                    }
                 }
             }
         }

@@ -49,6 +49,26 @@ func ReOrderArrayII(nums []int) []int {
 }
 
 //
+//  ReOrderArrayRepeatedIII
+//  @Description: 不保证稳定性
+//  @param nums
+//  @return []int
+//
+func ReOrderArrayRepeatedIII(nums []int) []int {
+    n := len(nums)
+    if n < 2 {
+        return nums
+    }
+    for slow, fast := 0, 0; fast < n; fast++ {
+        if nums[fast]&1 == 1 {
+            nums[slow], nums[fast] = nums[fast], nums[slow]
+            slow++
+        }
+    }
+    return nums
+}
+
+//
 //  ReOrderArrayRepeated
 //  @Description: 调整数组顺序使奇数位于偶数前面(二)
 //  @Description: 使得所有的奇数位于数组的前面部分，所有的偶数位于数组的后面部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变
@@ -81,10 +101,12 @@ func ReOrderArrayRepeatedII(nums []int) []int {
     if n < 2 {
         return nums
     }
-    for slow, fast := 0, 0; fast < n; fast++ {
-        if nums[fast]&1 == 1 {
-            nums[slow], nums[fast] = nums[fast], nums[slow]
-            slow++
+    for i, pos := 0, 0; i < n; i++ {
+        if nums[i]&1 == 1 {
+            for j := i; j > pos; j-- {
+                nums[j], nums[j-1] = nums[j-1], nums[j]
+            }
+            pos++
         }
     }
     return nums

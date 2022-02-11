@@ -30,6 +30,7 @@ func maxLength(arr []int) int {
 //
 //  MaxLengthRepeatLess
 //  @Description: NC41 最长无重复子数组
+//  @Solution: 哈希表 + 双指针, l, r := -1, 0
 //  @param arr
 //  @return int
 //
