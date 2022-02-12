@@ -6,6 +6,10 @@ import (
     "testing"
 )
 
+//////////////////////////////////////////////////////
+// 第N次出现的数字
+//////////////////////////////////////////////////////
+
 //
 //  TestFoundOnceNumber
 //  @Description: NC156 数组中只出现一次的数（其它数出现k次）
@@ -29,16 +33,6 @@ func TestFindNumsAppearOnce(t *testing.T) {
 }
 
 //
-//  TestScaleConvert
-//  @Description: 进制转换
-//  @param t
-//
-func TestScaleConvert(t *testing.T) {
-    res := others.ScaleConvert(-4, 3)
-    fmt.Println(res)
-}
-
-//
 //  TestTopKStrings
 //  @Description: NC97 字符串出现次数的TopK问题
 //  @param t
@@ -50,14 +44,19 @@ func TestTopKStrings(t *testing.T) {
 }
 
 //
-//  TestSqrt
-//  @Description: NC32 求平方根
+//  TestFindNthDigit
+//  @Description: JZ44 数字序列中某一位的数字
 //  @param t
 //
-func TestSQRT(t *testing.T) {
-    res := others.SQRT(5)
+func TestFindNthDigit(t *testing.T) {
+    n := 13
+    res := others.FindNthDigit(n)
     fmt.Println(res)
 }
+
+//////////////////////////////////////////////////////
+// 有趣的数字
+//////////////////////////////////////////////////////
 
 //
 //  TestIsPokerContinuous
@@ -91,6 +90,36 @@ func TestUglyNumber(t *testing.T) {
     fmt.Println(res)
 }
 
+//////////////////////////////////////////////////////
+// 二分查找
+//////////////////////////////////////////////////////
+
+//
+//  TestBinSearchII
+//  @Description: NC105 二分查找-II
+//  @Description: 重复数字的升序数组的二分查找第一个出现的数字
+//  @param t
+//
+func TestBinSearchII(t *testing.T) {
+    data := []int{1, 2, 4, 4, 5}
+    target := 4
+    res := others.BinSearchII(data, target)
+    fmt.Println(res)
+}
+
+//
+//  TestGetNumberOfK
+//  @Description: NC74 数字在升序数组中出现的次数
+//  @Solution: 1.边界判断 2.左边界 3.有边界 4.返回
+//  @param t
+//
+func TestGetNumberOfK(t *testing.T) {
+    data := []int{1, 2, 3, 3, 3, 3, 4, 5}
+    target := 3
+    res := others.GetNumberOfK(data, target)
+    fmt.Println(res)
+}
+
 //
 //  TestMinNumberInRotateArray
 //  @Description: NC71 旋转数组的最小数字
@@ -110,6 +139,19 @@ func TestMinNumberInRotateArray(t *testing.T) {
 func TestTargetNumberInRotateArray(t *testing.T) {
     data := []int{1, 3}
     res := others.TargetNumberInRotateArrayII(data, 3)
+    fmt.Println(res)
+}
+
+//////////////////////////////////////////////////////
+// 模拟
+//////////////////////////////////////////////////////
+//
+//  TestScaleConvert
+//  @Description: 进制转换
+//  @param t
+//
+func TestScaleConvert(t *testing.T) {
+    res := others.ScaleConvert(-4, 3)
     fmt.Println(res)
 }
 
@@ -167,13 +209,12 @@ func TestBigNumberProduct(t *testing.T) {
 }
 
 //
-//  TestFindNthDigit
-//  @Description: JZ44 数字序列中某一位的数字
+//  TestSqrt
+//  @Description: NC32 求平方根
 //  @param t
 //
-func TestFindNthDigit(t *testing.T) {
-    n := 13
-    res := others.FindNthDigit(n)
+func TestSQRT(t *testing.T) {
+    res := others.SQRT(5)
     fmt.Println(res)
 }
 
@@ -190,7 +231,7 @@ func TestAddNumber(t *testing.T) {
 
 //
 //  TestMyPow
-//  @Description:
+//  @Description:数值的整数次方/幂运算
 //  @param t
 //
 func TestMyPow(t *testing.T) {

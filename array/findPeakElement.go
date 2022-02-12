@@ -43,13 +43,3 @@ func findPeakElementBinarySearch(nums []int) int {
     }
     return left
 }
-
-//func main() {
-//    data := []int{1, 2, 3, 4}
-//    res := findPeakElementBinarySearch(data)
-//    json, err := json.Marshal(res)
-//    if err != nil {
-//        fmt.Printf("错误:%v", err)
-//    }
-//    fmt.Println(string(json))
-//}

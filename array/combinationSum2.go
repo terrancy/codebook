@@ -15,7 +15,7 @@ func CombinationSum2(num []int, target int) [][]int {
     sort.Ints(num)
     temp := make([]int, 0)
     res := make([][]int, 0)
-    backtrace(num, target, &temp, &res, 0)
+    backtrace(num, target, temp, &res, 0)
     return res
 }
 
@@ -28,30 +28,26 @@ func CombinationSum2(num []int, target int) [][]int {
 //  @param res
 //  @param start
 //
-func backtrace(num []int, target int, temp *[]int, res *[][]int, start int) {
+func backtrace(num []int, target int, temp []int, res *[][]int, start int) {
     if target == 0 {
-        t := make([]int, len(*temp))
-        copy(t, *temp)
+        t := make([]int, len(temp))
+        copy(t, temp)
         *res = append(*res, t)
         return
     }
-    n := len(num)
-    if start == n {
-        return
-    }
     
-    for i := start; i < n; i++ {
+    for i := start; i < len(num); i++ {
         if num[i] > target {
             return
         }
-        // 剪枝
+        // 剪枝,做法和使用used的方式一样。过滤兄弟节点重复的问题
         if i > start && num[i-1] == num[i] {
             continue
         }
-        *temp = append(*temp, num[i])
+        temp = append(temp, num[i])
         backtrace(num, target-num[i], temp, res, i+1)
         // 回溯,不选num[i]的情况
-        *temp = (*temp)[:len(*temp)-1]
+        temp = (temp)[:len(temp)-1]
     }
     return
 }

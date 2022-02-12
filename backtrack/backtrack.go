@@ -6,8 +6,19 @@ import (
 )
 
 //
+//  SubsetsII
+//  @Description: NC27 集合的所有子集(一)
+//  @Solution: 1、数组长度 2、遍历的起始值设置 3、回溯与记录
+//  @param nums
+//  @return [][]int
+//
+func Subsets(nums []int) [][]int {
+    return array.SubsetsII(nums)
+}
+
+//
 //  BTPermuteUnique
-//  @Description: 字符串全排列
+//  @Description: NC121 字符串的排列
 //  @param str
 //  @return []string
 //
@@ -34,4 +45,14 @@ func BTPermuteUnique(num []int) [][]int {
 //
 func CombinationSum2(num []int, target int) [][]int {
     return array.CombinationSum2(num, target)
+}
+
+//
+//  GenerateParenthesis
+//  @Description: NC26 括号生成
+//  @param n
+//  @return []string
+//
+func GenerateParenthesis(n int) []string {
+    return strings.GenerateParenthesis(n)
 }

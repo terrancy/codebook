@@ -25,3 +25,8 @@
 - 最小覆盖子串
 - 堆排序、快排的优化
 - 二分查找的优化
+
+### 参考
+- [labuladong](https://labuladong.gitee.io/algo)
+- [宫水三叶](https://github.com/SharingSource/LogicStack-LeetCode/tree/main/PDF)
+- [香辣鸡排蛋包饭](https://www.bilibili.com/video/BV1CK411c7gx?spm_id_from=333.999.0.0)

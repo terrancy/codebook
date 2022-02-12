@@ -19,7 +19,7 @@ func TestTwoSum(t *testing.T) {
 
 //
 //  TestTreeSum
-//  @Description: NC54 数组中相加和为0的三元组
+//  @Description: NC54 数组中相加和为0的三元组 /  三数之和
 //  @param t
 //
 func TestTreeSum(t *testing.T) {
@@ -138,5 +138,29 @@ func TestPrintMinNumber(t *testing.T) {
 func TestPrintNumbers(t *testing.T) {
     n := 2
     res := array.PrintNumbers(n)
+    fmt.Println(res)
+}
+
+//
+//  TestSubsetsII
+//  @Description: NC27 集合的所有子集(一)
+//  @Solution: 1、数组长度 2、遍历的起始值设置 3、回溯与记录
+//  @param t
+//
+func TestSubsetsII(t *testing.T) {
+    data := []int{1, 2, 3}
+    res := array.SubsetsII(data)
+    fmt.Println(res)
+}
+
+//
+//  TestCombinationSum2
+//  @Description: NC46 加起来和为目标值的组合(二)
+//  @param t
+//
+func TestCombinationSum2(t *testing.T) {
+    data := []int{100, 10, 20, 70, 60, 10, 50}
+    target := 80
+    res := array.CombinationSum2(data, target)
     fmt.Println(res)
 }

@@ -37,12 +37,12 @@ func backtrackPermuteUnique(num []int, used []bool, res *[][]int, tmp []int) {
     }
     
     for i := 0; i < len(num); i++ {
-        // 过滤重复
+        // 过滤父子重复
         if used[i] {
             continue
         }
         
-        // 不是很理解
+        // 过滤兄弟重复
         if i > 0 && !used[i-1] && num[i-1] == num[i] {
             continue
         }

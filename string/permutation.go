@@ -1,10 +1,12 @@
 package strings
 
-import "awesome"
+import (
+    "awesome"
+)
 
 //
 //  Permutation
-//  @Description:
+//  @Description: NC121 字符串的排列
 //  @param str
 //  @return []string
 //
@@ -39,7 +41,7 @@ func backtrack(bytes []byte, visited []bool, res *[]string, tmp []byte) {
         if visited[i] {
             continue
         }
-        // 选择
+        // 选择 visited[i-1]，true: 父子节点，false：兄弟节点
         if i > 0 && bytes[i] == bytes[i-1] && !visited[i-1] {
             continue
         }

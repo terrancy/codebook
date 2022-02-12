@@ -83,3 +83,14 @@ func TestReverseSentence(t *testing.T) {
     res := strings.ReverseSentence(str)
     fmt.Println(res)
 }
+
+//
+//  TestGenerateParenthesis
+//  @Description: NC26 括号生成
+//  @param t
+//
+func TestGenerateParenthesis(t *testing.T) {
+    n := 3
+    res := strings.GenerateParenthesis(n)
+    fmt.Println(res)
+}
