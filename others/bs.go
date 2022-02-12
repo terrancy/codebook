@@ -92,6 +92,7 @@ func GetNumberOfK(nums []int, target int) int {
 //
 //  MinNumberInRotateArray
 //  @Description: NC71 旋转数组的最小数字
+//  @Solution: 非降序数组
 //  @param rotateArray
 //  @return int
 //
@@ -108,6 +109,7 @@ func MinNumberInRotateArray(rotateArray []int) int {
         } else if rotateArray[mid] < rotateArray[r] {
             r = mid
         } else {
+            // 恢复二段性
             r = r - 1
         }
     }
@@ -180,6 +182,18 @@ func TargetNumberInRotateArrayII(nums []int, target int) int {
         }
     }
     return -1
+}
+
+//
+//  TargetNumberInRotateArrayUnDesOrder
+//  @Description: LC 面试题 10.03. 搜索旋转数组
+//  @Description: 含有重复元素的数组
+//  @param nums
+//  @param target
+//  @return int
+//
+func TargetNumberInRotateRepeatedData(nums []int, target int) int {
+
 }
 
 //

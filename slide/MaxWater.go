@@ -13,7 +13,8 @@ func MaxWater(nums []int) int64 {
         return int64(0)
     }
     res := int64(0)
-    for left, right, leftMax, rightMax := 0, n-1, 0, 0; left < right; {
+    leftMax, rightMax := 0, 0
+    for left, right := 0, n-1; left < right; {
         // 寻找短板
         if nums[left] <= nums[right] {
             // 看看能不能接水
