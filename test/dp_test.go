@@ -119,12 +119,34 @@ func TestEditCost(t *testing.T) {
 
 //
 //  TestCoinChange
-//  @Description:
+//  @Description: LC322. 零钱兑换
 //  @param t
 //
 func TestCoinChange(t *testing.T) {
     coins := []int{1, 2, 5}
     amount := 11
     res := dp.CoinChange(coins, amount)
+    fmt.Println(res)
+}
+
+//
+//  TestLongestPalindromeII
+//  @Description: NC17 最长回文子串
+//  @param t
+//
+func TestLongestPalindromeII(t *testing.T) {
+    str := "ababc"
+    res := dp.LongestPalindrome(str)
+    fmt.Println(res)
+}
+
+//
+//  TestLongestPalindromeSubsequence
+//  @Description: 最长回文子序列
+//  @param t
+//
+func TestLongestPalindromeSubsequence(t *testing.T) {
+    str := "bbbab"
+    res := dp.LongestPalindromeSubsequence(str)
     fmt.Println(res)
 }
