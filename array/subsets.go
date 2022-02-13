@@ -39,7 +39,7 @@ func SubsetsII(nums []int) [][]int {
     n := len(nums)
     res := make([][]int, 0)
     for i := 0; i <= n; i++ {
-        BSSubsets(nums, []int{}, &res, i, 0)
+        BTSubsets(nums, []int{}, &res, i, 0)
     }
     return res
 }
@@ -53,18 +53,49 @@ func SubsetsII(nums []int) [][]int {
 //  @param k
 //  @param start
 //
-func BSSubsets(nums []int, stack []int, res *[][]int, k int, start int) {
+func BTSubsets(nums []int, stack []int, res *[][]int, k int, start int) {
     // 结束条件
     if k == len(stack) {
         track := make([]int, len(stack))
         copy(track, stack)
         *res = append(*res, track)
+        return
     }
     
     // 遍历、选择、递归、撤销
     for i := start; i < len(nums); i++ {
         stack = append(stack, nums[i])
-        BSSubsets(nums, stack, res, k, i+1)
+        BTSubsets(nums, stack, res, k, i+1)
         stack = stack[:len(stack)-1]
+    }
+}
+
+//
+//  SubsetsUnique
+//  @Description: NC221 集合的所有子集(二)
+//  @Description: 给定一个整数数组 nums ，其中可能包含重复元素，请你返回这个数组的所有可能子集. 将答案按字典序进行排序
+//  @param nums
+//  @return [][]int
+//
+func SubsetsUnique(nums []int) [][]int {
+    // write code here
+    sort.Ints(nums)
+    res := make([][]int, 0)
+    BTSubsetUnique(nums, []int{}, &res, 0)
+    return res
+}
+
+func BTSubsetUnique(nums []int, path []int, res *[][]int, start int) {
+    temp := make([]int, len(path))
+    copy(temp, path)
+    *res = append(*res, temp)
+    
+    for i := start; i < len(nums); i++ {
+        if i > start && nums[i] == nums[i-1] {
+            continue
+        }
+        path = append(path, nums[i])
+        BTSubsetUnique(nums, path, res, i+1)
+        path = path[:len(path)-1]
     }
 }

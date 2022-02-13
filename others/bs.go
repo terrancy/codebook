@@ -193,7 +193,7 @@ func TargetNumberInRotateArrayII(nums []int, target int) int {
 //  @return int
 //
 func TargetNumberInRotateRepeatedData(nums []int, target int) int {
-
+    return 0
 }
 
 //

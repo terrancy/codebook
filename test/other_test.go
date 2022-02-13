@@ -75,7 +75,7 @@ func TestIsPokerContinuous(t *testing.T) {
 //  @param t
 //
 func TestIsPalindrome(t *testing.T) {
-    num := 121
+    num := 1001
     res := others.IsPalindromeII(num)
     fmt.Println(res)
 }
