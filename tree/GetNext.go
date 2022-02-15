@@ -29,6 +29,12 @@ func inOrderGetNext(root *TreeLinkNode, target *TreeLinkNode) *TreeLinkNode {
     return root
 }
 
+//
+//  GetNextII
+//  @Description: 中根遍历获取目标值
+//  @param pNode
+//  @return *TreeLinkNode
+//
 func GetNextII(pNode *TreeLinkNode) *TreeLinkNode {
     if pNode == nil {
         return nil

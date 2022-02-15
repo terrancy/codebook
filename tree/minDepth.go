@@ -6,29 +6,26 @@ package trees
 //  @param root
 //  @return int
 //
-func minDepth(root *TreeNode) int {
+func MinDepth(root *TreeNode) int {
     if root == nil {
         return 0
     }
-    queue := make([]*TreeNode, 0)
-    queue = queuePush(queue, root)
-    node := &TreeNode{}
+    queue := []*TreeNode{root}
     level := 0
-    for size := 0; len(queue) > 0; {
-        size = len(queue)
-        level++
-        for size > 0 {
-            node, queue = queueShift(queue)
+    for len(queue) > 0 {
+        cnt++
+        for size := len(queue); size > 0; size-- {
+            node := queue[0]
+            queue = queue[1:]
             if node.Left != nil {
-                queue = queuePush(queue, node.Left)
+                queue = append(queue, node.Left)
             }
             if node.Right != nil {
-                queue = queuePush(queue, node.Right)
+                queue = append(queue, node.Right)
             }
             if node.Left == nil && node.Right == nil {
                 return level
             }
-            size--
         }
     }
     return level

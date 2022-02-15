@@ -51,6 +51,12 @@ func LongestPalindrome(str string) string {
     return str[start : start+maxLen]
 }
 
+//
+//  LongestPalindromeSubsequence
+//  @Description: 最长回文子序列
+//  @param str
+//  @return int
+//
 func LongestPalindromeSubsequence(str string) int {
     n := len(str)
     if n == 1 {
