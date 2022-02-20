@@ -105,3 +105,20 @@ func StrSort(str string) []byte {
     })
     return bytes
 }
+
+//
+//  Str2Sort
+//  @Description: 字符串排序
+//  @param strList
+//  @return []byte
+//
+func Str2Sort(strList []string) []string {
+    n := len(strList)
+    if n < 2 {
+        return strList
+    }
+    sort.Slice(strList, func(i, j int) bool {
+        return strList[i]+strList[j] < strList[j]+strList[i]
+    })
+    return strList
+}

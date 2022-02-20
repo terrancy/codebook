@@ -32,3 +32,16 @@ func TestInterface(t *testing.T) {
     var p tutorial.Person = &tutorial.Student{Name: "cai", Age: 33}
     fmt.Println(p.GetName())
 }
+
+//
+//  TestMap
+//  @Description:
+//  @param t
+//
+func TestMap(t *testing.T) {
+    dic := make(map[int]int)
+    dic[1] = 110
+    tutorial.ForMap(dic)
+    fmt.Println(dic)
+    fmt.Printf("%p\n", &dic)
+}
