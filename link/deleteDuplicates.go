@@ -33,23 +33,20 @@ func DeleteDuplicatesII(head *ListNode) *ListNode {
     if head == nil || head.Next == nil {
         return head
     }
-    dummy := &ListNode{Next:head}
+    dummy := &ListNode{Next: head}
     pre := dummy
     cur := head
     isDeleted := false
-    for cur != nil && cur.Next != nil {
-        if cur.Val == cur.Next.Val {
-            cur.Next = cur.Next.Next
+    for cur.Next != nil {
+        if pre.Next.Val == cur.Next.Val {
             isDeleted = true
+        } else if isDeleted == true {
+            pre.Next = cur.Next
+            isDeleted = false
         } else {
-            if isDeleted == true {
-                pre.Next = cur.Next
-                isDeleted = false
-            } else {
-                pre = cur
-            }
-            cur = cur.Next
+            pre = cur
         }
+        cur = cur.Next
     }
     // 存在最后两个相等直接退出的情况
     if isDeleted == true {
