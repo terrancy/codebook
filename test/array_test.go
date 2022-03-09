@@ -164,3 +164,14 @@ func TestCombinationSum2(t *testing.T) {
     res := array.CombinationSum2(data, target)
     fmt.Println(res)
 }
+
+//
+//  TestSubArrayRanges
+//  @Description: 2104. 子数组范围和
+//  @param t
+//
+func TestSubArrayRanges(t *testing.T) {
+    data := []int{4, -2, -3, 4, 1}
+    res := array.SubArrayRanges(data)
+    fmt.Println(res)
+}
