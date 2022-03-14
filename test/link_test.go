@@ -164,3 +164,18 @@ func TestCopyRandomList(t *testing.T) {
     head := link.BuildRandomListNode(data)
     link.CopyRandomList(head)
 }
+
+//
+//  TestMergeKLists
+//  @Description: NC51 合并k个已排序的链表
+//  @param t
+//
+func TestMergeKLists(t *testing.T) {
+    data := [][]int{{1, 2}, {1, 4, 5}, {6}}
+    list := make([]*link.ListNode, 0)
+    for _, item := range data {
+        list = append(list, link.BuildListNode(item))
+    }
+    dummy := link.MergeKLists(list)
+    link.ShowData(dummy)
+}
