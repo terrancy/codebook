@@ -94,3 +94,14 @@ func TestGenerateParenthesis(t *testing.T) {
     res := strings.GenerateParenthesis(n)
     fmt.Println(res)
 }
+
+//
+//  TestCheckBracketValid
+//  @Description: 20. 有效的括号
+//  @param t
+//
+func TestCheckBracketValid(t *testing.T) {
+    str := "()[]{}"
+    res := strings.CheckBracketValid(str)
+    fmt.Println(res)
+}

@@ -273,7 +273,7 @@ func HeapSortASC(nums []int) []int {
 
 //
 //  adjustHeap
-//  @Description: 大根堆调整
+//  @Description: 大根堆调整。每次获取最大值
 //  @param nums
 //  @param n
 //  @param pos
@@ -315,7 +315,7 @@ func HeapSortDESC(nums []int) []int {
 
 //
 //  adjustHeapII
-//  @Description: 对调整
+//  @Description: 堆调整。每次获取最小值
 //  @param nums
 //  @param n
 //  @param pos

@@ -62,3 +62,25 @@ func TestCountMaxOrSubsets(t *testing.T) {
     res := challenge.CountMaxOrSubsets(nums)
     fmt.Println(res)
 }
+
+//
+//  TestLongestWord
+//  @Description: 720. 词典中最长的单词
+//  @param t
+//
+func TestLongestWord(t *testing.T) {
+    words := []string{"a", "banana", "app", "appl", "ap", "apply", "apple"}
+    res := challenge.LongestWord(words)
+    fmt.Println(res)
+}
+
+//
+//  TestWinnerOfGame
+//  @Description: 2038. 如果相邻两个颜色均相同则删除当前颜色
+//  @param t
+//
+func TestWinnerOfGame(t *testing.T) {
+    colors := "AAABABB"
+    res := challenge.WinnerOfGame(colors)
+    fmt.Println(res)
+}

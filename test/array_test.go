@@ -175,3 +175,14 @@ func TestSubArrayRanges(t *testing.T) {
     res := array.SubArrayRanges(data)
     fmt.Println(res)
 }
+
+//
+//  TestFirstMissingPositive
+//  @Description: 41. 缺失的第一个正数
+//  @param t
+//
+func TestFirstMissingPositive(t *testing.T) {
+    data := []int{7, 8, 9, 11, 12}
+    res := array.FirstMissingPositive(data)
+    fmt.Println(res)
+}
