@@ -102,6 +102,18 @@ func TestConvertTree2DualLink(t *testing.T) {
 }
 
 //
+//  TestIsBalanced
+//  @Description: NC62 判断是不是平衡二叉树
+//  @param t
+//
+func TestIsBalanced(t *testing.T) {
+    data := []int{1, 2, 2, 3, 3, awesome.INF, awesome.INF, 4, 4}
+    root := trees.BuildTreeNode(data)
+    res := trees.IsBalanced(root)
+    fmt.Println(res)
+}
+
+//
 //  TestIsSymmetric
 //  @Description: JZ28 对称的二叉树
 //  @param t

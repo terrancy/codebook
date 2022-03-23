@@ -84,3 +84,14 @@ func TestWinnerOfGame(t *testing.T) {
     res := challenge.WinnerOfGame(colors)
     fmt.Println(res)
 }
+
+//
+//  TestFindKthDictOrderNumber
+//  @Description: 440. 字典序的第K小数字
+//  @param t
+//
+func TestFindKthDictOrderNumber(t *testing.T) {
+    n, k := 2, 2
+    res := challenge.FindKthDictOrderNumber(n, k)
+    fmt.Println(res)
+}

@@ -13,7 +13,7 @@ func CheckBracketValid(str string) bool {
             stack = append(stack, dict[str[i]])
         } else {
             // 右半边
-            if str[i] != stack[len(stack)-1] {
+            if len(stack) == 0 || str[i] != stack[len(stack)-1] {
                 return false
             } else {
                 stack = stack[:len(stack)-1]
