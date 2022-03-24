@@ -95,3 +95,14 @@ func TestFindKthDictOrderNumber(t *testing.T) {
     res := challenge.FindKthDictOrderNumber(n, k)
     fmt.Println(res)
 }
+
+//
+//  TestTrailingZeroes
+//  @Description: 172. 阶乘后的零
+//  @param t
+//
+func TestTrailingZeroes(t *testing.T) {
+    n := 0
+    res := challenge.TrailingZeroes(n)
+    fmt.Println(res)
+}

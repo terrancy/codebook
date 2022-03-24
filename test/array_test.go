@@ -182,7 +182,7 @@ func TestSubArrayRanges(t *testing.T) {
 //  @param t
 //
 func TestFirstMissingPositive(t *testing.T) {
-    data := []int{7, 8, 9, 11, 12}
+    data := []int{3, 4, -1, 1}
     res := array.FirstMissingPositive(data)
     fmt.Println(res)
 }
