@@ -106,3 +106,27 @@ func TestTrailingZeroes(t *testing.T) {
     res := challenge.TrailingZeroes(n)
     fmt.Println(res)
 }
+
+//
+//  TestCalPoints
+//  @Description: 682. 棒球比赛
+//  @param t
+//
+func TestCalPoints(t *testing.T) {
+    data := []string{"5", "2", "C", "D", "+"}
+    res := challenge.CalPoints(data)
+    fmt.Println(res)
+}
+
+//
+//  TestMissingRolls
+//  @Description: 2028. 找出缺失的观测数据
+//  @param t
+//
+func TestMissingRolls(t *testing.T) {
+    data := []int{3, 2, 4, 3}
+    mean := 4
+    n := 2
+    res := challenge.MissingRolls(data, mean, n)
+    fmt.Println(res)
+}

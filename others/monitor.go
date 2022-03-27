@@ -137,3 +137,23 @@ func FindNthDigit(n int) int {
     idx := (n - 1) % digit
     return int(strconv.Itoa(num)[idx] - '0')
 }
+
+//
+//  IntToRoman
+//  @Description: 12. 整数转罗马数字
+//  @param num
+//  @return string
+//
+func IntToRoman(num int) string {
+    return ""
+}
+
+//
+//  RomanToInt
+//  @Description: 罗马数字转整数
+//  @param str
+//  @return int
+//
+func RomanToInt(str string) int {
+    return 0
+}
