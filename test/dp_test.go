@@ -150,3 +150,14 @@ func TestLongestPalindromeSubsequence(t *testing.T) {
     res := dp.LongestPalindromeSubsequence(str)
     fmt.Println(res)
 }
+
+//
+//  TestLongestValidParentheses
+//  @Description: 32. 最长有效括号
+//  @param t
+//
+func TestLongestValidParentheses(t *testing.T) {
+    str := ")()())"
+    res := dp.LongestValidParentheses(str)
+    fmt.Println(res)
+}
