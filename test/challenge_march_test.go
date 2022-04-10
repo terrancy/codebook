@@ -130,3 +130,25 @@ func TestMissingRolls(t *testing.T) {
     res := challenge.MissingRolls(data, mean, n)
     fmt.Println(res)
 }
+
+//
+//  TestReachingPoints
+//  @Description: 780. 到达终点
+//  @param t
+//
+func TestReachingPoints(t *testing.T) {
+    sx, sy, tx, ty := 1, 1, 2, 2
+    res := challenge.ReachingPoints(sx, sy, tx, ty)
+    fmt.Println(res)
+}
+
+//
+//  TestUniqueMorseRepresentations
+//  @Description: 804. 唯一摩尔斯密码词
+//  @param t
+//
+func TestUniqueMorseRepresentations(t *testing.T) {
+    words := []string{"gin", "zen", "gig", "msg"}
+    res := challenge.UniqueMorseRepresentations(words)
+    fmt.Println(res)
+}
