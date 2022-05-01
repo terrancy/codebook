@@ -152,3 +152,25 @@ func TestUniqueMorseRepresentations(t *testing.T) {
     res := challenge.UniqueMorseRepresentations(words)
     fmt.Println(res)
 }
+
+//
+//  TestGetTriangleRow
+//  @Description: 119. 杨辉三角 II
+//  @param t
+//
+func TestGetTriangleRow(t *testing.T) {
+    rowIndex := 3
+    res := challenge.GetTriangleRow(rowIndex)
+    fmt.Println(res)
+}
+
+//
+//  TestCountNumbersWithUniqueDigits
+//  @Description: 357. 统计各位数字都不同的数字个数
+//  @param t
+//
+func TestCountNumbersWithUniqueDigits(t *testing.T) {
+    n := 2
+    res := challenge.CountNumbersWithUniqueDigits(n)
+    fmt.Println(res)
+}

@@ -153,3 +153,14 @@ func DFSHasMatrixPath(board [][]byte, word string, i, j, k int) bool {
     }
     return false
 }
+
+//
+//  GetPermutation
+//  @Description: 60. 排列序列
+//  @param n
+//  @param k
+//  @return string
+//
+func GetPermutation(n int, k int) string {
+    return ""
+}
