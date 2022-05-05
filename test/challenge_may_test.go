@@ -52,3 +52,15 @@ func TestFindTheWinner(t *testing.T) {
     res := challenge.FindTheWinner(n, m)
     fmt.Println(res)
 }
+
+//
+//  TestNumSubarrayProductLessThanK
+//  @Description: 713. 乘积小于 K 的子数组
+//  @param t
+//
+func TestNumSubarrayProductLessThanK(t *testing.T) {
+    nums := []int{10, 5, 2, 6}
+    k := 100
+    res := challenge.NumSubarrayProductLessThanK(nums, k)
+    fmt.Println(res)
+}
