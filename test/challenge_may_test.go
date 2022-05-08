@@ -64,3 +64,14 @@ func TestNumSubarrayProductLessThanK(t *testing.T) {
     res := challenge.NumSubarrayProductLessThanK(nums, k)
     fmt.Println(res)
 }
+
+//
+//  TestFindDuplicates
+//  @Description: 442. 数组中重复的数据
+//  @param t
+//
+func TestFindDuplicates(t *testing.T) {
+    nums := []int{4, 3, 2, 7, 8, 2, 3, 1}
+    res := challenge.FindDuplicates(nums)
+    fmt.Println(res)
+}
