@@ -75,3 +75,15 @@ func TestFindDuplicates(t *testing.T) {
     res := challenge.FindDuplicates(nums)
     fmt.Println(res)
 }
+
+//
+//  TestOneEditAway
+//  @Description: 面试题 01.05. 一次编辑
+//  @param t
+//
+func TestOneEditAway(t *testing.T) {
+    first := "pale"
+    second := "ple"
+    result := challenge.OneEditAway(first, second)
+    fmt.Println(result)
+}
