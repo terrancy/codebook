@@ -87,3 +87,16 @@ func TestOneEditAway(t *testing.T) {
     result := challenge.OneEditAway(first, second)
     fmt.Println(result)
 }
+
+//
+//  TestInorderSuccessor
+//  @Description: 面试题 04.06. 后继者
+//  @param t
+//
+func TestInorderSuccessor(t *testing.T) {
+    data := []int{2, 1, 3}
+    root := trees.BuildTreeNode(data)
+    p := &trees.TreeNode{Val: 1}
+    node := challenge.InorderSuccessor(root, p)
+    fmt.Println(node.Val)
+}
