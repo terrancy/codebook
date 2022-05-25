@@ -1,6 +1,7 @@
 package test
 
 import (
+    "awesome"
     "awesome/challenge"
     trees "awesome/tree"
     "fmt"
@@ -99,4 +100,16 @@ func TestInorderSuccessor(t *testing.T) {
     p := &trees.TreeNode{Val: 1}
     node := challenge.InorderSuccessor(root, p)
     fmt.Println(node.Val)
+}
+
+//
+//  TestIsUniqueTree
+//  @Description: 965. 单值二叉树
+//  @param t
+//
+func TestIsUniqueTree(t *testing.T) {
+    data := []int{1, 1, 1, 2, 1, awesome.INF, 1}
+    root := trees.BuildTreeNode(data)
+    result := challenge.IsUniqueTree(root)
+    fmt.Println(result)
 }
