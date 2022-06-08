@@ -30,3 +30,14 @@ func TestNumUniqueEmails(t *testing.T) {
     res := challenge.NumUniqueEmail(emails)
     fmt.Println(res)
 }
+
+//
+//  TestIsBoomerang
+//  @Description: 1037. 有效的回旋镖
+//  @param t
+//
+func TestIsBoomerang(t *testing.T) {
+    points := [][]int{{1, 1}, {2, 2}, {3, 2}}
+    result := challenge.IsBoomerang(points)
+    fmt.Println(result)
+}
