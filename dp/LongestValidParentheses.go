@@ -3,10 +3,10 @@ package dp
 import "awesome"
 
 //
-//  LongestValidParentheses
-//  @Description: 32. 最长有效括号
-//  @param s
-//  @return int
+// LongestValidParentheses
+// @Description: 32. 最长有效括号
+// @param s
+// @return int
 //
 func LongestValidParentheses(str string) int {
     maxAns := 0

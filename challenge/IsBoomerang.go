@@ -1,10 +1,10 @@
 package challenge
 
 //
-//  IsBoomerang
-//  @Description: 1037. 有效的回旋镖
-//  @param points
-//  @return bool
+// IsBoomerang
+// @Description: 1037. 有效的回旋镖
+// @param points
+// @return bool
 //
 func IsBoomerang(points [][]int) bool {
     a, b, c := points[0], points[1], points[2]

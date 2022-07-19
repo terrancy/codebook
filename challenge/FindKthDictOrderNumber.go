@@ -1,11 +1,11 @@
 package challenge
 
 //
-//  FindKthDictOrderNumber
-//  @Description: 440. 字典序的第K小数字
-//  @param n
-//  @param k
-//  @return int
+// FindKthDictOrderNumber
+// @Description: 440. 字典序的第K小数字
+// @param n
+// @param k
+// @return int
 //
 func FindKthDictOrderNumber(n int, k int) int {
     cur := 1

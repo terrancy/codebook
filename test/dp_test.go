@@ -7,9 +7,9 @@ import (
 )
 
 //
-//  TestFib
-//  @Description: Fibonacci数列
-//  @param t
+// TestFib
+// @Description: Fibonacci数列
+// @param t
 //
 func TestFib(t *testing.T) {
     res := dp.Fib(10)
@@ -17,9 +17,9 @@ func TestFib(t *testing.T) {
 }
 
 //
-//  TestMaxSubArrayII
-//  @Description: JZ85 连续子数组的最大和(二)
-//  @param t
+// TestMaxSubArrayII
+// @Description: JZ85 连续子数组的最大和(二)
+// @param t
 //
 func TestMaxSubArrayII(t *testing.T) {
     data := []int{1, -2, 3, 10, -4, 7, 2, -5}
@@ -28,9 +28,9 @@ func TestMaxSubArrayII(t *testing.T) {
 }
 
 //
-//  TestMaxProfit
-//  @Description: JZ63 买卖股票的最好时机(一)
-//  @param t
+// TestMaxProfit
+// @Description: JZ63 买卖股票的最好时机(一)
+// @param t
 //
 func TestMaxProfit(t *testing.T) {
     data := []int{8, 9, 2, 5, 4, 7, 1}
@@ -39,9 +39,9 @@ func TestMaxProfit(t *testing.T) {
 }
 
 //
-//  TestMaxProfit
-//  @Description: JZ63 买卖股票的最好时机(一)
-//  @param t
+// TestMaxProfit
+// @Description: JZ63 买卖股票的最好时机(一)
+// @param t
 //
 func TestMaxProfitII(t *testing.T) {
     data := []int{8, 5, 1, 7, 10, 12}
@@ -50,24 +50,24 @@ func TestMaxProfitII(t *testing.T) {
 }
 
 //
-//  TestLongCommonSubstring
-//  @Description: 最长公共子串
-//  @param t
+// TestLongCommonSubstring
+// @Description: 最长公共子串
+// @param t
 //
 func TestLongCommonSubstring(t *testing.T) {
     str1 := "1AB2345CD"
     str2 := "12345EF"
-    //res := longCommonSubstring(str1, str2)
-    //fmt.Print(res)
+    // res := longCommonSubstring(str1, str2)
+    // fmt.Print(res)
     res := dp.LongCommonSubstring(str1, str2)
     fmt.Println(res)
 }
 
 //
-//  TestThrowEggs
-//  @Description: NC87 丢棋子问题
-//  @Description:
-//  @param t
+// TestThrowEggs
+// @Description: NC87 丢棋子问题
+// @Description:
+// @param t
 //
 func TestThrowEggs(t *testing.T) {
     res := dp.ThrowEggsII(105, 2)
@@ -75,9 +75,9 @@ func TestThrowEggs(t *testing.T) {
 }
 
 //
-//  TestCuttingRopes
-//  @Description: JZ14 剪绳子 - 动态规划
-//  @param t
+// TestCuttingRopes
+// @Description: JZ14 剪绳子 - 动态规划
+// @param t
 //
 func TestCuttingRopesDP(t *testing.T) {
     res := dp.CuttingRopesDP(100)
@@ -85,9 +85,9 @@ func TestCuttingRopesDP(t *testing.T) {
 }
 
 //
-//  TestCuttingRopesGreedy
-//  @Description: Z14 剪绳子 - 贪心算法
-//  @param t
+// TestCuttingRopesGreedy
+// @Description: Z14 剪绳子 - 贪心算法
+// @param t
 //
 func TestCuttingRopesGreedy(t *testing.T) {
     res := dp.CuttingRosesGreedy(120)
@@ -95,9 +95,9 @@ func TestCuttingRopesGreedy(t *testing.T) {
 }
 
 //
-//  TestEditDistance
-//  @Description: NC196 编辑距离(一)
-//  @param t
+// TestEditDistance
+// @Description: NC196 编辑距离(一)
+// @param t
 //
 func TestEditDistance(t *testing.T) {
     str1, str2 := "nowcoder", "new"
@@ -106,9 +106,9 @@ func TestEditDistance(t *testing.T) {
 }
 
 //
-//  TestEditCost
-//  @Description: NC35 编辑距离(二)
-//  @param t
+// TestEditCost
+// @Description: NC35 编辑距离(二)
+// @param t
 //
 func TestEditCost(t *testing.T) {
     str1, str2 := "abc", "adc"
@@ -118,9 +118,9 @@ func TestEditCost(t *testing.T) {
 }
 
 //
-//  TestCoinChange
-//  @Description: LC322. 零钱兑换
-//  @param t
+// TestCoinChange
+// @Description: LC322. 零钱兑换
+// @param t
 //
 func TestCoinChange(t *testing.T) {
     coins := []int{1, 2, 5}
@@ -130,9 +130,9 @@ func TestCoinChange(t *testing.T) {
 }
 
 //
-//  TestLongestPalindromeII
-//  @Description: NC17 最长回文子串
-//  @param t
+// TestLongestPalindromeII
+// @Description: NC17 最长回文子串
+// @param t
 //
 func TestLongestPalindromeII(t *testing.T) {
     str := "ababc"
@@ -141,9 +141,9 @@ func TestLongestPalindromeII(t *testing.T) {
 }
 
 //
-//  TestLongestPalindromeSubsequence
-//  @Description: 最长回文子序列
-//  @param t
+// TestLongestPalindromeSubsequence
+// @Description: 最长回文子序列
+// @param t
 //
 func TestLongestPalindromeSubsequence(t *testing.T) {
     str := "bbbab"
@@ -152,9 +152,9 @@ func TestLongestPalindromeSubsequence(t *testing.T) {
 }
 
 //
-//  TestLongestValidParentheses
-//  @Description: 32. 最长有效括号
-//  @param t
+// TestLongestValidParentheses
+// @Description: 32. 最长有效括号
+// @param t
 //
 func TestLongestValidParentheses(t *testing.T) {
     str := ")()())"

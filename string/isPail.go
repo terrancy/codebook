@@ -1,10 +1,10 @@
 package strings
 
 //
-//  isPail
-//  @Description: NC141 判断是否为回文字符串
-//  @param str
-//  @return bool
+// isPail
+// @Description: NC141 判断是否为回文字符串
+// @param str
+// @return bool
 //
 func isPail(str string) bool {
     n := len(str)

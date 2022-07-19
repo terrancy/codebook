@@ -3,17 +3,17 @@ package trees
 import "awesome"
 
 //
-//  widthOfBinaryTree
-//  @Description: NC204 二叉树的最大宽度
-//  @param root
-//  @return int
+// widthOfBinaryTree
+// @Description: NC204 二叉树的最大宽度
+// @param root
+// @return int
 //
 func WidthOfBinaryTree(root *TreeNode) int {
     if root == nil {
         return 0
     }
     queue := make([]*TreeNode, 0)
-    //初始化
+    // 初始化
     root.Val = 1
     queue = queuePush(queue, root)
     node := &TreeNode{}

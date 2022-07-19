@@ -1,11 +1,11 @@
 package link
 
 //
-//  FindFirstCommonNode
-//  @Description: NC66 两个链表的第一个公共结点
-//  @param pHead1
-//  @param pHead2
-//  @return *ListNode
+// FindFirstCommonNode
+// @Description: NC66 两个链表的第一个公共结点
+// @param pHead1
+// @param pHead2
+// @return *ListNode
 //
 func FindFirstCommonNode(pHead1 *ListNode, pHead2 *ListNode) *ListNode {
     if pHead1 == nil || pHead2 == nil {

@@ -2,6 +2,12 @@ package challenge
 
 import "strings"
 
+//
+// LongestWord
+// @Description:
+// @param words
+// @return string
+//
 func LongestWord(words []string) string {
     // 哈希表
     dict := make(map[string]int)

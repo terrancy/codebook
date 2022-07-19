@@ -3,10 +3,10 @@ package challenge
 import "strconv"
 
 //
-//  CalPoints
-//  @Description: 682. 棒球比赛
-//  @param ops
-//  @return int
+// CalPoints
+// @Description: 682. 棒球比赛
+// @param ops
+// @return int
 //
 func CalPoints(ops []string) int {
     n := len(ops)

@@ -1,11 +1,11 @@
 package array
 
 //
-//  TwoSum
-//  @Description: NC61 两数之和
-//  @param numbers
-//  @param target
-//  @return []int
+// TwoSum
+// @Description: NC61 两数之和
+// @param numbers
+// @param target
+// @return []int
 //
 func TwoSum(numbers []int, target int) []int {
     n := len(numbers)
@@ -25,11 +25,11 @@ func TwoSum(numbers []int, target int) []int {
 }
 
 //
-//  towSumII
-//  @Description: 将数组键值反转,查看差值是否存在
-//  @param numbers
-//  @param target
-//  @return []int
+// towSumII
+// @Description: 将数组键值反转,查看差值是否存在
+// @param numbers
+// @param target
+// @return []int
 //
 func TowSumII(numbers []int, target int) []int {
     n := len(numbers)

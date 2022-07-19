@@ -8,11 +8,11 @@ func IsSearchBinaryTree(root *TreeNode) bool {
 }
 
 //
-//  isSBT
-//  @Description: 判断是否是搜索二叉树
-//  @Solution: 先根遍历是升序的,设置最小值,发现有更小的值就有问题
-//  @param root
-//  @return bool
+// isSBT
+// @Description: 判断是否是搜索二叉树
+// @Solution: 先根遍历是升序的,设置最小值,发现有更小的值就有问题
+// @param root
+// @return bool
 //
 func isSBT(root *TreeNode, min *int) bool {
     if root == nil {
@@ -30,11 +30,11 @@ func isSBT(root *TreeNode, min *int) bool {
 }
 
 //
-//  KthNode
-//  @Description: 二叉搜索树第K小(大)的值
-//  @param root
-//  @param k
-//  @return bool
+// KthNode
+// @Description: 二叉搜索树第K小(大)的值
+// @param root
+// @param k
+// @return bool
 //
 var res, cnt = -1, 0
 
@@ -42,15 +42,15 @@ func KthNode(root *TreeNode, k int) int {
     // 第K大
     inorderKthMax(root, k)
     // 第K小
-    //inorderKthMin(root, k)
+    // inorderKthMin(root, k)
     return res
 }
 
 //
-//  inorderKthMax
-//  @Description: 第K大
-//  @param root
-//  @param k
+// inorderKthMax
+// @Description: 第K大
+// @param root
+// @param k
 //
 func inorderKthMax(root *TreeNode, k int) {
     if root == nil {
@@ -68,10 +68,10 @@ func inorderKthMax(root *TreeNode, k int) {
 }
 
 //
-//  inorderKthMin
-//  @Description: 第K小
-//  @param root
-//  @param k
+// inorderKthMin
+// @Description: 第K小
+// @param root
+// @param k
 //
 func inorderKthMin(root *TreeNode, k int) {
     if root == nil {

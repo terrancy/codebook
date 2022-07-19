@@ -3,8 +3,8 @@ package base
 import "fmt"
 
 //
-//  testRune
-//  @Description: rune测试
+// testRune
+// @Description: rune测试
 //
 func StructRune() {
     str := "这是2022"

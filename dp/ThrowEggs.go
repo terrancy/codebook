@@ -6,11 +6,11 @@ import (
 )
 
 //
-//  ThrowEggs
-//  @Description: NC87 丢棋子问题 / LC 887鸡蛋掉落
-//  @param n
-//  @param k
-//  @return int
+// ThrowEggs
+// @Description: NC87 丢棋子问题 / LC 887鸡蛋掉落
+// @param n
+// @param k
+// @return int
 //
 func ThrowEggs(n int, k int) int {
     if n < 2 || k == 1 {
@@ -21,7 +21,7 @@ func ThrowEggs(n int, k int) int {
     if k >= bs {
         return bs
     }
-    //dp[k]用k颗棋子最多恰好在第几层摔碎
+    // dp[k]用k颗棋子最多恰好在第几层摔碎
     dp := make([]int, k+1)
     dp[1] = 1
     for i := 2; ; i++ {
@@ -39,11 +39,11 @@ func log2n(n int) int {
 }
 
 //
-//  ThrowEggsII
-//  @Description:
-//  @param n
-//  @param k
-//  @return int
+// ThrowEggsII
+// @Description:
+// @param n
+// @param k
+// @return int
 //
 func ThrowEggsII(n int, k int) int {
     dp := make([]int, n+1)

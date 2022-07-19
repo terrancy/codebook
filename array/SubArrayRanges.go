@@ -1,17 +1,17 @@
 package array
 
 //
-//  SubArrayRanges
-//  @Description: 2104. 子数组范围和
-//  @param nums
-//  @return int64
+// SubArrayRanges
+// @Description: 2104. 子数组范围和
+// @param nums
+// @return int64
 //
 func SubArrayRanges(nums []int) int64 {
     n := len(nums)
     if n == 1 {
         return 0
     }
-    //sort.Ints(nums)
+    // sort.Ints(nums)
     dataList := make([][]int, 0)
     for i := 2; i <= n; i++ {
         dfs(nums, []int{}, &dataList, i, 0)

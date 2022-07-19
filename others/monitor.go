@@ -9,10 +9,10 @@ import (
 // 模拟
 
 //
-//  IsPokerContinuous
-//  @Description: NC63 扑克牌顺子
-//  @param numbers
-//  @return bool
+// IsPokerContinuous
+// @Description: NC63 扑克牌顺子
+// @param numbers
+// @return bool
 //
 func IsPokerContinuous(numbers []int) bool {
     n := len(numbers)
@@ -37,11 +37,11 @@ func IsPokerContinuous(numbers []int) bool {
 }
 
 //
-//  IsPalindrome
-//  @Description: NC56 回文数字
-//  @Solution: 利用字符串的思路
-//  @param x
-//  @return bool
+// IsPalindrome
+// @Description: NC56 回文数字
+// @Solution: 利用字符串的思路
+// @param x
+// @return bool
 //
 func IsPalindrome(x int) bool {
     if x < 0 {
@@ -58,11 +58,11 @@ func IsPalindrome(x int) bool {
 }
 
 //
-//  IsPalindromeII
-//  @Description: NC56 回文数字
-//  @Solution:
-//  @param x
-//  @return bool
+// IsPalindromeII
+// @Description: NC56 回文数字
+// @Solution:
+// @param x
+// @return bool
 //
 func IsPalindromeII(x int) bool {
     if x < 0 {
@@ -90,11 +90,11 @@ func IsPalindromeII(x int) bool {
 }
 
 //
-//  UglyNumber
-//  @Description: JZ49 丑数
-//  @Description: 三指针动态规划法
-//  @param index
-//  @return int
+// UglyNumber
+// @Description: JZ49 丑数
+// @Description: 三指针动态规划法
+// @param index
+// @return int
 //
 func UglyNumber(index int) int {
     if index < 4 {
@@ -120,10 +120,10 @@ func UglyNumber(index int) int {
 }
 
 //
-//  FindNthDigit
-//  @Description: JZ44 数字序列中某一位的数字
-//  @param n
-//  @return int
+// FindNthDigit
+// @Description: JZ44 数字序列中某一位的数字
+// @param n
+// @return int
 //
 func FindNthDigit(n int) int {
     start := 1
@@ -139,20 +139,20 @@ func FindNthDigit(n int) int {
 }
 
 //
-//  IntToRoman
-//  @Description: 12. 整数转罗马数字
-//  @param num
-//  @return string
+// IntToRoman
+// @Description: 12. 整数转罗马数字
+// @param num
+// @return string
 //
 func IntToRoman(num int) string {
     return ""
 }
 
 //
-//  RomanToInt
-//  @Description: 罗马数字转整数
-//  @param str
-//  @return int
+// RomanToInt
+// @Description: 罗马数字转整数
+// @param str
+// @return int
 //
 func RomanToInt(str string) int {
     return 0

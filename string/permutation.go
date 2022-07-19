@@ -5,10 +5,10 @@ import (
 )
 
 //
-//  Permutation
-//  @Description: NC121 字符串的排列
-//  @param str
-//  @return []string
+// Permutation
+// @Description: NC121 字符串的排列
+// @param str
+// @return []string
 //
 func Permutation(str string) []string {
     n := len(str)
@@ -24,12 +24,12 @@ func Permutation(str string) []string {
 }
 
 //
-//  backtrack
-//  @Description: 回溯法遍历
-//  @param bytes
-//  @param visited
-//  @param res
-//  @param tmp
+// backtrack
+// @Description: 回溯法遍历
+// @param bytes
+// @param visited
+// @param res
+// @param tmp
 //
 func backtrack(bytes []byte, visited []bool, res *[]string, tmp []byte) {
     // 结束条件

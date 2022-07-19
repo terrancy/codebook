@@ -1,10 +1,10 @@
 package challenge
 
 //
-//  GetTriangleRow
-//  @Description: 119. 杨辉三角 II
-//  @param rowIndex
-//  @return []int
+// GetTriangleRow
+// @Description: 119. 杨辉三角 II
+// @param rowIndex
+// @return []int
 //
 func GetTriangleRow(rowIndex int) []int {
     data := make([]int, 1)

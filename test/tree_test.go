@@ -8,9 +8,9 @@ import (
 )
 
 //
-//  testSerialize
-//  @Description: NC123 序列化二叉树
-//  @param t
+// testSerialize
+// @Description: NC123 序列化二叉树
+// @param t
 //
 func TestSerialize(t *testing.T) {
     data := []int{8, 6, 10, 5, 7, 9, 11}
@@ -19,13 +19,13 @@ func TestSerialize(t *testing.T) {
     fmt.Println(temp)
     str := trees.Array2String(temp)
     fmt.Println(str)
-    //trees.Deserialize(str)
+    // trees.Deserialize(str)
 }
 
 //
-//  TestIsContains
-//  @Description: NC98 判断t1树中是否有与t2树完全相同的子树
-//  @param t
+// TestIsContains
+// @Description: NC98 判断t1树中是否有与t2树完全相同的子树
+// @param t
 //
 func TestIsContains(t *testing.T) {
     data1 := []int{1, 2, 3, 4, 5, 6, 7, awesome.INF, 8, 9}
@@ -37,9 +37,9 @@ func TestIsContains(t *testing.T) {
 }
 
 //
-//  TestBuildTree
-//  @Description: 构建二叉树
-//  @param t
+// TestBuildTree
+// @Description: 构建二叉树
+// @param t
 //
 func TestBuildTree(t *testing.T) {
     // 中根 + 先根
@@ -62,9 +62,9 @@ func TestBuildTree(t *testing.T) {
 }
 
 //
-//  TestVerifySequenceOfBST
-//  @Description: JZ33 二叉搜索树的后序遍历序列
-//  @param t
+// TestVerifySequenceOfBST
+// @Description: JZ33 二叉搜索树的后序遍历序列
+// @param t
 //
 func TestVerifySequenceOfBST(t *testing.T) {
     data := []int{7, 4, 6, 5, 9, 11, 10, 8}
@@ -73,9 +73,9 @@ func TestVerifySequenceOfBST(t *testing.T) {
 }
 
 //
-//  TestHadSubTree
-//  @Description:JZ26 树的子结构
-//  @param t
+// TestHadSubTree
+// @Description:JZ26 树的子结构
+// @param t
 //
 func TestHasSubTree(t *testing.T) {
     data := []int{8, 8, 7, 9, 2, awesome.INF, awesome.INF, awesome.INF, awesome.INF, 4, 7}
@@ -91,9 +91,9 @@ func TestHasSubTree(t *testing.T) {
 }
 
 //
-//  TestConvertTree2DualLink
-//  @Description: JZ36 二叉搜索树与双向链表
-//  @param t
+// TestConvertTree2DualLink
+// @Description: JZ36 二叉搜索树与双向链表
+// @param t
 //
 func TestConvertTree2DualLink(t *testing.T) {
     data := []int{10, 6, 14, 4, 8, 12, 16}
@@ -102,9 +102,9 @@ func TestConvertTree2DualLink(t *testing.T) {
 }
 
 //
-//  TestIsBalanced
-//  @Description: NC62 判断是不是平衡二叉树
-//  @param t
+// TestIsBalanced
+// @Description: NC62 判断是不是平衡二叉树
+// @param t
 //
 func TestIsBalanced(t *testing.T) {
     data := []int{1, 2, 2, 3, 3, awesome.INF, awesome.INF, 4, 4}
@@ -114,9 +114,9 @@ func TestIsBalanced(t *testing.T) {
 }
 
 //
-//  TestIsSymmetric
-//  @Description: JZ28 对称的二叉树
-//  @param t
+// TestIsSymmetric
+// @Description: JZ28 对称的二叉树
+// @param t
 //
 func TestIsSymmetric(t *testing.T) {
     data := []int{2, 3, 3, 4, 5, 5, 4, awesome.INF, awesome.INF, 8, 9, awesome.INF, awesome.INF, 9, 8}
@@ -133,9 +133,9 @@ func TestKthNode(t *testing.T) {
 }
 
 //
-//  TestMaxPathSum
-//  @Description: NC6 二叉树中的最大路径和
-//  @param t
+// TestMaxPathSum
+// @Description: NC6 二叉树中的最大路径和
+// @param t
 //
 func TestMaxPathSum(t *testing.T) {
     data := []int{-10, 9, 20, awesome.INF, awesome.INF, 15, 7}
@@ -145,9 +145,9 @@ func TestMaxPathSum(t *testing.T) {
 }
 
 //
-//  TestPruneTree
-//  @Description: 814. 二叉树剪枝 || 剑指 Offer II 047. 二叉树剪枝
-//  @param t
+// TestPruneTree
+// @Description: 814. 二叉树剪枝 || 剑指 Offer II 047. 二叉树剪枝
+// @param t
 //
 func TestPruneTree(t *testing.T) {
     data := []int{1, 0, 1, 0, 0, 0, 1}
@@ -158,9 +158,9 @@ func TestPruneTree(t *testing.T) {
 }
 
 //
-//  TestFindTarget
-//  @Description: 剑指 Offer II 056. 二叉搜索树中两个节点之和
-//  @param t
+// TestFindTarget
+// @Description: 剑指 Offer II 056. 二叉搜索树中两个节点之和
+// @param t
 //
 func TestFindTarget(t *testing.T) {
     data := []int{8, 6, 10, 5, 7, 9, 11}
@@ -171,9 +171,9 @@ func TestFindTarget(t *testing.T) {
 }
 
 //
-//  TestBstFromPreorder
-//  @Description: 1008. 前序遍历构造二叉搜索树
-//  @param t
+// TestBstFromPreorder
+// @Description: 1008. 前序遍历构造二叉搜索树
+// @param t
 //
 func TestBstFromPreorder(t *testing.T) {
     data := []int{8, 10}

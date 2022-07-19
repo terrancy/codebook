@@ -25,10 +25,10 @@ func MinInt(a, b int) int {
 // 翻转问题
 
 //
-//  arrayReverse
-//  @Description: 数组翻转
-//  @param data
-//  @return []int
+// arrayReverse
+// @Description: 数组翻转
+// @param data
+// @return []int
 //
 func DataReverse(data []int) []int {
     n := len(data)
@@ -39,10 +39,10 @@ func DataReverse(data []int) []int {
 }
 
 //
-//  DataDualReverse
-//  @Description: 二维数组翻转
-//  @param data
-//  @return [][]int
+// DataDualReverse
+// @Description: 二维数组翻转
+// @param data
+// @return [][]int
 //
 func DataDualReverse(data [][]int) [][]int {
     for i, j := 0, len(data)-1; i < j; i, j = i+1, j-1 {
@@ -52,10 +52,10 @@ func DataDualReverse(data [][]int) [][]int {
 }
 
 //
-//  StrReverse
-//  @Description: 字符翻转
-//  @param str
-//  @return string
+// StrReverse
+// @Description: 字符翻转
+// @param str
+// @return string
 //
 func StrReverse(str string) string {
     n := len(str)
@@ -72,10 +72,10 @@ func StrReverse(str string) string {
 // 排序相关
 
 //
-//  DataSort
-//  @Description: 数组排序
-//  @param data
-//  @return []int
+// DataSort
+// @Description: 数组排序
+// @param data
+// @return []int
 //
 func DataSort(data []int) []int {
     n := len(data)
@@ -89,10 +89,10 @@ func DataSort(data []int) []int {
 }
 
 //
-//  StrSort
-//  @Description: 字符排序
-//  @param str
-//  @return string
+// StrSort
+// @Description: 字符排序
+// @param str
+// @return string
 //
 func StrSort(str string) []byte {
     n := len(str)
@@ -107,10 +107,10 @@ func StrSort(str string) []byte {
 }
 
 //
-//  Str2Sort
-//  @Description: 字符串排序
-//  @param strList
-//  @return []byte
+// Str2Sort
+// @Description: 字符串排序
+// @param strList
+// @return []byte
 //
 func Str2Sort(strList []string) []string {
     n := len(strList)

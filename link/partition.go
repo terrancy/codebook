@@ -1,11 +1,11 @@
 package link
 
 //
-//  partition
-//  @Description: NC23 划分链表
-//  @param head
-//  @param x
-//  @return *ListNode
+// partition
+// @Description: NC23 划分链表
+// @param head
+// @param x
+// @return *ListNode
 func partition(head *ListNode, x int) *ListNode {
     if head == nil || head.Next == nil {
         return head
@@ -36,9 +36,9 @@ func partition(head *ListNode, x int) *ListNode {
     return preHead.Next
 }
 
-//func main() {
-//    data := []int{1, 4, 3, 2, 5, 2}
-//    head := makeListNode(data)
-//    //partition(head, 3)
-//    showData(head)
-//}
+// func main() {
+//   data := []int{1, 4, 3, 2, 5, 2}
+//   head := makeListNode(data)
+//   //partition(head, 3)
+//   showData(head)
+// }

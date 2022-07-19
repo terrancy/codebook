@@ -3,10 +3,10 @@ package array
 import "sort"
 
 //
-//  subsets
-//  @Description:
-//  @param nums
-//  @return [][]int
+// subsets
+// @Description:
+// @param nums
+// @return [][]int
 //
 func Subsets(nums []int) [][]int {
     n := len(nums)
@@ -28,11 +28,11 @@ func Subsets(nums []int) [][]int {
 }
 
 //
-//  SubsetsII
-//  @Description: NC27 集合的所有子集(一)
-//  @Solution: 1、数组长度 2、遍历的起始值设置 3、回溯与记录
-//  @param nums
-//  @return [][]int
+// SubsetsII
+// @Description: NC27 集合的所有子集(一)
+// @Solution: 1、数组长度 2、遍历的起始值设置 3、回溯与记录
+// @param nums
+// @return [][]int
 //
 func SubsetsII(nums []int) [][]int {
     sort.Ints(nums)
@@ -45,13 +45,13 @@ func SubsetsII(nums []int) [][]int {
 }
 
 //
-//  BSSubsets
-//  @Description:
-//  @param nums
-//  @param stack
-//  @param res
-//  @param k
-//  @param start
+// BSSubsets
+// @Description:
+// @param nums
+// @param stack
+// @param res
+// @param k
+// @param start
 //
 func BTSubsets(nums []int, stack []int, res *[][]int, k int, start int) {
     // 结束条件
@@ -71,11 +71,11 @@ func BTSubsets(nums []int, stack []int, res *[][]int, k int, start int) {
 }
 
 //
-//  SubsetsUnique
-//  @Description: NC221 集合的所有子集(二)
-//  @Description: 给定一个整数数组 nums ，其中可能包含重复元素，请你返回这个数组的所有可能子集. 将答案按字典序进行排序
-//  @param nums
-//  @return [][]int
+// SubsetsUnique
+// @Description: NC221 集合的所有子集(二)
+// @Description: 给定一个整数数组 nums ，其中可能包含重复元素，请你返回这个数组的所有可能子集. 将答案按字典序进行排序
+// @param nums
+// @return [][]int
 //
 func SubsetsUnique(nums []int) [][]int {
     // write code here

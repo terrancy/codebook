@@ -1,10 +1,10 @@
 package challenge
 
 //
-//  BestRotation
-//  @Description: 798. 得分最高的最小轮调798. 得分最高的最小轮调
-//  @param nums
-//  @return int
+// BestRotation
+// @Description: 798. 得分最高的最小轮调798. 得分最高的最小轮调
+// @param nums
+// @return int
 //
 func BestRotation(nums []int) int {
     m := 100001

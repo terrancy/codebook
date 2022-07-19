@@ -6,10 +6,10 @@ import (
 )
 
 //
-//  maxSubsequence
-//  @Description: 连续子数组的最大长度
-//  @param arr
-//  @return int
+// maxSubsequence
+// @Description: 连续子数组的最大长度
+// @param arr
+// @return int
 //
 func maxSubsequence(arr []int) int {
     n := len(arr)

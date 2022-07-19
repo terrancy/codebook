@@ -3,14 +3,14 @@ package others
 import "strconv"
 
 //
-//  FindKTh
-//  @Description: NC88 寻找第K大
-//  @Description: 有一个整数数组，请你根据快速排序的思路，找出数组中第 k 大的数。
-//  @Description: 优先队列,维护利用插入排序维护一个排序好队列.队列大小为k
-//  @param nums
-//  @param n
-//  @param k
-//  @return int
+// FindKTh
+// @Description: NC88 寻找第K大
+// @Description: 有一个整数数组，请你根据快速排序的思路，找出数组中第 k 大的数。
+// @Description: 优先队列,维护利用插入排序维护一个排序好队列.队列大小为k
+// @param nums
+// @param n
+// @param k
+// @return int
 //
 func FindKTh(nums []int, n int, k int) int {
     if n == 0 || n < k {
@@ -24,12 +24,12 @@ func FindKTh(nums []int, n int, k int) int {
 }
 
 //
-//  priorityQueue
-//  @Description: 维护一个K长度的递增队列
-//  @param queue
-//  @param num
-//  @param k
-//  @return []int
+// priorityQueue
+// @Description: 维护一个K长度的递增队列
+// @param queue
+// @param num
+// @param k
+// @return []int
 //
 func priorityQueue(queue []int, num int, k int) []int {
     n := len(queue)
@@ -44,11 +44,11 @@ func priorityQueue(queue []int, num int, k int) []int {
 }
 
 //
-//  TopKStrings
-//  @Description: NC97 字符串出现次数的TopK问题
-//  @param strings
-//  @param k
-//  @return [][]string
+// TopKStrings
+// @Description: NC97 字符串出现次数的TopK问题
+// @param strings
+// @param k
+// @return [][]string
 //
 func TopKStrings(strings []string, k int) [][]string {
     // 统计次数
@@ -96,7 +96,7 @@ func heapSort(data []pair, n int, idx int) {
         maxIdx = rightIdx
     }
     if maxIdx != idx {
-        //!!交换位置
+        // !!交换位置
         data[maxIdx], data[idx] = data[idx], data[maxIdx]
         heapSort(data, n, maxIdx)
     }

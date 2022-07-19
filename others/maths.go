@@ -7,10 +7,10 @@ import (
 )
 
 //
-//  SQRT
-//  @Description: NC32 求平方根
-//  @param num
-//  @return int
+// SQRT
+// @Description: NC32 求平方根
+// @param num
+// @return int
 //
 func SQRT(num int) int {
     if num < 2 {
@@ -31,12 +31,12 @@ func SQRT(num int) int {
 }
 
 //
-//  Gcd
-//  @Description: NC151 最大公约数
-//  @Description: 辗转相减法: A = a*X,B = b*X => A-B = (a - b)*X => X为公约数,ab互质
-//  @param a
-//  @param b
-//  @return int
+// Gcd
+// @Description: NC151 最大公约数
+// @Description: 辗转相减法: A = a*X,B = b*X => A-B = (a - b)*X => X为公约数,ab互质
+// @param a
+// @param b
+// @return int
 //
 func Gcd(a int, b int) int {
     if a < b {
@@ -49,12 +49,12 @@ func Gcd(a int, b int) int {
 }
 
 //
-//  GcdII
-//  @Description: NC151 最大公约数
-//  @Description: 辗转相除法:
-//  @param a
-//  @param b
-//  @return int
+// GcdII
+// @Description: NC151 最大公约数
+// @Description: 辗转相除法:
+// @param a
+// @param b
+// @return int
 //
 func GcdII(a int, b int) int {
     if a < b {
@@ -67,11 +67,11 @@ func GcdII(a int, b int) int {
 }
 
 //
-//  MaxNums
-//  @Description: NC111 最大数
-//  @Description: 给定一个长度为n的数组nums，数组由一些非负整数组成，现需要将他们进行排列并拼接，每个数不可拆分，使得最后的结果最大
-//  @param nums
-//  @return string
+// MaxNums
+// @Description: NC111 最大数
+// @Description: 给定一个长度为n的数组nums，数组由一些非负整数组成，现需要将他们进行排列并拼接，每个数不可拆分，使得最后的结果最大
+// @param nums
+// @return string
 //
 func MaxNums(nums []int) string {
     str := make([]string, 0)
@@ -97,14 +97,14 @@ func MaxNums(nums []int) string {
 }
 
 //
-//  NumberOfZeroFactorial
-//  @Description: NC129 阶乘末尾0的数量
-//  @Description: 给定一个非负整数 n ，返回 n! 结果的末尾为 0 的数量
-//  @Tips: 有5因子的数比有2因子的数要少，所以我们就看能拆出来多少5就可以了，因为肯定能有足够数量的因子2来匹配
-//  @Tips: 这样的话 1\sim n1∼n 中有n/5个5的倍数，n/25个25的倍数，n/125个125的倍数!!
-//  @Tips: 25 = 5 * 5.对于5而言只算1个25.但是有2个5呢!!这里就要用25再回来.同理,125也是一样
-//  @param n
-//  @return int64
+// NumberOfZeroFactorial
+// @Description: NC129 阶乘末尾0的数量
+// @Description: 给定一个非负整数 n ，返回 n! 结果的末尾为 0 的数量
+// @Tips: 有5因子的数比有2因子的数要少，所以我们就看能拆出来多少5就可以了，因为肯定能有足够数量的因子2来匹配
+// @Tips: 这样的话 1\sim n1∼n 中有n/5个5的倍数，n/25个25的倍数，n/125个125的倍数!!
+// @Tips: 25 = 5 * 5.对于5而言只算1个25.但是有2个5呢!!这里就要用25再回来.同理,125也是一样
+// @param n
+// @return int64
 //
 func NumberOfZeroFactorial(n int64) int64 {
     if n < 5 {
@@ -119,12 +119,12 @@ func NumberOfZeroFactorial(n int64) int64 {
 }
 
 //
-//  TwoSum
-//  @Description: NC1 大数加法
-//  @Description: 以字符串的形式读入两个数字，编写一个函数计算它们的和，以字符串形式返回
-//  @param data1
-//  @param data2
-//  @return []int
+// TwoSum
+// @Description: NC1 大数加法
+// @Description: 以字符串的形式读入两个数字，编写一个函数计算它们的和，以字符串形式返回
+// @param data1
+// @param data2
+// @return []int
 //
 func BigNumberPlus(s, t string) string {
     n, m := len(s), len(t)
@@ -157,12 +157,12 @@ func BigNumberPlus(s, t string) string {
 }
 
 //
-//  BigNumberProduct
-//  @Description: NC10 大数乘法
-//  @Description: 以字符串的形式读入两个数字，编写一个函数计算它们的乘积，以字符串形式返回。
-//  @param s
-//  @param t
-//  @return string
+// BigNumberProduct
+// @Description: NC10 大数乘法
+// @Description: 以字符串的形式读入两个数字，编写一个函数计算它们的乘积，以字符串形式返回。
+// @param s
+// @param t
+// @return string
 //
 func BigNumberProduct(s string, t string) string {
     if s == "0" || t == "0" {

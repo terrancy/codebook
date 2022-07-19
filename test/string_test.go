@@ -7,9 +7,9 @@ import (
 )
 
 //
-//  TestKMP
-//  @Description: NC149 kmp算法
-//  @param t
+// TestKMP
+// @Description: NC149 kmp算法
+// @param t
 //
 func TestKMP(t *testing.T) {
     patten := "abab"
@@ -19,9 +19,9 @@ func TestKMP(t *testing.T) {
 }
 
 //
-//  TestPermutation
-//  @Description: 字符串的全排列
-//  @param t
+// TestPermutation
+// @Description: 字符串的全排列
+// @param t
 //
 func TestPermutation(t *testing.T) {
     str := "aab"
@@ -30,9 +30,9 @@ func TestPermutation(t *testing.T) {
 }
 
 //
-//  TestGetLongestPalindrome
-//  @Description: 最长回文子串
-//  @param t
+// TestGetLongestPalindrome
+// @Description: 最长回文子串
+// @param t
 //
 func TestLongestPalindrome(t *testing.T) {
     str := "ccbcabaabba"
@@ -41,9 +41,9 @@ func TestLongestPalindrome(t *testing.T) {
 }
 
 //
-//  TestLongRepeatedSubstring
-//  @Description: NC142 最长重复子串
-//  @param t
+// TestLongRepeatedSubstring
+// @Description: NC142 最长重复子串
+// @param t
 //
 func TestLongRepeatedSubstring(t *testing.T) {
     str := "abcab"
@@ -52,9 +52,9 @@ func TestLongRepeatedSubstring(t *testing.T) {
 }
 
 //
-//  TestFirstNotRepeatingChar
-//  @Description: NC31 第一个只出现一次的字符
-//  @param t
+// TestFirstNotRepeatingChar
+// @Description: NC31 第一个只出现一次的字符
+// @param t
 //
 func TestFirstNotRepeatingChar(t *testing.T) {
     str := "google"
@@ -63,9 +63,9 @@ func TestFirstNotRepeatingChar(t *testing.T) {
 }
 
 //
-//  TestCheckIpAddress
-//  @Description: NC113 验证IP地址
-//  @param t
+// TestCheckIpAddress
+// @Description: NC113 验证IP地址
+// @param t
 //
 func TestCheckIpAddress(t *testing.T) {
     str := "127.0.0.1"
@@ -74,9 +74,9 @@ func TestCheckIpAddress(t *testing.T) {
 }
 
 //
-//  TestReverseSentence
-//  @Description: JZ73 翻转单词序列
-//  @param t
+// TestReverseSentence
+// @Description: JZ73 翻转单词序列
+// @param t
 //
 func TestReverseSentence(t *testing.T) {
     str := "nowcoder. a am I"
@@ -85,9 +85,9 @@ func TestReverseSentence(t *testing.T) {
 }
 
 //
-//  TestGenerateParenthesis
-//  @Description: NC26 括号生成
-//  @param t
+// TestGenerateParenthesis
+// @Description: NC26 括号生成
+// @param t
 //
 func TestGenerateParenthesis(t *testing.T) {
     n := 3
@@ -96,9 +96,9 @@ func TestGenerateParenthesis(t *testing.T) {
 }
 
 //
-//  TestCheckBracketValid
-//  @Description: 20. 有效的括号
-//  @param t
+// TestCheckBracketValid
+// @Description: 20. 有效的括号
+// @param t
 //
 func TestCheckBracketValid(t *testing.T) {
     str := "()[]{}"

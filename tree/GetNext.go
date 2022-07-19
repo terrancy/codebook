@@ -1,11 +1,11 @@
 package trees
 
 //
-//  GetNext
-//  @Description: JZ8 二叉树的下一个结点
-//  @Requirement: 要求：空间复杂度 O(1)  ，时间复杂度 O(n)
-//  @param pNode
-//  @return *TreeLinkNode
+// GetNext
+// @Description: JZ8 二叉树的下一个结点
+// @Requirement: 要求：空间复杂度 O(1)  ，时间复杂度 O(n)
+// @param pNode
+// @return *TreeLinkNode
 //
 func GetNext(pNode *TreeLinkNode) *TreeLinkNode {
     if pNode == nil {
@@ -19,21 +19,21 @@ func GetNext(pNode *TreeLinkNode) *TreeLinkNode {
 }
 
 //
-//  inOrderGetNext
-//  @Description: 中根遍历获取目标值
-//  @param root
-//  @param target
-//  @return *TreeLinkNode
+// inOrderGetNext
+// @Description: 中根遍历获取目标值
+// @param root
+// @param target
+// @return *TreeLinkNode
 //
 func inOrderGetNext(root *TreeLinkNode, target *TreeLinkNode) *TreeLinkNode {
     return root
 }
 
 //
-//  GetNextII
-//  @Description: 中根遍历获取目标值
-//  @param pNode
-//  @return *TreeLinkNode
+// GetNextII
+// @Description: 中根遍历获取目标值
+// @param pNode
+// @return *TreeLinkNode
 //
 func GetNextII(pNode *TreeLinkNode) *TreeLinkNode {
     if pNode == nil {

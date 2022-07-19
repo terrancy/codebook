@@ -38,10 +38,10 @@ func CheckIpAddress(IP string) string {
 }
 
 //
-//  checkIp4Validate
-//  @Description: 检查是否是IPv4
-//  @param s
-//  @return bool
+// checkIp4Validate
+// @Description: 检查是否是IPv4
+// @param s
+// @return bool
 //
 func checkIp4Validate(s string) bool {
     n, err := strconv.Atoi(s)
@@ -61,10 +61,10 @@ func checkIp4Validate(s string) bool {
 }
 
 //
-//  checkIp6Validate
-//  @Description: 检查是否是IPv6
-//  @param s
-//  @return bool
+// checkIp6Validate
+// @Description: 检查是否是IPv6
+// @param s
+// @return bool
 //
 func checkIp6Validate(s string) bool {
     if len(s) > 4 || len(s) == 0 {

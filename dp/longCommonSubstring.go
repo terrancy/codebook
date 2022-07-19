@@ -1,11 +1,11 @@
 package dp
 
 //
-//  longCommonSubstring
-//  @Description:
-//  @param str1
-//  @param str2
-//  @return string
+// longCommonSubstring
+// @Description:
+// @param str1
+// @param str2
+// @return string
 //
 func LongCommonSubstring(str1 string, str2 string) string {
     n := len(str1)

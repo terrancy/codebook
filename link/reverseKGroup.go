@@ -1,11 +1,11 @@
 package link
 
 //
-//  ReverseKGroup
-//  @Description: NC50 链表中的节点每k个一组翻转
-//  @param head
-//  @param k
-//  @return *ListNode
+// ReverseKGroup
+// @Description: NC50 链表中的节点每k个一组翻转
+// @param head
+// @param k
+// @return *ListNode
 //
 func ReverseKGroup(head *ListNode, k int) *ListNode {
     if head == nil || head.Next == nil || k == 1 {
@@ -30,11 +30,11 @@ func ReverseKGroup(head *ListNode, k int) *ListNode {
 }
 
 //
-//  ReverseKGroupII
-//  @Description: NC50 链表中的节点每k个一组翻转
-//  @param head
-//  @param k
-//  @return *ListNode
+// ReverseKGroupII
+// @Description: NC50 链表中的节点每k个一组翻转
+// @param head
+// @param k
+// @return *ListNode
 //
 func ReverseKGroupII(head *ListNode, k int) *ListNode {
     if head == nil || head.Next == nil || k == 1 {

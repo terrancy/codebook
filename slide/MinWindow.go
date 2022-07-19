@@ -1,12 +1,12 @@
 package slide
 
 //
-//  MinWindow
-//  @Description: NC28 最小覆盖子串
-//  @Description: 给出两个字符串 s 和 t，要求在 s 中找出最短的包含 t 中所有字符的连续子串
-//  @param str
-//  @param target
-//  @return string
+// MinWindow
+// @Description: NC28 最小覆盖子串
+// @Description: 给出两个字符串 s 和 t，要求在 s 中找出最短的包含 t 中所有字符的连续子串
+// @param str
+// @param target
+// @return string
 //
 func MinWindow(str string, target string) string {
     // 初始化 窗口

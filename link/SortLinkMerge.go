@@ -1,11 +1,11 @@
 package link
 
 //
-//  linkMerge
-//  @Description: 两个有序链表合并
-//  @param pHead1
-//  @param pHead2
-//  @return *ListNode
+// linkMerge
+// @Description: 两个有序链表合并
+// @param pHead1
+// @param pHead2
+// @return *ListNode
 //
 func SortLinkMerge(pHead1 *ListNode, pHead2 *ListNode) *ListNode {
     node := &ListNode{}

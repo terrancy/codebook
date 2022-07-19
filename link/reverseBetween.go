@@ -1,12 +1,12 @@
 package link
 
 //
-//  reverseBetween
-//  @Description: NC21 链表内指定区间反转
-//  @param head
-//  @param m
-//  @param n
-//  @return *ListNode
+// reverseBetween
+// @Description: NC21 链表内指定区间反转
+// @param head
+// @param m
+// @param n
+// @return *ListNode
 //
 func ReverseBetween(head *ListNode, m int, n int) *ListNode {
     if head == nil || head.Next == nil {
@@ -36,13 +36,13 @@ func ReverseBetween(head *ListNode, m int, n int) *ListNode {
 }
 
 //
-//  ReverseBetweenII
-//  @Description: 区间翻转
-//  @Description: 利用翻转链表实现,节点从1开始,构建虚节点,翻转链表Next
-//  @param head
-//  @param m
-//  @param n
-//  @return *ListNode
+// ReverseBetweenII
+// @Description: 区间翻转
+// @Description: 利用翻转链表实现,节点从1开始,构建虚节点,翻转链表Next
+// @param head
+// @param m
+// @param n
+// @return *ListNode
 //
 func ReverseBetweenII(head *ListNode, m int, n int) *ListNode {
     if head == nil || head.Next == nil || m == n {
@@ -63,10 +63,10 @@ func ReverseBetweenII(head *ListNode, m int, n int) *ListNode {
 }
 
 //
-//  ReverseBetweenNext
-//  @Description: 根据链表的头尾指针翻转链表
-//  @param pre
-//  @param tail
+// ReverseBetweenNext
+// @Description: 根据链表的头尾指针翻转链表
+// @param pre
+// @param tail
 //
 func ReverseBetweenNext(pre *ListNode, tail *ListNode) *ListNode {
     if pre.Next == tail {

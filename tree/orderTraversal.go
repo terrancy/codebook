@@ -10,10 +10,10 @@ func PostOrderTraversal(root *TreeNode) []int {
 }
 
 //
-//  dfsPost
-//  @Description: 二叉树后根遍历
-//  @param root
-//  @param data
+// dfsPost
+// @Description: 二叉树后根遍历
+// @param root
+// @param data
 //
 func DfsPost(root *TreeNode, data *[]int) {
     if root == nil {
@@ -25,10 +25,10 @@ func DfsPost(root *TreeNode, data *[]int) {
 }
 
 //
-//  dfsPre
-//  @Description: 二叉树先根遍历
-//  @param root
-//  @param data
+// dfsPre
+// @Description: 二叉树先根遍历
+// @param root
+// @param data
 //
 func DfsPre(root *TreeNode, data *[]int) {
     if root == nil {
@@ -41,10 +41,10 @@ func DfsPre(root *TreeNode, data *[]int) {
 }
 
 //
-//  dfsMid
-//  @Description: 二叉树中根遍历
-//  @param root
-//  @param data
+// dfsMid
+// @Description: 二叉树中根遍历
+// @param root
+// @param data
 //
 func DfsMid(root *TreeNode, data *[]int) {
     if root == nil {
@@ -57,10 +57,10 @@ func DfsMid(root *TreeNode, data *[]int) {
 }
 
 //
-//  bfs
-//  @Description: 先根遍历
-//  @param root
-//  @param data
+// bfs
+// @Description: 先根遍历
+// @param root
+// @param data
 //
 func Bfs(root *TreeNode, data []int) {
     if root == nil {
@@ -85,11 +85,11 @@ func Bfs(root *TreeNode, data []int) {
 }
 
 //
-//  PMBuildTree
-//  @Description: 根据先根遍历和中根遍历构建树
-//  @param pre
-//  @param mid
-//  @return *TreeNode
+// PMBuildTree
+// @Description: 根据先根遍历和中根遍历构建树
+// @param pre
+// @param mid
+// @return *TreeNode
 //
 func PreMidBuildTree(pre []int, mid []int) *TreeNode {
     if len(pre) == 0 || len(mid) == 0 {
@@ -100,16 +100,16 @@ func PreMidBuildTree(pre []int, mid []int) *TreeNode {
 }
 
 //
-//  dspPMBuildTree
-//  @Description: 根据先根遍历和中根遍历构建树,递归构建
-//  @param pre
-//  @param mid
-//  @param pl
-//  @param pr
-//  @param ml
-//  @param mr
-//  @param midMap
-//  @return *TreeNode
+// dspPMBuildTree
+// @Description: 根据先根遍历和中根遍历构建树,递归构建
+// @param pre
+// @param mid
+// @param pl
+// @param pr
+// @param ml
+// @param mr
+// @param midMap
+// @return *TreeNode
 //
 func dspPreMidBuildTree(pre []int, mid []int, pl int, pr int, ml int, mr int, midMap map[int]int) *TreeNode {
     if pl > pr {
@@ -126,11 +126,11 @@ func dspPreMidBuildTree(pre []int, mid []int, pl int, pr int, ml int, mr int, mi
 }
 
 //
-//  PostMidBuildTree
-//  @Description: 根据后根遍历和中根遍历构建树
-//  @param post
-//  @param mid
-//  @return *TreeNode
+// PostMidBuildTree
+// @Description: 根据后根遍历和中根遍历构建树
+// @param post
+// @param mid
+// @return *TreeNode
 //
 func PostMidBuildTree(post []int, mid []int) *TreeNode {
     if len(post) == 0 || len(mid) == 0 {
@@ -141,16 +141,16 @@ func PostMidBuildTree(post []int, mid []int) *TreeNode {
 }
 
 //
-//  dspPostMidBuildTree
-//  @Description: 根据后根遍历和中根遍历构建树,递归构建
-//  @param post
-//  @param mid
-//  @param pl
-//  @param pr
-//  @param ml
-//  @param mr
-//  @param midMap
-//  @return *TreeNode
+// dspPostMidBuildTree
+// @Description: 根据后根遍历和中根遍历构建树,递归构建
+// @param post
+// @param mid
+// @param pl
+// @param pr
+// @param ml
+// @param mr
+// @param midMap
+// @return *TreeNode
 //
 func dspPostMidBuildTree(post []int, mid []int, pl int, pr int, ml int, mr int, midMap map[int]int) *TreeNode {
     if pl > pr {
@@ -174,14 +174,14 @@ func makeMidMap(mid []int) map[int]int {
     return midMap
 }
 
-////////////////////////////////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////////////////
 //
-//  DspPreMidBuildTreeII
-//  @Description:
-//  @param pre
-//  @param mid
-//  @param midMap
-//  @return *TreeNode
+// DspPreMidBuildTreeII
+// @Description:
+// @param pre
+// @param mid
+// @param midMap
+// @return *TreeNode
 //
 func DspPreMidBuildTreeII(preOrder []int, inOrder []int) *TreeNode {
     // 递归结束
@@ -199,11 +199,11 @@ func DspPreMidBuildTreeII(preOrder []int, inOrder []int) *TreeNode {
 }
 
 //
-//  DspPostMidBuildTreeII
-//  @Description:
-//  @param inOrder
-//  @param postOrder
-//  @return *TreeNode
+// DspPostMidBuildTreeII
+// @Description:
+// @param inOrder
+// @param postOrder
+// @return *TreeNode
 //
 func DspPostMidBuildTreeII(inOrder []int, postOrder []int) *TreeNode {
     if len(postOrder) == 0 || len(inOrder) == 0 {

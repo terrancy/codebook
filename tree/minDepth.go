@@ -1,10 +1,10 @@
 package trees
 
 //
-//  minDepth
-//  @Description: NC234 二叉树的最小深度
-//  @param root
-//  @return int
+// minDepth
+// @Description: NC234 二叉树的最小深度
+// @param root
+// @return int
 //
 func MinDepth(root *TreeNode) int {
     if root == nil {

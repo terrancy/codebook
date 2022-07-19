@@ -3,11 +3,11 @@ package dp
 import "awesome"
 
 //
-//  EditDistance
-//  @Description: NC196 编辑距离(一)
-//  @param word1
-//  @param word2
-//  @return int
+// EditDistance
+// @Description: NC196 编辑距离(一)
+// @param word1
+// @param word2
+// @return int
 //
 func EditDistance(str1 string, str2 string) int {
     n, m := len(str1), len(str2)
@@ -35,14 +35,14 @@ func EditDistance(str1 string, str2 string) int {
 }
 
 //
-//  EditCost
-//  @Description: NC35 编辑距离(二)
-//  @param str1
-//  @param str2
-//  @param insertCost 插入操作的成本
-//  @param deleteCost 删除操作的成本
-//  @param replaceCost 替换操作的成本
-//  @return int
+// EditCost
+// @Description: NC35 编辑距离(二)
+// @param str1
+// @param str2
+// @param insertCost 插入操作的成本
+// @param deleteCost 删除操作的成本
+// @param replaceCost 替换操作的成本
+// @return int
 //
 func EditCost(str1 string, str2 string, insertCost int, deleteCost int, replaceCost int) int {
     n, m := len(str1), len(str2)

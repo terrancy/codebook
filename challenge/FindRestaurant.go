@@ -1,11 +1,11 @@
 package challenge
 
 //
-//  FindRestaurant
-//  @Description: 599. 两个列表的最小索引总和
-//  @param list1
-//  @param list2
-//  @return []string
+// FindRestaurant
+// @Description: 599. 两个列表的最小索引总和
+// @param list1
+// @param list2
+// @return []string
 //
 func FindRestaurant(list1 []string, list2 []string) []string {
     dict := make(map[string]int)

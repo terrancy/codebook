@@ -1,12 +1,12 @@
 package link
 
 //
-//  RotateLinkedList
-//  @Description: NC211 旋转链表
-//  @Solution: 1. cnt 模k，模零返回 2. cnt-k获取pre
-//  @param head
-//  @param k
-//  @return *ListNode
+// RotateLinkedList
+// @Description: NC211 旋转链表
+// @Solution: 1. cnt 模k，模零返回 2. cnt-k获取pre
+// @param head
+// @param k
+// @return *ListNode
 //
 func RotateLinkedList(head *ListNode, k int) *ListNode {
     if head == nil || head.Next == nil {
@@ -44,12 +44,12 @@ func RotateLinkedList(head *ListNode, k int) *ListNode {
 }
 
 //
-//  rotateRight
-//  @Description: LC 61. 旋转链表
-//  @Solution: 1. cnt 模k，模零返回 2. cnt-k获取pre
-//  @param head
-//  @param k
-//  @return *ListNode
+// rotateRight
+// @Description: LC 61. 旋转链表
+// @Solution: 1. cnt 模k，模零返回 2. cnt-k获取pre
+// @param head
+// @param k
+// @return *ListNode
 //
 func rotateRight(head *ListNode, k int) *ListNode {
     if head == nil || head.Next == nil || k == 0 {

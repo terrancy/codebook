@@ -1,10 +1,10 @@
 package array
 
 //
-//  InversePairs
-//  @Description: JZ51 数组中的逆序对 - 快排思路
-//  @param data
-//  @return int
+// InversePairs
+// @Description: JZ51 数组中的逆序对 - 快排思路
+// @param data
+// @return int
 //
 func InversePairsQuickSort(data []int) int {
     n := len(data)
@@ -27,10 +27,10 @@ func InversePairsQuickSort(data []int) int {
 }
 
 //
-//  InversePairsMergeSort
-//  @Description: JZ51 数组中的逆序对 - 归并排序思路
-//  @param data
-//  @return int
+// InversePairsMergeSort
+// @Description: JZ51 数组中的逆序对 - 归并排序思路
+// @param data
+// @return int
 //
 func InversePairsMergeSort(data []int) int {
     return 1

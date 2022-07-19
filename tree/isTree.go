@@ -5,10 +5,10 @@ import (
 )
 
 //
-//  IsSymmetric
-//  @Description: JZ28 对称的二叉树 - 层序遍历
-//  @param root
-//  @return bool
+// IsSymmetric
+// @Description: JZ28 对称的二叉树 - 层序遍历
+// @param root
+// @return bool
 //
 func IsSymmetric(root *TreeNode) bool {
     if root == nil {
@@ -45,10 +45,10 @@ func IsSymmetric(root *TreeNode) bool {
 }
 
 //
-//  checkIsSymmetric
-//  @Description: 判断数组是否是对称的
-//  @param data
-//  @return bool
+// checkIsSymmetric
+// @Description: 判断数组是否是对称的
+// @param data
+// @return bool
 //
 func checkIsSymmetric(data []int) bool {
     n := len(data)
@@ -61,25 +61,25 @@ func checkIsSymmetric(data []int) bool {
 }
 
 //
-//  IsSymmetricII
-//  @Description: JZ28 对称的二叉树 - 先根遍历
-//  @param root
-//  @return bool
+// IsSymmetricII
+// @Description: JZ28 对称的二叉树 - 先根遍历
+// @param root
+// @return bool
 //
 func IsSymmetricII(root *TreeNode) bool {
     if root == nil {
         return true
     }
     return isSymmetricPreOrder(root.Left, root.Right)
-    //return isSymmetricPreOrder(root, root)
+    // return isSymmetricPreOrder(root, root)
 }
 
 //
-//  isSymmetricPreOrder
-//  @Description: 先根遍历
-//  @param root1
-//  @param root2
-//  @return bool
+// isSymmetricPreOrder
+// @Description: 先根遍历
+// @param root1
+// @param root2
+// @return bool
 //
 func isSymmetricPreOrder(root1, root2 *TreeNode) bool {
     if root1 == nil && root2 == nil {

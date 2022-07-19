@@ -3,10 +3,10 @@ package challenge
 import trees "awesome/tree"
 
 //
-//  SumRootToLeaf
-//  @Description: 1022. 从根到叶的二进制数之和
-//  @param root
-//  @return int
+// SumRootToLeaf
+// @Description: 1022. 从根到叶的二进制数之和
+// @param root
+// @return int
 //
 func SumRootToLeaf(root *trees.TreeNode) int {
     return DFSSumRootToLeaf(root, 0)

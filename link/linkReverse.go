@@ -1,10 +1,10 @@
 package link
 
 //
-//  Reverse
-//  @Description: NC78 反转链表
-//  @param head
-//  @return *ListNode
+// Reverse
+// @Description: NC78 反转链表
+// @param head
+// @return *ListNode
 //
 func Reverse(head *ListNode) *ListNode {
     if head == nil || head.Next == nil {
@@ -21,11 +21,12 @@ func Reverse(head *ListNode) *ListNode {
     }
     return pre
 }
+
 //
-//  HalfReverse
-//  @Description:
-//  @param head
-//  @return *ListNode
+// HalfReverse
+// @Description:
+// @param head
+// @return *ListNode
 //
 func HalfReverse(head *ListNode) *ListNode {
     if head == nil || head.Next == nil {

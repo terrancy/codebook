@@ -6,11 +6,11 @@ import (
 )
 
 //
-//  serialize
-//  @Description: NC123 序列化二叉树
-//  @Link: https://www.nowcoder.com/practice/cf7e25aa97c04cc1a68c8f040e71fb84?tpId=117&&tqId=37782&rp=1&ru=/activity/oj&qru=/ta/job-code-high/question-ranking
-//  @param root
-//  @return string
+// serialize
+// @Description: NC123 序列化二叉树
+// @Link: https://www.nowcoder.com/practice/cf7e25aa97c04cc1a68c8f040e71fb84?tpId=117&&tqId=37782&rp=1&ru=/activity/oj&qru=/ta/job-code-high/question-ranking
+// @param root
+// @return string
 //
 func Serialize(root *TreeNode) []int {
     if root == nil {
@@ -50,10 +50,10 @@ func Array2String(data []int) string {
 }
 
 //
-//  deserialize
-//  @Description: 二叉树反序列化
-//  @param str
-//  @return *TreeNode
+// deserialize
+// @Description: 二叉树反序列化
+// @param str
+// @return *TreeNode
 //
 func Deserialize(str string) *TreeNode {
     data := String2Array(str)

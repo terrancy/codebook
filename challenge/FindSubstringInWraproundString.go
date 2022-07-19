@@ -3,10 +3,10 @@ package challenge
 import "awesome"
 
 //
-//  FindSubstringInWrapRoundString
-//  @Description: 467. 环绕字符串中唯一的子字符串
-//  @param p
-//  @return int
+// FindSubstringInWrapRoundString
+// @Description: 467. 环绕字符串中唯一的子字符串
+// @param p
+// @return int
 //
 func FindSubstringInWrapRoundString(p string) (ans int) {
     dp := [26]int{}

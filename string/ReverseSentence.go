@@ -5,10 +5,10 @@ import (
 )
 
 //
-//  ReverseSentence
-//  @Description: JZ73 翻转单词序列
-//  @param str
-//  @return string
+// ReverseSentence
+// @Description: JZ73 翻转单词序列
+// @param str
+// @return string
 //
 func ReverseSentence(str string) string {
     if str == "" {

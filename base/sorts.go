@@ -1,16 +1,16 @@
 package base
 
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 // 冒泡排序、快速排序、插入排序、选择排序、堆排序
 // 稳定性：排序后 2 个相等键值的顺序和排序之前它们的顺序相同
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 
 //
-//  BubbleSort
-//  @Description: 冒泡排序 O(N2)
-//  @Solution: 两两交换,最大的放后面
-//  @param nums
-//  @return []int
+// BubbleSort
+// @Description: 冒泡排序 O(N2)
+// @Solution: 两两交换,最大的放后面
+// @param nums
+// @return []int
 //
 func BubbleSort(nums []int) []int {
     n := len(nums)
@@ -25,11 +25,11 @@ func BubbleSort(nums []int) []int {
 }
 
 //
-//  SelectSort
-//  @Description: 选择排序
-//  @Solution: 两两交换,最小的放前面
-//  @param nums
-//  @return []int
+// SelectSort
+// @Description: 选择排序
+// @Solution: 两两交换,最小的放前面
+// @param nums
+// @return []int
 //
 func SelectSort(nums []int) []int {
     n := len(nums)
@@ -44,11 +44,11 @@ func SelectSort(nums []int) []int {
 }
 
 //
-//  InsertSort
-//  @Description: 插入排序
-//  @Solution: 将待排序的元素插入已排序的序列中.
-//  @param nums
-//  @return []int
+// InsertSort
+// @Description: 插入排序
+// @Solution: 将待排序的元素插入已排序的序列中.
+// @param nums
+// @return []int
 //
 func InsertSort(nums []int) []int {
     n := len(nums)
@@ -64,16 +64,16 @@ func InsertSort(nums []int) []int {
     return nums
 }
 
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 // 快速排序
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 
 //
-//  quickSort
-//  @Description: 朴素快速排序
-//  @Solution: 以首个为基准分为两个数组,递归调用再合并.类似中根遍历.注意递归边界!!
-//  @param nums
-//  @return []int
+// quickSort
+// @Description: 朴素快速排序
+// @Solution: 以首个为基准分为两个数组,递归调用再合并.类似中根遍历.注意递归边界!!
+// @param nums
+// @return []int
 //
 func QuickSortOld(nums []int) []int {
     n := len(nums)
@@ -97,12 +97,12 @@ func QuickSortOld(nums []int) []int {
 }
 
 //
-//  QuickSortII
-//  @Description: 快排优化
-//  @Solution: 1.基准选中 2.尾递归优化 3.重复数值的处理
-//  @param nums
-//  @param left 左边界
-//  @param right 有边界
+// QuickSortII
+// @Description: 快排优化
+// @Solution: 1.基准选中 2.尾递归优化 3.重复数值的处理
+// @param nums
+// @param left 左边界
+// @param right 有边界
 //
 func QuickSort(nums []int, left int, right int) {
     for left < right {
@@ -113,12 +113,12 @@ func QuickSort(nums []int, left int, right int) {
 }
 
 //
-//  partition
-//  @Description: 获取基准值
-//  @param nums
-//  @param left
-//  @param right
-//  @return int
+// partition
+// @Description: 获取基准值
+// @param nums
+// @param left
+// @param right
+// @return int
 //
 func partition(nums []int, left int, right int) int {
     // 三数取中
@@ -143,31 +143,31 @@ func partition(nums []int, left int, right int) int {
 }
 
 //
-//  QuickSortII
-//  @Description: 快排优化
-//  @Solution: 1.基准选中 2.尾递归优化 3.重复数值的处理
-//  @param nums
-//  @param left 左边界
-//  @param right 有边界
+// QuickSortII
+// @Description: 快排优化
+// @Solution: 1.基准选中 2.尾递归优化 3.重复数值的处理
+// @param nums
+// @param left 左边界
+// @param right 有边界
 //
 func QuickSortII(nums []int, left int, right int) {
     partitionII(nums, left, right)
-    //for left < right {
-    //    // 重复值处理
-    //    leftMid, rightMid := partitionII(nums, left, right)
-    //    QuickSortII(nums, left, leftMid)
-    //    left = rightMid
-    //}
+    // for left < right {
+    //   // 重复值处理
+    //   leftMid, rightMid := partitionII(nums, left, right)
+    //   QuickSortII(nums, left, leftMid)
+    //   left = rightMid
+    // }
 }
 
 //
-//  partitionII
-//  @Description: 重复数值的优化
-//  @Link: https://www.cnblogs.com/vipchenwei/p/7460293.html
-//  @param nums
-//  @param left
-//  @param right
-//  @return int
+// partitionII
+// @Description: 重复数值的优化
+// @Link: https://www.cnblogs.com/vipchenwei/p/7460293.html
+// @param nums
+// @param left
+// @param right
+// @return int
 //
 func partitionII(nums []int, left int, right int) (int, int) {
     first, last := left, right
@@ -226,12 +226,12 @@ func getPivotIdx(nums []int, a, b, c, target int) int {
 }
 
 //
-//  threeSumMedian
-//  @Description: 三数取中
-//  @param a
-//  @param b
-//  @param c
-//  @return int
+// threeSumMedian
+// @Description: 三数取中
+// @param a
+// @param b
+// @param c
+// @return int
 //
 func threeSumMedian(a, b, c int) int {
     if b > a {
@@ -248,15 +248,15 @@ func threeSumMedian(a, b, c int) int {
     }
 }
 
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 // 堆排序
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 
 //
-//  HeapSortASC
-//  @Description: 堆排序
-//  @param nums
-//  @return []int
+// HeapSortASC
+// @Description: 堆排序
+// @param nums
+// @return []int
 //
 func HeapSortASC(nums []int) []int {
     n := len(nums)
@@ -272,11 +272,11 @@ func HeapSortASC(nums []int) []int {
 }
 
 //
-//  adjustHeap
-//  @Description: 大根堆调整。每次获取最大值
-//  @param nums
-//  @param n
-//  @param pos
+// adjustHeap
+// @Description: 大根堆调整。每次获取最大值
+// @param nums
+// @param n
+// @param pos
 //
 func adjustHeap(nums []int, n int, pos int) {
     largeIndex := pos
@@ -293,10 +293,10 @@ func adjustHeap(nums []int, n int, pos int) {
 }
 
 //
-//  HeapSortDESC
-//  @Description: 小根堆
-//  @param nums
-//  @return []int
+// HeapSortDESC
+// @Description: 小根堆
+// @param nums
+// @return []int
 //
 func HeapSortDESC(nums []int) []int {
     n := len(nums)
@@ -314,11 +314,11 @@ func HeapSortDESC(nums []int) []int {
 }
 
 //
-//  adjustHeapII
-//  @Description: 堆调整。每次获取最小值
-//  @param nums
-//  @param n
-//  @param pos
+// adjustHeapII
+// @Description: 堆调整。每次获取最小值
+// @param nums
+// @param n
+// @param pos
 //
 func adjustHeapII(nums []int, n int, pos int) {
     smallIdx := pos

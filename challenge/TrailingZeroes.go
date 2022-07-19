@@ -1,10 +1,10 @@
 package challenge
 
 //
-//  TrailingZeroes
-//  @Description: 172. 阶乘后的零
-//  @param n
-//  @return int
+// TrailingZeroes
+// @Description: 172. 阶乘后的零
+// @param n
+// @return int
 //
 func TrailingZeroes(n int) int {
     if n == 0 {

@@ -7,9 +7,9 @@ import (
 )
 
 //
-//  TestConsecutiveNumbersSum
-//  @Description: 829. 连续整数求和
-//  @param t
+// TestConsecutiveNumbersSum
+// @Description: 829. 连续整数求和
+// @param t
 //
 func TestConsecutiveNumbersSum(t *testing.T) {
     res := challenge.ConsecutiveNumbersSum(5)
@@ -17,9 +17,9 @@ func TestConsecutiveNumbersSum(t *testing.T) {
 }
 
 //
-//  TestNumUniqueEmails
-//  @Description: 929. 独特的电子邮件地址
-//  @param t
+// TestNumUniqueEmails
+// @Description: 929. 独特的电子邮件地址
+// @param t
 //
 func TestNumUniqueEmails(t *testing.T) {
     emails := []string{
@@ -32,9 +32,9 @@ func TestNumUniqueEmails(t *testing.T) {
 }
 
 //
-//  TestIsBoomerang
-//  @Description: 1037. 有效的回旋镖
-//  @param t
+// TestIsBoomerang
+// @Description: 1037. 有效的回旋镖
+// @param t
 //
 func TestIsBoomerang(t *testing.T) {
     points := [][]int{{1, 1}, {2, 2}, {3, 2}}

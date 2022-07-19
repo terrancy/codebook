@@ -7,9 +7,9 @@ import (
 )
 
 //
-//  TestTwoSum
-//  @Description:NC61 两数之和
-//  @param t
+// TestTwoSum
+// @Description:NC61 两数之和
+// @param t
 //
 func TestTwoSum(t *testing.T) {
     data := []int{20, 70, 110, 150}
@@ -18,9 +18,9 @@ func TestTwoSum(t *testing.T) {
 }
 
 //
-//  TestTreeSum
-//  @Description: NC54 数组中相加和为0的三元组 /  三数之和
-//  @param t
+// TestTreeSum
+// @Description: NC54 数组中相加和为0的三元组 /  三数之和
+// @param t
 //
 func TestTreeSum(t *testing.T) {
     data := []int{-10, 0, 10, 20, -10, -40}
@@ -29,9 +29,9 @@ func TestTreeSum(t *testing.T) {
 }
 
 //
-//  TestMaxLengthRepeatLess
-//  @Description: NC41 最长无重复子数组
-//  @param t
+// TestMaxLengthRepeatLess
+// @Description: NC41 最长无重复子数组
+// @param t
 //
 func TestMaxLengthRepeatLess(t *testing.T) {
     data := []int{2, 2, 3, 4, 3}
@@ -40,10 +40,10 @@ func TestMaxLengthRepeatLess(t *testing.T) {
 }
 
 //
-//  TestFindDataTarget
-//  @Description: NC29 二维数组中的查找
-//  @Solution: 1. 左下角或者右上角 2. if + continue
-//  @param t
+// TestFindDataTarget
+// @Description: NC29 二维数组中的查找
+// @Solution: 1. 左下角或者右上角 2. if + continue
+// @param t
 //
 func TestFindDataTarget(t *testing.T) {
     data := [][]int{{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}}
@@ -53,9 +53,9 @@ func TestFindDataTarget(t *testing.T) {
 }
 
 //
-//  TestMajorityElement
-//  @Description: NC73 数组中出现次数超过一半的数字
-//  @param t
+// TestMajorityElement
+// @Description: NC73 数组中出现次数超过一半的数字
+// @param t
 //
 func TestMajorityElement(t *testing.T) {
     data := []int{1, 2, 3, 2, 2, 2, 5, 4, 2}
@@ -64,9 +64,9 @@ func TestMajorityElement(t *testing.T) {
 }
 
 //
-//  TestReOrderArray
-//  @Description: NC77 调整数组顺序使奇数位于偶数前面(一)
-//  @param t
+// TestReOrderArray
+// @Description: NC77 调整数组顺序使奇数位于偶数前面(一)
+// @param t
 //
 func TestReOrderArray(t *testing.T) {
     data := []int{1, 3, 5, 6, 7}
@@ -75,9 +75,9 @@ func TestReOrderArray(t *testing.T) {
 }
 
 //
-//  TestReOrderArrayRepeated
-//  @Description: 调整数组顺序使奇数位于偶数前面(二)
-//  @param t
+// TestReOrderArrayRepeated
+// @Description: 调整数组顺序使奇数位于偶数前面(二)
+// @param t
 //
 func TestReOrderArrayRepeated(t *testing.T) {
     data := []int{11, 2, 3, 4, 5, 4, 0}
@@ -86,9 +86,9 @@ func TestReOrderArrayRepeated(t *testing.T) {
 }
 
 //
-//  TestFindMedianInTwoSortedArrayBS
-//  @Description: NC36 在两个长度相等的排序数组中找到上中位数
-//  @param t
+// TestFindMedianInTwoSortedArrayBS
+// @Description: NC36 在两个长度相等的排序数组中找到上中位数
+// @param t
 //
 func TestFindMedianInTwoSortedArrayBS(t *testing.T) {
     data1 := []int{1, 2, 3, 4}
@@ -98,9 +98,9 @@ func TestFindMedianInTwoSortedArrayBS(t *testing.T) {
 }
 
 //
-//  TestInversePairs
-//  @Description: JZ51 数组中的逆序对
-//  @param t
+// TestInversePairs
+// @Description: JZ51 数组中的逆序对
+// @param t
 //
 func TestInversePairs(t *testing.T) {
     data := []int{1, 2, 3, 4, 5, 6, 7, 0}
@@ -109,9 +109,9 @@ func TestInversePairs(t *testing.T) {
 }
 
 //
-//  TestFindRepeatNumber
-//  @Description: JZ3 数组中重复的数字
-//  @param t
+// TestFindRepeatNumber
+// @Description: JZ3 数组中重复的数字
+// @param t
 //
 func TestFindRepeatNumber(t *testing.T) {
     data := []int{2, 3, 1, 0, 2, 5, 3}
@@ -120,9 +120,9 @@ func TestFindRepeatNumber(t *testing.T) {
 }
 
 //
-//  TestPrintMinNumber
-//  @Description: ERR!!
-//  @param t
+// TestPrintMinNumber
+// @Description: ERR!!
+// @param t
 //
 func TestPrintMinNumber(t *testing.T) {
     data := []int{3, 32, 321}
@@ -131,9 +131,9 @@ func TestPrintMinNumber(t *testing.T) {
 }
 
 //
-//  TestPrintNumbers
-//  @Description: JZ17 打印从1到最大的n位数
-//  @param t
+// TestPrintNumbers
+// @Description: JZ17 打印从1到最大的n位数
+// @param t
 //
 func TestPrintNumbers(t *testing.T) {
     n := 2
@@ -142,10 +142,10 @@ func TestPrintNumbers(t *testing.T) {
 }
 
 //
-//  TestSubsetsII
-//  @Description: NC27 集合的所有子集(一)
-//  @Solution: 1、数组长度 2、遍历的起始值设置 3、回溯与记录
-//  @param t
+// TestSubsetsII
+// @Description: NC27 集合的所有子集(一)
+// @Solution: 1、数组长度 2、遍历的起始值设置 3、回溯与记录
+// @param t
 //
 func TestSubsetsII(t *testing.T) {
     data := []int{1, 2, 3}
@@ -154,9 +154,9 @@ func TestSubsetsII(t *testing.T) {
 }
 
 //
-//  TestCombinationSum2
-//  @Description: NC46 加起来和为目标值的组合(二)
-//  @param t
+// TestCombinationSum2
+// @Description: NC46 加起来和为目标值的组合(二)
+// @param t
 //
 func TestCombinationSum2(t *testing.T) {
     data := []int{100, 10, 20, 70, 60, 10, 50}
@@ -166,9 +166,9 @@ func TestCombinationSum2(t *testing.T) {
 }
 
 //
-//  TestSubArrayRanges
-//  @Description: 2104. 子数组范围和
-//  @param t
+// TestSubArrayRanges
+// @Description: 2104. 子数组范围和
+// @param t
 //
 func TestSubArrayRanges(t *testing.T) {
     data := []int{4, -2, -3, 4, 1}
@@ -177,9 +177,9 @@ func TestSubArrayRanges(t *testing.T) {
 }
 
 //
-//  TestFirstMissingPositive
-//  @Description: 41. 缺失的第一个正数
-//  @param t
+// TestFirstMissingPositive
+// @Description: 41. 缺失的第一个正数
+// @param t
 //
 func TestFirstMissingPositive(t *testing.T) {
     data := []int{3, 4, -1, 1}

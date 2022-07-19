@@ -3,10 +3,10 @@ package trees
 import "awesome"
 
 //
-//  MaxPathSum
-//  @Description: NC6 二叉树中的最大路径和
-//  @param root
-//  @return int
+// MaxPathSum
+// @Description: NC6 二叉树中的最大路径和
+// @param root
+// @return int
 //
 var maxPathSumRes = -1001
 

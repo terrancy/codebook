@@ -7,12 +7,12 @@ import (
 )
 
 //
-//  NetworkDelayTime
-//  @Description: 网络延迟问题
-//  @param times
-//  @param N
-//  @param K
-//  @return int
+// NetworkDelayTime
+// @Description: 网络延迟问题
+// @param times
+// @param N
+// @param K
+// @return int
 //
 func NetworkDelayTime(times [][]int, N int, K int) int {
     max := 0

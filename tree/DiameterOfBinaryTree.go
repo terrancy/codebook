@@ -1,10 +1,10 @@
 package trees
 
 //
-//  DiameterOfBinaryTree
-//  @Description: 543. 二叉树的直径
-//  @param root
-//  @return int
+// DiameterOfBinaryTree
+// @Description: 543. 二叉树的直径
+// @param root
+// @return int
 //
 func DiameterOfBinaryTree(root *TreeNode) int {
     res := 0

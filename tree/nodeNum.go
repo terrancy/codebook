@@ -1,10 +1,10 @@
 package trees
 
 //
-//  nodeNum
-//  @Description: NC84 完全二叉树节点数
-//  @param head
-//  @return int
+// nodeNum
+// @Description: NC84 完全二叉树节点数
+// @param head
+// @return int
 //
 func nodeNum(head *TreeNode) int {
     return countNode(head)

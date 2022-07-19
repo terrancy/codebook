@@ -3,10 +3,10 @@ package link
 import "sort"
 
 //
-//  spiralOrder
-//  @Description: NC51 合并k个已排序的链表
-//  @param lists
-//  @return *ListNode
+// spiralOrder
+// @Description: NC51 合并k个已排序的链表
+// @param lists
+// @return *ListNode
 //
 func spiralOrder(lists []*ListNode) *ListNode {
     n := len(lists)
@@ -33,11 +33,11 @@ func spiralOrder(lists []*ListNode) *ListNode {
     return head
 }
 
-//func main() {
-//    data := [][]int{{1, 2, 3,}, {4, 5, 6, 7,}}
-//    list := make([]*ListNode, 0)
-//    for _, val := range data {
-//        list = append(list, makeListNode(val))
-//    }
-//    spiralOrder(list)
-//}
+// func main() {
+//   data := [][]int{{1, 2, 3,}, {4, 5, 6, 7,}}
+//   list := make([]*ListNode, 0)
+//   for _, val := range data {
+//       list = append(list, makeListNode(val))
+//   }
+//   spiralOrder(list)
+// }

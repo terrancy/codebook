@@ -3,11 +3,11 @@ package link
 import "awesome"
 
 //
-//  addInList
-//  @Description:
-//  @param head1
-//  @param head2
-//  @return *ListNode
+// addInList
+// @Description:
+// @param head1
+// @param head2
+// @return *ListNode
 //
 func addInList(head1 *ListNode, head2 *ListNode) *ListNode {
     if head1 == nil && head2 == nil {
@@ -47,11 +47,11 @@ func addInList(head1 *ListNode, head2 *ListNode) *ListNode {
 }
 
 //
-//  towSum
-//  @Description: 大数之和 - 模拟加法
-//  @param data1
-//  @param data2
-//  @return []int
+// towSum
+// @Description: 大数之和 - 模拟加法
+// @param data1
+// @param data2
+// @return []int
 //
 func towSum(data1, data2 []int) []int {
     n, m := len(data1), len(data2)

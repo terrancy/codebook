@@ -1,10 +1,10 @@
 package trees
 
 //
-//  ConvertTree2DualLink
-//  @Description: JZ36 二叉搜索树与双向链表
-//  @param pRootOfTree
-//  @return *TreeNode
+// ConvertTree2DualLink
+// @Description: JZ36 二叉搜索树与双向链表
+// @param pRootOfTree
+// @return *TreeNode
 //
 var preRoot *TreeNode
 
@@ -21,10 +21,10 @@ func ConvertTree2DualLink(pRootOfTree *TreeNode) *TreeNode {
 }
 
 //
-//  dfsConvertTree2DualLink
-//  @Description: 中根遍历
-//  @param root
-//  @return *TreeNode
+// dfsConvertTree2DualLink
+// @Description: 中根遍历
+// @param root
+// @return *TreeNode
 //
 func dfsConvertTree2DualLink(root *TreeNode) {
     if root == nil {
@@ -42,10 +42,10 @@ func dfsConvertTree2DualLink(root *TreeNode) {
 var head, tail *TreeNode
 
 //
-//  ConvertTree2DualLinkII
-//  @Description: JZ36 二叉搜索树与双向链表
-//  @param pRootOfTree
-//  @return *TreeNode
+// ConvertTree2DualLinkII
+// @Description: JZ36 二叉搜索树与双向链表
+// @param pRootOfTree
+// @return *TreeNode
 //
 func ConvertTree2DualLinkII(pRootOfTree *TreeNode) *TreeNode {
     if pRootOfTree == nil {
@@ -56,9 +56,9 @@ func ConvertTree2DualLinkII(pRootOfTree *TreeNode) *TreeNode {
 }
 
 //
-//  inOrderConvertTree2DualLink
-//  @Description: 中根遍历
-//  @param root
+// inOrderConvertTree2DualLink
+// @Description: 中根遍历
+// @param root
 //
 func inOrderConvertTree2DualLink(root *TreeNode) {
     if root == nil {

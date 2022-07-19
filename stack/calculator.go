@@ -3,10 +3,10 @@ package stack
 // 计算器系列相关
 
 //
-//  Calculator
-//  @Description: 请写一个整数计算器，支持加减乘三种运算和括号
-//  @param s
-//  @return int
+// Calculator
+// @Description: 请写一个整数计算器，支持加减乘三种运算和括号
+// @param s
+// @return int
 //
 func Calculator(s string) int {
     // 数据初始化

@@ -1,12 +1,12 @@
 package array
 
 //
-//  FindTarget
-//  @Description: NC29 二维数组中的查找
-//  @Solution: 1. 左下角或者右上角 2. if + continue
-//  @param target
-//  @param nums
-//  @return bool
+// FindTarget
+// @Description: NC29 二维数组中的查找
+// @Solution: 1. 左下角或者右上角 2. if + continue
+// @param target
+// @param nums
+// @return bool
 //
 func FindTarget(target int, nums [][]int) bool {
     n := len(nums)

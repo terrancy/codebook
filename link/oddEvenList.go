@@ -1,10 +1,10 @@
 package link
 
 //
-//  oddEvenList
-//  @Description: NC133 链表的奇偶重排
-//  @param head
-//  @return *ListNode
+// oddEvenList
+// @Description: NC133 链表的奇偶重排
+// @param head
+// @return *ListNode
 //
 func oddEvenList(head *ListNode) *ListNode {
     if head == nil || head.Next == nil {

@@ -3,10 +3,10 @@ package array
 import "math"
 
 //
-//  PrintNumbers
-//  @Description: JZ17 打印从1到最大的n位数
-//  @param n
-//  @return []int
+// PrintNumbers
+// @Description: JZ17 打印从1到最大的n位数
+// @param n
+// @return []int
 //
 func PrintNumbers(n int) []int {
     // 普通解法
@@ -19,11 +19,11 @@ func PrintNumbers(n int) []int {
 }
 
 //
-//  PrintNumbersBigData
-//  @Description: JZ17 打印从1到最大的n位数
-//  @Description: 考虑大数, 模拟大数加法
-//  @param n
-//  @return []int
+// PrintNumbersBigData
+// @Description: JZ17 打印从1到最大的n位数
+// @Description: 考虑大数, 模拟大数加法
+// @param n
+// @return []int
 //
 func PrintNumbersBigData(n int) []int {
     return nil

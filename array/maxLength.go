@@ -3,10 +3,10 @@ package array
 import "awesome"
 
 //
-//  maxLength
-//  @Description: NC41 最长无重复子数组
-//  @param arr
-//  @return int
+// maxLength
+// @Description: NC41 最长无重复子数组
+// @param arr
+// @return int
 //
 func maxLength(arr []int) int {
     // write code here
@@ -28,11 +28,11 @@ func maxLength(arr []int) int {
 }
 
 //
-//  MaxLengthRepeatLess
-//  @Description: NC41 最长无重复子数组
-//  @Solution: 哈希表 + 双指针, l, r := -1, 0
-//  @param arr
-//  @return int
+// MaxLengthRepeatLess
+// @Description: NC41 最长无重复子数组
+// @Solution: 哈希表 + 双指针, l, r := -1, 0
+// @param arr
+// @return int
 //
 func MaxLengthRepeatLess(arr []int) int {
     n := len(arr)

@@ -3,12 +3,12 @@ package others
 // 位运算相关
 
 //
-//  foundOnceNumber
-//  @Description: NC156 数组中只出现一次的数（其它数出现k次）
-//  @Solution:
-//  @param arr
-//  @param k
-//  @return int
+// foundOnceNumber
+// @Description: NC156 数组中只出现一次的数（其它数出现k次）
+// @Solution:
+// @param arr
+// @param k
+// @return int
 //
 func FoundOnceNumber(arr []int, k int) int {
     var ans, negative = 0, false
@@ -34,10 +34,10 @@ func FoundOnceNumber(arr []int, k int) int {
 }
 
 //
-//  FindNumsAppearOnce
-//  @Description: NC75 数组中只出现一次的两个数字
-//  @param array
-//  @return []int
+// FindNumsAppearOnce
+// @Description: NC75 数组中只出现一次的两个数字
+// @param array
+// @return []int
 //
 func FindNumsAppearOnce(array []int) []int {
     // 求数组异或
@@ -67,10 +67,10 @@ func FindNumsAppearOnce(array []int) []int {
 }
 
 //
-//  xorSum
-//  @Description: 数组异或
-//  @param []int
-//  @return int
+// xorSum
+// @Description: 数组异或
+// @param []int
+// @return int
 //
 func arrayXor(nums []int) int {
     ans := 0
@@ -81,11 +81,11 @@ func arrayXor(nums []int) int {
 }
 
 //
-//  scaleConvert
-//  @Description: NC112 进制转换
-//  @param num
-//  @param scale
-//  @return string
+// scaleConvert
+// @Description: NC112 进制转换
+// @param num
+// @param scale
+// @return string
 //
 func ScaleConvert(num int, scale int) string {
     negative := ""
@@ -104,11 +104,11 @@ func ScaleConvert(num int, scale int) string {
 }
 
 //
-//  addNumber
-//  @Description: JZ65 不用加减乘除做加法
-//  @param num1
-//  @param num2
-//  @return int
+// addNumber
+// @Description: JZ65 不用加减乘除做加法
+// @param num1
+// @param num2
+// @return int
 //
 func AddNumber(num1, num2 int) int {
     for num2 != 0 {
@@ -120,11 +120,11 @@ func AddNumber(num1, num2 int) int {
 }
 
 //
-//  MyPow
-//  @Description: JZ16 数值的整数次方
-//  @param x
-//  @param n
-//  @return float64
+// MyPow
+// @Description: JZ16 数值的整数次方
+// @param x
+// @param n
+// @return float64
 //
 func MyPow(x float64, n int) float64 {
     if x == 0 || x == 1 {

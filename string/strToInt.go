@@ -3,10 +3,10 @@ package strings
 import "math"
 
 //
-//  strToInt
-//  @Description: 字符转数字
-//  @param str
-//  @return int
+// strToInt
+// @Description: 字符转数字
+// @param str
+// @return int
 //
 func strToInt(str string) int {
     n := len(str)

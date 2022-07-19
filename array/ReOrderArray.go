@@ -1,10 +1,10 @@
 package array
 
 //
-//  ReOrderArray
-//  @Description: 奇偶位置 - 不是奇偶数
-//  @param nums
-//  @return []int
+// ReOrderArray
+// @Description: 奇偶位置 - 不是奇偶数
+// @param nums
+// @return []int
 //
 func ReOrderArray(nums []int) []int {
     n := len(nums)
@@ -23,11 +23,11 @@ func ReOrderArray(nums []int) []int {
 }
 
 //
-//  ReOrderArrayII
-//  @Description: NC77 调整数组顺序使奇数位于偶数前面(一), 并保证奇数和奇数，偶数和偶数之间的相对位置不变(稳定型)
-//  @Description: 时间复杂度O(N^2) 空间复杂度O(1)
-//  @param nums
-//  @return []int
+// ReOrderArrayII
+// @Description: NC77 调整数组顺序使奇数位于偶数前面(一), 并保证奇数和奇数，偶数和偶数之间的相对位置不变(稳定型)
+// @Description: 时间复杂度O(N^2) 空间复杂度O(1)
+// @param nums
+// @return []int
 //
 func ReOrderArrayII(nums []int) []int {
     n := len(nums)
@@ -49,10 +49,10 @@ func ReOrderArrayII(nums []int) []int {
 }
 
 //
-//  ReOrderArrayRepeatedIII
-//  @Description: 不保证稳定性
-//  @param nums
-//  @return []int
+// ReOrderArrayRepeatedIII
+// @Description: 不保证稳定性
+// @param nums
+// @return []int
 //
 func ReOrderArrayRepeatedIII(nums []int) []int {
     n := len(nums)
@@ -69,12 +69,12 @@ func ReOrderArrayRepeatedIII(nums []int) []int {
 }
 
 //
-//  ReOrderArrayRepeated
-//  @Description: 调整数组顺序使奇数位于偶数前面(二)
-//  @Description: 使得所有的奇数位于数组的前面部分，所有的偶数位于数组的后面部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变
-//  @Description: 时间复杂度 O(N),空间复杂度O(1)
-//  @param nums
-//  @return []int
+// ReOrderArrayRepeated
+// @Description: 调整数组顺序使奇数位于偶数前面(二)
+// @Description: 使得所有的奇数位于数组的前面部分，所有的偶数位于数组的后面部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变
+// @Description: 时间复杂度 O(N),空间复杂度O(1)
+// @param nums
+// @return []int
 //
 func ReOrderArrayRepeated(nums []int) []int {
     n := len(nums)

@@ -1,10 +1,10 @@
 package trees
 
 //
-//  bfs
-//  @Description: NC15 求二叉树的层序遍历
-//  @param root
-//  @return [][]int
+// bfs
+// @Description: NC15 求二叉树的层序遍历
+// @param root
+// @return [][]int
 //
 func bfs(root *TreeNode) [][]int {
     if root == nil {

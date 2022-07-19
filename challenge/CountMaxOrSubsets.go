@@ -1,10 +1,10 @@
 package challenge
 
 //
-//  CountMaxOrSubsets
-//  @Description: 2044. 统计按位或能得到最大值的子集数目
-//  @param nums
-//  @return int
+// CountMaxOrSubsets
+// @Description: 2044. 统计按位或能得到最大值的子集数目
+// @param nums
+// @return int
 //
 func CountMaxOrSubsets(nums []int) int {
     var n int = len(nums)

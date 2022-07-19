@@ -6,9 +6,9 @@ import (
 )
 
 //
-//  TestLinkReverse
-//  @Description: 链表翻转
-//  @param t
+// TestLinkReverse
+// @Description: 链表翻转
+// @param t
 //
 func TestLinkReverse(t *testing.T) {
     data := []int{1, 2, 3, 4, 5, 6, 7}
@@ -18,8 +18,8 @@ func TestLinkReverse(t *testing.T) {
 }
 
 //
-//  TestHalfReverse
-//  @Description:
+// TestHalfReverse
+// @Description:
 //
 func TestHalfReverse(t *testing.T) {
     data := []int{1, 2, 3, 4, 5, 6, 7}
@@ -29,9 +29,9 @@ func TestHalfReverse(t *testing.T) {
 }
 
 //
-//  TestDeleteDuplicates
-//  @Description: NC25 删除有序链表中重复的元素-I
-//  @param t
+// TestDeleteDuplicates
+// @Description: NC25 删除有序链表中重复的元素-I
+// @param t
 //
 func TestDeleteDuplicates(t *testing.T) {
     data := []int{1, 2, 2}
@@ -41,9 +41,9 @@ func TestDeleteDuplicates(t *testing.T) {
 }
 
 //
-//  TestDeleteDuplicatesII
-//  @Description: NC24 删除有序链表中重复的元素-II
-//  @param t
+// TestDeleteDuplicatesII
+// @Description: NC24 删除有序链表中重复的元素-II
+// @param t
 //
 func TestDeleteDuplicatesII(t *testing.T) {
     data := []int{1, 2, 2}
@@ -53,9 +53,9 @@ func TestDeleteDuplicatesII(t *testing.T) {
 }
 
 //
-//  TestRemoveNthFromEnd
-//  @Description: NC53 删除链表的倒数第n个节点
-//  @param t
+// TestRemoveNthFromEnd
+// @Description: NC53 删除链表的倒数第n个节点
+// @param t
 //
 func TestRemoveNthFromEnd(t *testing.T) {
     data := []int{1, 2}
@@ -65,9 +65,9 @@ func TestRemoveNthFromEnd(t *testing.T) {
 }
 
 //
-//  TestReverseBetween
-//  @Description: NC21 链表内指定区间反转
-//  @param t
+// TestReverseBetween
+// @Description: NC21 链表内指定区间反转
+// @param t
 //
 func TestReverseBetween(t *testing.T) {
     data := []int{1, 2}
@@ -84,9 +84,9 @@ func TestReverseKGroup(t *testing.T) {
 }
 
 //
-//  TestInsertSortList
-//  @Description: NC244 对链表进行插入排序
-//  @param t
+// TestInsertSortList
+// @Description: NC244 对链表进行插入排序
+// @param t
 //
 func TestInsertSortList(t *testing.T) {
     data := []int{2, 4, 1}
@@ -96,9 +96,9 @@ func TestInsertSortList(t *testing.T) {
 }
 
 //
-//  TestSwapLinkedPair
-//  @Description: NC186 两两交换链表的节点
-//  @param t
+// TestSwapLinkedPair
+// @Description: NC186 两两交换链表的节点
+// @param t
 //
 func TestSwapLinkedPair(t *testing.T) {
     data := []int{1, 2, 3, 4}
@@ -108,8 +108,8 @@ func TestSwapLinkedPair(t *testing.T) {
 }
 
 //
-//  sortLinkedList
-//  @Description: NC207 排序奇升偶降链表
+// sortLinkedList
+// @Description: NC207 排序奇升偶降链表
 //
 func TestSortLinkedList(t *testing.T) {
     data := []int{1, 3, 2, 2, 3, 1}
@@ -119,9 +119,9 @@ func TestSortLinkedList(t *testing.T) {
 }
 
 //
-//  TestRotateLinkedList
-//  @Description: NC211 旋转链表
-//  @param t
+// TestRotateLinkedList
+// @Description: NC211 旋转链表
+// @param t
 //
 func TestRotateLinkedList(t *testing.T) {
     data := []int{1, 2, 3}
@@ -131,9 +131,9 @@ func TestRotateLinkedList(t *testing.T) {
 }
 
 //
-//  TestPlusOne
-//  @Description: 链表加1
-//  @param t
+// TestPlusOne
+// @Description: 链表加1
+// @param t
 //
 func TestPlusOne(t *testing.T) {
     data := []int{9, 9, 9}
@@ -143,9 +143,9 @@ func TestPlusOne(t *testing.T) {
 }
 
 //
-//  TestOddEvenList
-//  @Description: NC133 链表的奇偶重排
-//  @param t
+// TestOddEvenList
+// @Description: NC133 链表的奇偶重排
+// @param t
 //
 func TestOddEvenList(t *testing.T) {
     data := []int{1, 4, 6, 3, 7}
@@ -155,9 +155,9 @@ func TestOddEvenList(t *testing.T) {
 }
 
 //
-//  TestCopyRandomList
-//  @Description:JZ35 复杂链表的复制
-//  @param t
+// TestCopyRandomList
+// @Description:JZ35 复杂链表的复制
+// @param t
 //
 func TestCopyRandomList(t *testing.T) {
     data := []int{1, 2, 3, 4, 5}
@@ -166,9 +166,9 @@ func TestCopyRandomList(t *testing.T) {
 }
 
 //
-//  TestMergeKLists
-//  @Description: NC51 合并k个已排序的链表
-//  @param t
+// TestMergeKLists
+// @Description: NC51 合并k个已排序的链表
+// @param t
 //
 func TestMergeKLists(t *testing.T) {
     data := [][]int{{1, 2}, {1, 4, 5}, {6}}

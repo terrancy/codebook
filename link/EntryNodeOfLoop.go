@@ -1,12 +1,12 @@
 package link
 
 //
-//  EntryNodeOfLoop
-//  @Description: NC3 链表中环的入口结点
-//  @Solution: 快慢指针相遇(快=2慢),快重头走,慢继续走直到相遇.
-//  @Warn: 无环和最大环的判断
-//  @param pHead
-//  @return *ListNode
+// EntryNodeOfLoop
+// @Description: NC3 链表中环的入口结点
+// @Solution: 快慢指针相遇(快=2慢),快重头走,慢继续走直到相遇.
+// @Warn: 无环和最大环的判断
+// @param pHead
+// @return *ListNode
 //
 func EntryNodeOfLoop(pHead *ListNode) *ListNode {
     slow, fast := pHead, pHead

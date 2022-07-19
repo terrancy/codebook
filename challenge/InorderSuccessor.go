@@ -3,11 +3,11 @@ package challenge
 import trees "awesome/tree"
 
 //
-//  InorderSuccessor
-//  @Description: 面试题 04.06. 后继者
-//  @param root
-//  @param p
-//  @return *trees.TreeNode
+// InorderSuccessor
+// @Description: 面试题 04.06. 后继者
+// @param root
+// @param p
+// @return *trees.TreeNode
 //
 func InorderSuccessor(root, p *trees.TreeNode) *trees.TreeNode {
     var successor *trees.TreeNode

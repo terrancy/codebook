@@ -5,10 +5,10 @@ import (
 )
 
 //
-//  CuttingRopes
-//  @Description: JZ14 剪绳子 - 动态规划
-//  @param n
-//  @return int
+// CuttingRopes
+// @Description: JZ14 剪绳子 - 动态规划
+// @param n
+// @return int
 //
 func CuttingRopesDP(number int) int {
     // DP[i] 表示长度为i的绳子的最大乘积
@@ -25,10 +25,10 @@ func CuttingRopesDP(number int) int {
 }
 
 //
-//  CuttingRosesGreedy
-//  @Description: Z14 剪绳子 - 贪心算法
-//  @param number
-//  @return int
+// CuttingRosesGreedy
+// @Description: Z14 剪绳子 - 贪心算法
+// @param number
+// @return int
 //
 func CuttingRosesGreedy(number int) int {
     // 重点在于公式推导: 将绳子等分为长度为3的若干份时乘积最大
@@ -52,11 +52,11 @@ func CuttingRosesGreedy(number int) int {
 }
 
 //
-//  cuttingRopePow
-//  @Description: 乘方操作时需要模操作
-//  @param x
-//  @param n
-//  @return int64
+// cuttingRopePow
+// @Description: 乘方操作时需要模操作
+// @param x
+// @param n
+// @return int64
 //
 func cuttingRopePow(x, n int64) int64 {
     var res int64 = 1

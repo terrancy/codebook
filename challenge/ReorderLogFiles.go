@@ -7,10 +7,10 @@ import (
 )
 
 //
-//  ReorderLogFiles
-//  @Description: 937. 重新排列日志文件
-//  @param logs
-//  @return []string
+// ReorderLogFiles
+// @Description: 937. 重新排列日志文件
+// @param logs
+// @return []string
 //
 func ReorderLogFiles(logs []string) []string {
     sort.SliceStable(logs, func(i, j int) bool {

@@ -5,11 +5,11 @@ import (
 )
 
 //
-//  permuteUnique
-//  @Description: NC42 有重复项数字的全排列
-//  @Description: 给出一组可能包含重复项的数字，返回该组数字的所有排列。结果以字典序升序排列
-//  @param num
-//  @return [][]int
+// permuteUnique
+// @Description: NC42 有重复项数字的全排列
+// @Description: 给出一组可能包含重复项的数字，返回该组数字的所有排列。结果以字典序升序排列
+// @param num
+// @return [][]int
 //
 func PermuteUnique(num []int) [][]int {
     sort.Ints(num)
@@ -20,16 +20,16 @@ func PermuteUnique(num []int) [][]int {
 }
 
 //
-//  backtrackPermuteUnique
-//  @Description: 全排列回溯框架
-//  @param num
-//  @param used
-//  @param res
-//  @param tmp
+// backtrackPermuteUnique
+// @Description: 全排列回溯框架
+// @param num
+// @param used
+// @param res
+// @param tmp
 //
 func backtrackPermuteUnique(num []int, used []bool, res *[][]int, tmp []int) {
     if len(num) == len(tmp) {
-        //*res = append(*res, tmp)
+        // *res = append(*res, tmp)
         // !!使用切片的copy方法,不然容易出错
         target := make([]int, len(num))
         copy(target, tmp)

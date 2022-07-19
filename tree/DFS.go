@@ -1,10 +1,10 @@
 package trees
 
 //
-//  ThreeOrders
-//  @Description: NC45 实现二叉树先序，中序和后序遍历
-//  @param root
-//  @return [][]int
+// ThreeOrders
+// @Description: NC45 实现二叉树先序，中序和后序遍历
+// @param root
+// @return [][]int
 //
 func ThreeOrders(root *TreeNode) [][]int {
     res := make([][]int, 3)
@@ -30,11 +30,11 @@ func dfs(root *TreeNode, res [][]int) {
 // 非递归/迭代
 
 //
-//  inorder
-//  @Description: 中根遍历 - 迭代
-//  @Solution: 根不空时循环左入栈,栈不空时根出栈且右入栈
-//  @param root
-//  @param res
+// inorder
+// @Description: 中根遍历 - 迭代
+// @Solution: 根不空时循环左入栈,栈不空时根出栈且右入栈
+// @param root
+// @param res
 //
 func inorder(root *TreeNode, res [][]int) {
     if root == nil {
@@ -60,11 +60,11 @@ func inorder(root *TreeNode, res [][]int) {
 }
 
 //
-//  preorder
-//  @Description: 先根遍历 - 迭代
-//  @Solution: 根入栈,出栈,右左入栈
-//  @param root
-//  @param res
+// preorder
+// @Description: 先根遍历 - 迭代
+// @Solution: 根入栈,出栈,右左入栈
+// @param root
+// @param res
 //
 func preorder(root *TreeNode, res [][]int) {
     if root == nil {
@@ -85,11 +85,11 @@ func preorder(root *TreeNode, res [][]int) {
 }
 
 //
-//  postorder
-//  @Description: 后根遍历 - 迭代
-//  @Solution: 根入栈,出栈,左右入栈,翻转
-//  @param root
-//  @param res
+// postorder
+// @Description: 后根遍历 - 迭代
+// @Solution: 根入栈,出栈,左右入栈,翻转
+// @param root
+// @param res
 //
 func postorder(root *TreeNode, res [][]int) {
     if root == nil {

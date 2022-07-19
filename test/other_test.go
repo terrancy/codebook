@@ -6,14 +6,14 @@ import (
     "testing"
 )
 
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 // 第N次出现的数字
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 
 //
-//  TestFoundOnceNumber
-//  @Description: NC156 数组中只出现一次的数（其它数出现k次）
-//  @param t
+// TestFoundOnceNumber
+// @Description: NC156 数组中只出现一次的数（其它数出现k次）
+// @param t
 //
 func TestFoundOnceNumber(t *testing.T) {
     data := []int{5, -4, 1, 1, 5, 1, 5}
@@ -22,9 +22,9 @@ func TestFoundOnceNumber(t *testing.T) {
 }
 
 //
-//  TestFindNumsAppearOnce
-//  @Description: NC75 数组中只出现一次的两个数字
-//  @param t
+// TestFindNumsAppearOnce
+// @Description: NC75 数组中只出现一次的两个数字
+// @param t
 //
 func TestFindNumsAppearOnce(t *testing.T) {
     data := []int{1, 2, 3, 3, 2, 9}
@@ -33,9 +33,9 @@ func TestFindNumsAppearOnce(t *testing.T) {
 }
 
 //
-//  TestTopKStrings
-//  @Description: NC97 字符串出现次数的TopK问题
-//  @param t
+// TestTopKStrings
+// @Description: NC97 字符串出现次数的TopK问题
+// @param t
 //
 func TestTopKStrings(t *testing.T) {
     data := []string{"123", "123", "231", "32"}
@@ -44,9 +44,9 @@ func TestTopKStrings(t *testing.T) {
 }
 
 //
-//  TestFindNthDigit
-//  @Description: JZ44 数字序列中某一位的数字
-//  @param t
+// TestFindNthDigit
+// @Description: JZ44 数字序列中某一位的数字
+// @param t
 //
 func TestFindNthDigit(t *testing.T) {
     n := 13
@@ -54,14 +54,14 @@ func TestFindNthDigit(t *testing.T) {
     fmt.Println(res)
 }
 
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 // 有趣的数字
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 
 //
-//  TestIsPokerContinuous
-//  @Description: NC63 扑克牌顺子
-//  @param t
+// TestIsPokerContinuous
+// @Description: NC63 扑克牌顺子
+// @param t
 //
 func TestIsPokerContinuous(t *testing.T) {
     data := []int{6, 0, 2, 0, 4}
@@ -70,9 +70,9 @@ func TestIsPokerContinuous(t *testing.T) {
 }
 
 //
-//  TestIsPalindrome
-//  @Description: NC56 回文数字
-//  @param t
+// TestIsPalindrome
+// @Description: NC56 回文数字
+// @param t
 //
 func TestIsPalindrome(t *testing.T) {
     num := 1001
@@ -81,24 +81,24 @@ func TestIsPalindrome(t *testing.T) {
 }
 
 //
-//  TestUglyNumber
-//  @Description: 丑数
-//  @param t
+// TestUglyNumber
+// @Description: 丑数
+// @param t
 //
 func TestUglyNumber(t *testing.T) {
     res := others.UglyNumber(7)
     fmt.Println(res)
 }
 
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 // 二分查找
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 
 //
-//  TestBinSearchII
-//  @Description: NC105 二分查找-II
-//  @Description: 重复数字的升序数组的二分查找第一个出现的数字
-//  @param t
+// TestBinSearchII
+// @Description: NC105 二分查找-II
+// @Description: 重复数字的升序数组的二分查找第一个出现的数字
+// @param t
 //
 func TestBinSearchII(t *testing.T) {
     data := []int{1, 2, 4, 4, 5}
@@ -108,10 +108,10 @@ func TestBinSearchII(t *testing.T) {
 }
 
 //
-//  TestGetNumberOfK
-//  @Description: NC74 数字在升序数组中出现的次数
-//  @Solution: 1.边界判断 2.左边界 3.有边界 4.返回
-//  @param t
+// TestGetNumberOfK
+// @Description: NC74 数字在升序数组中出现的次数
+// @Solution: 1.边界判断 2.左边界 3.有边界 4.返回
+// @param t
 //
 func TestGetNumberOfK(t *testing.T) {
     data := []int{1, 2, 3, 3, 3, 3, 4, 5}
@@ -121,9 +121,9 @@ func TestGetNumberOfK(t *testing.T) {
 }
 
 //
-//  TestMinNumberInRotateArray
-//  @Description: NC71 旋转数组的最小数字
-//  @param t
+// TestMinNumberInRotateArray
+// @Description: NC71 旋转数组的最小数字
+// @param t
 //
 func TestMinNumberInRotateArray(t *testing.T) {
     data := []int{3, 4, 5, 1, 2}
@@ -132,9 +132,9 @@ func TestMinNumberInRotateArray(t *testing.T) {
 }
 
 //
-//  TestTargetNumberInRotateArray
-//  @Description: NC48 在旋转过的有序数组中寻找目标值
-//  @param t
+// TestTargetNumberInRotateArray
+// @Description: NC48 在旋转过的有序数组中寻找目标值
+// @param t
 //
 func TestTargetNumberInRotateArray(t *testing.T) {
     data := []int{1, 3}
@@ -142,13 +142,13 @@ func TestTargetNumberInRotateArray(t *testing.T) {
     fmt.Println(res)
 }
 
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 // 模拟
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 //
-//  TestScaleConvert
-//  @Description: 进制转换
-//  @param t
+// TestScaleConvert
+// @Description: 进制转换
+// @param t
 //
 func TestScaleConvert(t *testing.T) {
     res := others.ScaleConvert(-4, 3)
@@ -156,9 +156,9 @@ func TestScaleConvert(t *testing.T) {
 }
 
 //
-//  TestGcd
-//  @Description: NC151 最大公约数
-//  @param t
+// TestGcd
+// @Description: NC151 最大公约数
+// @param t
 //
 func TestGcd(t *testing.T) {
     res := others.GcdII(3, 4)
@@ -166,9 +166,9 @@ func TestGcd(t *testing.T) {
 }
 
 //
-//  TestMaxNums
-//  @Description:NC111 最大数
-//  @param t
+// TestMaxNums
+// @Description:NC111 最大数
+// @param t
 //
 func TestMaxNums(t *testing.T) {
     data := []int{2, 20, 23, 4, 8}
@@ -177,9 +177,9 @@ func TestMaxNums(t *testing.T) {
 }
 
 //
-//  TestNumberOfZeroFactorial
-//  @Description: NC129 阶乘末尾0的数量
-//  @param t
+// TestNumberOfZeroFactorial
+// @Description: NC129 阶乘末尾0的数量
+// @param t
 //
 func TestNumberOfZeroFactorial(t *testing.T) {
     res := others.NumberOfZeroFactorial(1000000000)
@@ -187,9 +187,9 @@ func TestNumberOfZeroFactorial(t *testing.T) {
 }
 
 //
-//  TestBigNumberPlus
-//  @Description: NC1 大数加法
-//  @param t
+// TestBigNumberPlus
+// @Description: NC1 大数加法
+// @param t
 //
 func TestBigNumberPlus(t *testing.T) {
     res := others.BigNumberPlus("1", "99")
@@ -197,9 +197,9 @@ func TestBigNumberPlus(t *testing.T) {
 }
 
 //
-//  TestBigNumberProduct
-//  @Description: NC10 大数乘法
-//  @param t
+// TestBigNumberProduct
+// @Description: NC10 大数乘法
+// @param t
 //
 func TestBigNumberProduct(t *testing.T) {
     source := "11"
@@ -209,9 +209,9 @@ func TestBigNumberProduct(t *testing.T) {
 }
 
 //
-//  TestSqrt
-//  @Description: NC32 求平方根
-//  @param t
+// TestSqrt
+// @Description: NC32 求平方根
+// @param t
 //
 func TestSQRT(t *testing.T) {
     res := others.SQRT(5)
@@ -219,9 +219,9 @@ func TestSQRT(t *testing.T) {
 }
 
 //
-//  TestAddNumber
-//  @Description: JZ65 不用加减乘除做加法
-//  @param t
+// TestAddNumber
+// @Description: JZ65 不用加减乘除做加法
+// @param t
 //
 func TestAddNumber(t *testing.T) {
     a, b := 1001, 2020
@@ -230,9 +230,9 @@ func TestAddNumber(t *testing.T) {
 }
 
 //
-//  TestMyPow
-//  @Description:数值的整数次方/幂运算
-//  @param t
+// TestMyPow
+// @Description:数值的整数次方/幂运算
+// @param t
 //
 func TestMyPow(t *testing.T) {
     var x float64 = 100

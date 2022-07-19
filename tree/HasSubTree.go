@@ -1,11 +1,11 @@
 package trees
 
 //
-//  HasSubTree
-//  @Description: JZ26 树的子结构
-//  @param pRoot1
-//  @param pRoot2
-//  @return bool
+// HasSubTree
+// @Description: JZ26 树的子结构
+// @param pRoot1
+// @param pRoot2
+// @return bool
 //
 func HasSubTree(pRoot1 *TreeNode, pRoot2 *TreeNode) bool {
     if pRoot1 == nil || pRoot2 == nil {
@@ -13,12 +13,13 @@ func HasSubTree(pRoot1 *TreeNode, pRoot2 *TreeNode) bool {
     }
     return dfsHasSubTree(pRoot1, pRoot2) || HasSubTree(pRoot1.Left, pRoot2) || HasSubTree(pRoot1.Right, pRoot2)
 }
+
 //
-//  dfsHasSubTree
-//  @Description:JZ26 树的子结构
-//  @param pRoot1
-//  @param pRoot2
-//  @return bool
+// dfsHasSubTree
+// @Description:JZ26 树的子结构
+// @param pRoot1
+// @param pRoot2
+// @return bool
 //
 func dfsHasSubTree(pRoot1 *TreeNode, pRoot2 *TreeNode) bool {
     if pRoot2 == nil {

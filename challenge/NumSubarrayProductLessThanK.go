@@ -1,11 +1,11 @@
 package challenge
 
 //
-//  NumSubarrayProductLessThanK
-//  @Description: 713. 乘积小于 K 的子数组
-//  @param nums
-//  @param k
-//  @return int
+// NumSubarrayProductLessThanK
+// @Description: 713. 乘积小于 K 的子数组
+// @param nums
+// @param k
+// @return int
 //
 func NumSubarrayProductLessThanK(nums []int, k int) int {
     if k == 0 {

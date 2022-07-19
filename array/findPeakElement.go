@@ -1,10 +1,10 @@
 package array
 
 //
-//  findPeakElement
-//  @Description: NC107 寻找峰值
-//  @param num
-//  @return int
+// findPeakElement
+// @Description: NC107 寻找峰值
+// @param num
+// @return int
 //
 func findPeakElement(nums []int) int {
     n := len(nums)
@@ -21,10 +21,10 @@ func findPeakElement(nums []int) int {
 }
 
 //
-//  findPeakElementBinarySearch
-//  @Description: 寻找峰值 - 二分查找 O(logN)
-//  @param nums
-//  @return int
+// findPeakElementBinarySearch
+// @Description: 寻找峰值 - 二分查找 O(logN)
+// @param nums
+// @return int
 //
 func findPeakElementBinarySearch(nums []int) int {
     n := len(nums)

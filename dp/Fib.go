@@ -1,10 +1,10 @@
 package dp
 
 //
-//  Fib
-//  @Description: 剑指 Offer 10- I. 斐波那契数列
-//  @param n
-//  @return int
+// Fib
+// @Description: 剑指 Offer 10- I. 斐波那契数列
+// @param n
+// @return int
 //
 func Fib(n int) int {
     if n < 2 {

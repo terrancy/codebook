@@ -1,11 +1,11 @@
 package challenge
 
 //
-//  OneEditAway
-//  @Description: 面试题 01.05. 一次编辑
-//  @param first
-//  @param second
-//  @return bool
+// OneEditAway
+// @Description: 面试题 01.05. 一次编辑
+// @param first
+// @param second
+// @return bool
 //
 func OneEditAway(first, second string) bool {
     m, n := len(first), len(second)

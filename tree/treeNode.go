@@ -3,8 +3,8 @@ package trees
 import "awesome"
 
 //
-//  TreeNode
-//  @Description: 二叉树树节点
+// TreeNode
+// @Description: 二叉树树节点
 //
 type TreeNode struct {
     Val   int
@@ -13,8 +13,8 @@ type TreeNode struct {
 }
 
 //
-//  TreeLinkNode
-//  @Description: 指向父节点的二叉树节点
+// TreeLinkNode
+// @Description: 指向父节点的二叉树节点
 //
 type TreeLinkNode struct {
     Val   int
@@ -24,10 +24,10 @@ type TreeLinkNode struct {
 }
 
 //
-//  BuildTreeNode
-//  @Description: 通过数组层序遍历构建"满二叉树"
-//  @param data
-//  @return *TreeNode
+// BuildTreeNode
+// @Description: 通过数组层序遍历构建"满二叉树"
+// @param data
+// @return *TreeNode
 //
 func BuildTreeNode(data []int) *TreeNode {
     // 数组优化

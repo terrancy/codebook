@@ -1,10 +1,10 @@
 package trees
 
 //
-//  VerifySequenceOfBST
-//  @Description: JZ33 二叉搜索树的后序遍历序列
-//  @param sequence
-//  @return bool
+// VerifySequenceOfBST
+// @Description: JZ33 二叉搜索树的后序遍历序列
+// @param sequence
+// @return bool
 //
 func VerifySequenceOfBST(sequence []int) bool {
     if sequence == nil {
@@ -14,11 +14,11 @@ func VerifySequenceOfBST(sequence []int) bool {
 }
 
 //
-//  verifyIfBST
-//  @Description: 递归判断是否满足二叉搜索树
-//  @Solution:
-//  @param sequence
-//  @return bool
+// verifyIfBST
+// @Description: 递归判断是否满足二叉搜索树
+// @Solution:
+// @param sequence
+// @return bool
 //
 func verifyIfBST(sequence []int) bool {
     n := len(sequence)
@@ -48,10 +48,10 @@ func verifyIfBST(sequence []int) bool {
 }
 
 //
-//  verifyIfBSTII
-//  @Description: 判断一个数组的是否为搜索树的中序遍历序列
-//  @param data
-//  @return bool
+// verifyIfBSTII
+// @Description: 判断一个数组的是否为搜索树的中序遍历序列
+// @param data
+// @return bool
 //
 func verifyIfBSTII(data []int) bool {
     n := len(data)

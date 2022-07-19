@@ -1,10 +1,10 @@
 package link
 
 //
-//  ysfLink
-//  @Description: 约瑟夫环链表
-//  @param n 1~n人组成圈
-//  @param m 报数步长step
+// ysfLink
+// @Description: 约瑟夫环链表
+// @param n 1~n人组成圈
+// @param m 报数步长step
 //
 func ysfLink(n, m int) int {
     if n == 1 {
@@ -44,7 +44,7 @@ func ysfII(n, m int) int {
     return ans + 1
 }
 
-//func main() {
-//    res := ysfLink(3, 1)
-//    println(res)
-//}
+// func main() {
+//   res := ysfLink(3, 1)
+//   println(res)
+// }

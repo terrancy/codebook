@@ -1,10 +1,10 @@
 package link
 
 //
-//  CopyRandomList
-//  @Description: JZ35 复杂链表的复制
-//  @param head
-//  @return *RandomListNode
+// CopyRandomList
+// @Description: JZ35 复杂链表的复制
+// @param head
+// @return *RandomListNode
 //
 func CopyRandomList(head *RandomListNode) *RandomListNode {
     if head == nil {

@@ -5,10 +5,10 @@ import (
 )
 
 //
-//  ThreeSum
-//  @Description: NC54 数组中相加和为0的三元组
-//  @param num
-//  @return [][]int
+// ThreeSum
+// @Description: NC54 数组中相加和为0的三元组
+// @param num
+// @return [][]int
 //
 func ThreeSum(num []int) [][]int {
     n := len(num)
@@ -56,7 +56,7 @@ func ThreeSum(num []int) [][]int {
                 // 存储
                 ans = append(ans, []int{num[k], num[i], num[j]})
                 
-                //继续寻找
+                // 继续寻找
                 for i < j {
                     i++
                     if num[i-1] != num[i] {
@@ -76,11 +76,11 @@ func ThreeSum(num []int) [][]int {
 }
 
 //
-//  ThreeSumII
-//  @Description: NC54 数组中相加和为0的三元组
-//  @Solution: 1.排序判断最小值; 2. 去重
-//  @param num
-//  @return [][]int
+// ThreeSumII
+// @Description: NC54 数组中相加和为0的三元组
+// @Solution: 1.排序判断最小值; 2. 去重
+// @param num
+// @return [][]int
 //
 func ThreeSumII(num []int) [][]int {
     n := len(num)

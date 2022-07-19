@@ -1,12 +1,12 @@
 package strings
 
 //
-//  kmp 算法
-//  @Description: 给你一个文本串 T ，一个非空模板串 S ，问 S 在 T 中出现了多少次
-//  @Solution:
-//  @param target abababab
-//  @param patten ababab
-//  @return int
+// kmp 算法
+// @Description: 给你一个文本串 T ，一个非空模板串 S ，问 S 在 T 中出现了多少次
+// @Solution:
+// @param target abababab
+// @param patten ababab
+// @return int
 //
 func KMP(target string, patten string) int {
     n := len(patten)

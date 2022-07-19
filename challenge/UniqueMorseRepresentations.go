@@ -1,10 +1,10 @@
 package challenge
 
 //
-//  UniqueMorseRepresentations
-//  @Description: 804. 唯一摩尔斯密码词
-//  @param words
-//  @return int
+// UniqueMorseRepresentations
+// @Description: 804. 唯一摩尔斯密码词
+// @param words
+// @return int
 //
 func UniqueMorseRepresentations(words []string) int {
     list := []string{

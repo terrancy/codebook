@@ -1,10 +1,10 @@
 package trees
 
 //
-//  findErrorSBT
-//  @Description: NC58 找到搜索二叉树中两个错误的节点
-//  @param root
-//  @return []int
+// findErrorSBT
+// @Description: NC58 找到搜索二叉树中两个错误的节点
+// @param root
+// @return []int
 //
 func findErrorSBT(root *TreeNode) []int {
     var data []int

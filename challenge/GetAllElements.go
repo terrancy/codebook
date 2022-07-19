@@ -3,11 +3,11 @@ package challenge
 import trees "awesome/tree"
 
 //
-//  GetAllElements
-//  @Description: 1305. 两棵二叉搜索树中的所有元素
-//  @param root1
-//  @param root2
-//  @return []int
+// GetAllElements
+// @Description: 1305. 两棵二叉搜索树中的所有元素
+// @param root1
+// @param root2
+// @return []int
 //
 func GetAllElements(root1, root2 *trees.TreeNode) []int {
     var data1, data2, res []int

@@ -1,10 +1,10 @@
 package challenge
 
 //
-//  FindDuplicates
-//  @Description: 442. 数组中重复的数据
-//  @param nums [4,3,2,7,8,2,3,1]
-//  @return []int
+// FindDuplicates
+// @Description: 442. 数组中重复的数据
+// @param nums [4,3,2,7,8,2,3,1]
+// @return []int
 //
 func FindDuplicates(nums []int) (res []int) {
     for idx := range nums {

@@ -1,11 +1,11 @@
 package link
 
 //
-//  SortLinkedList
-//  @Description: NC207 排序奇升偶降链表
-//  @Description: 给定一个奇数位升序，偶数位降序的链表，返回对其排序后的链表
-//  @param head
-//  @return *ListNode
+// SortLinkedList
+// @Description: NC207 排序奇升偶降链表
+// @Description: 给定一个奇数位升序，偶数位降序的链表，返回对其排序后的链表
+// @param head
+// @return *ListNode
 //
 func SortLinkedList(head *ListNode) *ListNode {
     if head == nil || head.Next == nil {
@@ -20,10 +20,10 @@ func SortLinkedList(head *ListNode) *ListNode {
 }
 
 //
-//  sortLinkedListReverse
-//  @Description: 翻转
-//  @param head
-//  @return *ListNode
+// sortLinkedListReverse
+// @Description: 翻转
+// @param head
+// @return *ListNode
 //
 func sortLinkedListReverse(head *ListNode) *ListNode {
     if head == nil || head.Next == nil {
@@ -41,11 +41,11 @@ func sortLinkedListReverse(head *ListNode) *ListNode {
 }
 
 //
-//  getOddEvenLink
-//  @Description: 拆分
-//  @param head
-//  @return *ListNode
-//  @return *ListNode
+// getOddEvenLink
+// @Description: 拆分
+// @param head
+// @return *ListNode
+// @return *ListNode
 //
 func getOddEvenLink(head *ListNode) (*ListNode, *ListNode) {
     odd, oddHead := head, head
@@ -67,11 +67,11 @@ func getOddEvenLink(head *ListNode) (*ListNode, *ListNode) {
 }
 
 //
-//  sortLinkMerge
-//  @Description: 合并
-//  @param odd
-//  @param even
-//  @return *ListNode
+// sortLinkMerge
+// @Description: 合并
+// @param odd
+// @param even
+// @return *ListNode
 //
 func sortLinkMerge(odd *ListNode, even *ListNode) *ListNode {
     if odd == nil {

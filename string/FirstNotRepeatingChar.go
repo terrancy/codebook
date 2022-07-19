@@ -1,10 +1,10 @@
 package strings
 
 //
-//  FirstNotRepeatingChar
-//  @Description: NC31 第一个只出现一次的字符
-//  @param str
-//  @return int
+// FirstNotRepeatingChar
+// @Description: NC31 第一个只出现一次的字符
+// @param str
+// @return int
 //
 func FirstNotRepeatingChar(str string) int {
     n := len(str)

@@ -6,68 +6,68 @@ import (
 )
 
 //
-//  SubsetsII
-//  @Description: NC27 集合的所有子集(一)
-//  @Solution: 1、数组长度 2、遍历的起始值设置 3、回溯与记录
-//  @param nums
-//  @return [][]int
+// SubsetsII
+// @Description: NC27 集合的所有子集(一)
+// @Solution: 1、数组长度 2、遍历的起始值设置 3、回溯与记录
+// @param nums
+// @return [][]int
 //
 func Subsets(nums []int) [][]int {
     return array.SubsetsII(nums)
 }
 
 //
-//  BTPermuteUnique
-//  @Description: NC121 字符串的排列
-//  @param str
-//  @return []string
+// BTPermuteUnique
+// @Description: NC121 字符串的排列
+// @param str
+// @return []string
 //
 func BTPermutation(str string) []string {
     return strings.Permutation(str)
 }
 
 //
-//  BTPermuteUnique
-//  @Description: NC42 有重复项数字的全排列
-//  @param num
-//  @return [][]int
+// BTPermuteUnique
+// @Description: NC42 有重复项数字的全排列
+// @param num
+// @return [][]int
 //
 func BTPermuteUnique(num []int) [][]int {
     return PermuteUnique(num)
 }
 
 //
-//  CombinationSum2
-//  @Description: NC46 加起来和为目标值的组合(二)
-//  @param num
-//  @param target
-//  @return [][]int
+// CombinationSum2
+// @Description: NC46 加起来和为目标值的组合(二)
+// @param num
+// @param target
+// @return [][]int
 //
 func CombinationSum2(num []int, target int) [][]int {
     return array.CombinationSum2(num, target)
 }
 
 //
-//  GenerateParenthesis
-//  @Description: NC26 括号生成
-//  @param n
-//  @return []string
+// GenerateParenthesis
+// @Description: NC26 括号生成
+// @param n
+// @return []string
 //
 func GenerateParenthesis(n int) []string {
     return strings.GenerateParenthesis(n)
 }
 
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 // 图的遍历DFS
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 
 //
-//  MovingCount
-//  @Description: JZ13 机器人的运动范围
-//  @param m
-//  @param n
-//  @param k
-//  @return int
+// MovingCount
+// @Description: JZ13 机器人的运动范围
+// @param m
+// @param n
+// @param k
+// @return int
 //
 func MovingCount(m int, n int, k int) int {
     visited := make([][]bool, m)
@@ -98,11 +98,11 @@ func getSum(a, b int) int {
 }
 
 //
-//  HasMatrixPath
-//  @Description: JZ12 矩阵中的路径
-//  @param board
-//  @param word
-//  @return bool
+// HasMatrixPath
+// @Description: JZ12 矩阵中的路径
+// @param board
+// @param word
+// @return bool
 //
 
 var hasMatrixPathDirections = [][]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
@@ -122,14 +122,14 @@ func HasMatrixPath(board [][]byte, word string) bool {
 }
 
 //
-//  DFSHasMatrixPath
-//  @Description: 先根遍历
-//  @param board
-//  @param word
-//  @param i
-//  @param j
-//  @param k
-//  @return bool
+// DFSHasMatrixPath
+// @Description: 先根遍历
+// @param board
+// @param word
+// @param i
+// @param j
+// @param k
+// @return bool
 //
 func DFSHasMatrixPath(board [][]byte, word string, i, j, k int) bool {
     if i >= len(board) || i < 0 {
@@ -155,11 +155,11 @@ func DFSHasMatrixPath(board [][]byte, word string, i, j, k int) bool {
 }
 
 //
-//  GetPermutation
-//  @Description: 60. 排列序列
-//  @param n
-//  @param k
-//  @return string
+// GetPermutation
+// @Description: 60. 排列序列
+// @param n
+// @param k
+// @return string
 //
 func GetPermutation(n int, k int) string {
     return ""

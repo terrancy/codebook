@@ -5,10 +5,10 @@ import "awesome"
 // 连续子数组的最大和
 
 //
-//  MaxSubArray
-//  @Description: NC19 连续子数组的最大和
-//  @param nums
-//  @return int
+// MaxSubArray
+// @Description: NC19 连续子数组的最大和
+// @param nums
+// @return int
 //
 func MaxSubArray(nums []int) int {
     max := nums[0]
@@ -21,11 +21,11 @@ func MaxSubArray(nums []int) int {
 }
 
 //
-//  MaxSubArrayII
-//  @Description: JZ85 连续子数组的最大和(二)
-//  @Description: 找到一个具有最大和且数组长度最长的连续子数组
-//  @param nums
-//  @return []int
+// MaxSubArrayII
+// @Description: JZ85 连续子数组的最大和(二)
+// @Description: 找到一个具有最大和且数组长度最长的连续子数组
+// @param nums
+// @return []int
 //
 func MaxSubArrayII(nums []int) []int {
     max := nums[0]
@@ -54,12 +54,12 @@ func MaxSubArrayII(nums []int) []int {
 // 买卖股票的最好时机
 
 //
-//  MaxProfit
-//  @Description: JZ63 买卖股票的最好时机(一)
-//  @Description: 你可以买入一次股票和卖出一次股票,请根据这个价格数组，返回买卖股票能获得的最大收益
-//  @Solution: 利润是整数，max初始值为0
-//  @param prices
-//  @return int
+// MaxProfit
+// @Description: JZ63 买卖股票的最好时机(一)
+// @Description: 你可以买入一次股票和卖出一次股票,请根据这个价格数组，返回买卖股票能获得的最大收益
+// @Solution: 利润是整数，max初始值为0
+// @param prices
+// @return int
 //
 func MaxProfit(prices []int) int {
     n := len(prices)
@@ -77,21 +77,21 @@ func MaxProfit(prices []int) int {
 }
 
 //
-//  MaxProfitII
-//  @Description: 122. 买卖股票的最佳时机 II
-//  @Description: 你在任何时候最多只能持有一股股票,可以多次卖出再买入
-//  @param prices
-//  @return int
+// MaxProfitII
+// @Description: 122. 买卖股票的最佳时机 II
+// @Description: 你在任何时候最多只能持有一股股票,可以多次卖出再买入
+// @param prices
+// @return int
 //
 func MaxProfitII(prices []int) int {
     return 0
 }
 
 //
-//  maxProfit
-//  @Description: NC135 买卖股票的最好时机(三)
-//  @param prices
-//  @return int
+// MaxProfitIII
+// @Description: NC135 买卖股票的最好时机(三)
+// @param prices
+// @return int
 //
 func MaxProfitIII(prices []int) int {
     n := len(prices)

@@ -3,10 +3,10 @@ package trees
 import "awesome"
 
 //
-//  LevelOrderBottom
-//  @Description: 自底向上打印
-//  @param root
-//  @return [][]int
+// LevelOrderBottom
+// @Description: 自底向上打印
+// @param root
+// @return [][]int
 //
 func LevelOrderBottom(root *TreeNode) [][]int {
     if root == nil {

@@ -3,8 +3,8 @@ package link
 import "fmt"
 
 //
-//  ListNode
-//  @Description: 简单链表
+// ListNode
+// @Description: 简单链表
 //
 type ListNode struct {
     Val  int
@@ -12,8 +12,8 @@ type ListNode struct {
 }
 
 //
-//  RandomListNode
-//  @Description: 复杂链表
+// RandomListNode
+// @Description: 复杂链表
 //
 type RandomListNode struct {
     Label  int
@@ -51,10 +51,10 @@ func BuildRandomListNode(data []int) *RandomListNode {
 }
 
 //
-//  circleSingleListNode
-//  @Description: 环形单向链表
-//  @param n
-//  @return *ListNode
+// circleSingleListNode
+// @Description: 环形单向链表
+// @param n
+// @return *ListNode
 //
 func circleSingleListNode(n int) *ListNode {
     head := &ListNode{}
@@ -70,10 +70,10 @@ func circleSingleListNode(n int) *ListNode {
 }
 
 //
-//  list2Array
-//  @Description: 将链表转为数组
-//  @param head
-//  @return []int
+// list2Array
+// @Description: 将链表转为数组
+// @param head
+// @return []int
 //
 func Serialize(head *ListNode) []int {
     if head == nil {
@@ -91,9 +91,9 @@ func Serialize(head *ListNode) []int {
 }
 
 //
-//  showData
-//  @Description: 将链表数据打印出来
-//  @param head
+// showData
+// @Description: 将链表数据打印出来
+// @param head
 //
 func ShowData(head *ListNode) {
     data := Serialize(head)

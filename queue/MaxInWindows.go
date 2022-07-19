@@ -1,14 +1,14 @@
 package queue
 
 //
-//  maxInWindows
-//  @Description: NC82 滑动窗口的最大值 => 单调队列
-//  @Solution: 1. 维护单调队列,新元素较大时剔除较小元素再添加 = 类似于插入排序
-//  @Solution: 2. 判断窗口大小, 队首元素出队
-//  @Solution: 3. 判断是否记录,满足队首元素
-//  @param num
-//  @param size
-//  @return []int
+// maxInWindows
+// @Description: NC82 滑动窗口的最大值 => 单调队列
+// @Solution: 1. 维护单调队列,新元素较大时剔除较小元素再添加 = 类似于插入排序
+// @Solution: 2. 判断窗口大小, 队首元素出队
+// @Solution: 3. 判断是否记录,满足队首元素
+// @param num
+// @param size
+// @return []int
 //
 func MaxInWindows(num []int, size int) []int {
     n := len(num)

@@ -7,20 +7,20 @@ import (
 )
 
 //
-//  TestBubbleSort
-//  @Description: 冒泡排序
-//  @param t
+// TestBubbleSort
+// @Description: 冒泡排序
+// @param t
 //
 func TestBubbleSort(t *testing.T) {
-    nums := []int{3, 4, 2, 9, 1, 8,}
+    nums := []int{3, 4, 2, 9, 1, 8}
     res := base.BubbleSort(nums)
     fmt.Println(res)
 }
 
 //
-//  TestSelectSort
-//  @Description: 选自排序
-//  @param t
+// TestSelectSort
+// @Description: 选自排序
+// @param t
 //
 func TestSelectSort(t *testing.T) {
     nums := []int{5, 2, 3, 1, 4}
@@ -29,9 +29,9 @@ func TestSelectSort(t *testing.T) {
 }
 
 //
-//  TestQuickSort
-//  @Description: 快排
-//  @param t
+// TestQuickSort
+// @Description: 快排
+// @param t
 //
 func TestQuickSortOld(t *testing.T) {
     nums := []int{5, 2, 3, 1, 4}
@@ -40,9 +40,9 @@ func TestQuickSortOld(t *testing.T) {
 }
 
 //
-//  TestQuickSort
-//  @Description: 快排
-//  @param t
+// TestQuickSort
+// @Description: 快排
+// @param t
 //
 func TestQuickSort(t *testing.T) {
     nums := []int{5, 2, 3, 1, 4}
@@ -52,9 +52,9 @@ func TestQuickSort(t *testing.T) {
 }
 
 //
-//  TestQuickSort
-//  @Description: 快排
-//  @param t
+// TestQuickSort
+// @Description: 快排
+// @param t
 //
 func TestQuickSortII(t *testing.T) {
     nums := []int{5, 2, 1, 3, 4, 3, 3}
@@ -64,9 +64,9 @@ func TestQuickSortII(t *testing.T) {
 }
 
 //
-//  TestInsertSort
-//  @Description: 插入排序
-//  @param t
+// TestInsertSort
+// @Description: 插入排序
+// @param t
 //
 func TestInsertSort(t *testing.T) {
     nums := []int{5, 2, 3, 1, 4}
@@ -75,9 +75,9 @@ func TestInsertSort(t *testing.T) {
 }
 
 //
-//  TestHeapSort
-//  @Description: 堆排序
-//  @param t
+// TestHeapSort
+// @Description: 堆排序
+// @param t
 //
 func TestHeapSort(t *testing.T) {
     nums := []int{5, 2, 3, 1, 4}
@@ -86,9 +86,9 @@ func TestHeapSort(t *testing.T) {
 }
 
 //
-//  TestHeapSort
-//  @Description: 堆排序
-//  @param t
+// TestHeapSort
+// @Description: 堆排序
+// @param t
 //
 func TestFindLastKth(t *testing.T) {
     nums := []int{5, 2, 3, 1, 4}

@@ -1,11 +1,11 @@
 package slide
 
 //
-//  MaxWater
-//  @Description: NC128 接雨水问题
-//  @Solution: 水桶的短板效应,比较两边较小值.左边向右,右边向左.遇到大的替换,遇到小的盛水
-//  @param []int
-//  @return int
+// MaxWater
+// @Description: NC128 接雨水问题
+// @Solution: 水桶的短板效应,比较两边较小值.左边向右,右边向左.遇到大的替换,遇到小的盛水
+// @param []int
+// @return int
 //
 func MaxWater(nums []int) int64 {
     n := len(nums)

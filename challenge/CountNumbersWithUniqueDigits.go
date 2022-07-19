@@ -1,10 +1,10 @@
 package challenge
 
 //
-//  CountNumbersWithUniqueDigits
-//  @Description: 357. 统计各位数字都不同的数字个数
-//  @param n
-//  @return int
+// CountNumbersWithUniqueDigits
+// @Description: 357. 统计各位数字都不同的数字个数
+// @param n
+// @return int
 //
 func CountNumbersWithUniqueDigits(n int) int {
     if n == 0 {

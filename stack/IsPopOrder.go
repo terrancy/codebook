@@ -1,11 +1,11 @@
 package stack
 
 //
-//  IsPopOrder
-//  @Description: JZ31 栈的压入、弹出序列
-//  @param pushV
-//  @param popV
-//  @return bool
+// IsPopOrder
+// @Description: JZ31 栈的压入、弹出序列
+// @param pushV
+// @param popV
+// @return bool
 //
 func IsPopOrder(pushV []int, popV []int) bool {
     stack := make([]int, 0)

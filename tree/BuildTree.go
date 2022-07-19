@@ -1,12 +1,12 @@
 package trees
 
 //
-//  buildTree
-//  @Description: NC12 重建二叉树 - 先根与中根
-//  @Solution: 注意事项: 1. 索引idx的获取与切片区间 2.递归终止条件,len(inorder)==0 非 inorder == nil
-//  @param preorder
-//  @param inorder
-//  @return *TreeNode
+// buildTree
+// @Description: NC12 重建二叉树 - 先根与中根
+// @Solution: 注意事项: 1. 索引idx的获取与切片区间 2.递归终止条件,len(inorder)==0 非 inorder == nil
+// @param preorder
+// @param inorder
+// @return *TreeNode
 //
 func BuildTree(preorder []int, inorder []int) *TreeNode {
     if len(preorder) == 0 || len(inorder) == 0 {
@@ -21,11 +21,11 @@ func BuildTree(preorder []int, inorder []int) *TreeNode {
 }
 
 //
-//  buildTree
-//  @Description: NC223 从中序与后序遍历序列构造二叉树
-//  @param inorder
-//  @param postorder
-//  @return *TreeNode
+// buildTree
+// @Description: NC223 从中序与后序遍历序列构造二叉树
+// @param inorder
+// @param postorder
+// @return *TreeNode
 //
 func buildTree(inorder []int, postorder []int) *TreeNode {
     if len(inorder) == 0 || len(postorder) == 0 {
@@ -49,11 +49,11 @@ func getIdx(data []int, target int) int {
 }
 
 //
-//  sortedArrayToBST
-//  @Description: NC11 将升序数组转化为平衡二叉搜索树
-//  @Solution: 1.判断条件;2.根的获取 mid := (n + 1) >> 1;3.左节点 num[:mid] 右结点 num[mid+1:]
-//  @param num
-//  @return *TreeNode
+// sortedArrayToBST
+// @Description: NC11 将升序数组转化为平衡二叉搜索树
+// @Solution: 1.判断条件;2.根的获取 mid := (n + 1) >> 1;3.左节点 num[:mid] 右结点 num[mid+1:]
+// @param num
+// @return *TreeNode
 //
 func SortedArrayToBST(num []int) *TreeNode {
     n := len(num)
@@ -71,10 +71,10 @@ func SortedArrayToBST(num []int) *TreeNode {
 }
 
 //
-//  bstFromPreorder
-//  @Description: LC1008. 前序遍历构造二叉搜索树
-//  @param preorder
-//  @return *TreeNode
+// bstFromPreorder
+// @Description: LC1008. 前序遍历构造二叉搜索树
+// @param preorder
+// @return *TreeNode
 //
 func BstFromPreorder(preorder []int) *TreeNode {
     if len(preorder) == 0 {
@@ -89,10 +89,10 @@ func BstFromPreorder(preorder []int) *TreeNode {
 }
 
 //
-//  getPreorderIdx
-//  @Description: 获取idx
-//  @param data
-//  @return int
+// getPreorderIdx
+// @Description: 获取idx
+// @param data
+// @return int
 //
 func getPreorderIdx(data []int) int {
     // 有左右子树

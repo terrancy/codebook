@@ -7,9 +7,9 @@ import (
 )
 
 //
-//  TestNumIslands
-//  @Description: NC109 岛屿数量
-//  @param t
+// TestNumIslands
+// @Description: NC109 岛屿数量
+// @param t
 //
 func TestNumIslands(t *testing.T) {
     grid := [][]byte{

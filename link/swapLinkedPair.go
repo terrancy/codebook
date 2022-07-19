@@ -1,10 +1,10 @@
 package link
 
 //
-//  SwapLinkedPair
-//  @Description: NC186 遍历:两两交换链表的节点
-//  @param head
-//  @return *ListNode
+// SwapLinkedPair
+// @Description: NC186 遍历:两两交换链表的节点
+// @param head
+// @return *ListNode
 //
 func SwapLinkedPair(head *ListNode) *ListNode {
     if head == nil || head.Next == nil {
@@ -29,20 +29,20 @@ func SwapLinkedPair(head *ListNode) *ListNode {
 }
 
 //
-//  SwapLinkedPairII
-//  @Description:
-//  @param head
-//  @return *ListNode
+// SwapLinkedPairII
+// @Description:
+// @param head
+// @return *ListNode
 //
 func SwapLinkedPairII(head *ListNode) *ListNode {
     return ReverseKGroup(head, 2)
 }
 
 //
-//  SwapLinkedPairDG
-//  @Description: NC186 递归:两两交换链表的节点
-//  @param head
-//  @return *ListNode
+// SwapLinkedPairDG
+// @Description: NC186 递归:两两交换链表的节点
+// @param head
+// @return *ListNode
 //
 func SwapLinkedPairDG(head *ListNode) *ListNode {
     // 单个节点不交换

@@ -1,10 +1,11 @@
 package dp
+
 //
-//  uniquePaths
-//  @Description:
-//  @param m
-//  @param n
-//  @return int
+// uniquePaths
+// @Description:
+// @param m
+// @param n
+// @return int
 //
 func uniquePaths(m int, n int) int {
     if m < n {

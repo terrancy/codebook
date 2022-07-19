@@ -6,20 +6,20 @@ func reorderList(head *ListNode) {
     }
     // 翻转链表
     reverseLastPart(head)
-    //mid := reverseLastPart(head)
-    //cur := head
-    //curNext := &ListNode{}
-    //midNext := &ListNode{}
-    //for mid != nil {
-    //    curNext = cur.Next
-    //    cur.Next = mid
-    //    midNext = mid.Next
-    //    mid.Next = curNext
+    // mid := reverseLastPart(head)
+    // cur := head
+    // curNext := &ListNode{}
+    // midNext := &ListNode{}
+    // for mid != nil {
+    //   curNext = cur.Next
+    //   cur.Next = mid
+    //   midNext = mid.Next
+    //   mid.Next = curNext
     //
-    //    // 遍历
-    //    mid = midNext
-    //    cur = curNext
-    //}
+    //   // 遍历
+    //   mid = midNext
+    //   cur = curNext
+    // }
 }
 
 func reverseLastPart(head *ListNode) *ListNode {
@@ -33,14 +33,14 @@ func reverseLastPart(head *ListNode) *ListNode {
     }
     mid := pre.Next
     // 翻转链表-四联式
-    //cur = pre.Next
-    //next := &ListNode{}
-    //for pre.Next != nil && cur.Next.Next != nil {
-    //   next = cur.Next
-    //   cur.Next = next.Next
-    //   next.Next = pre.Next
-    //   pre.Next = next
-    //}
+    // cur = pre.Next
+    // next := &ListNode{}
+    // for pre.Next != nil && cur.Next.Next != nil {
+    //  next = cur.Next
+    //  cur.Next = next.Next
+    //  next.Next = pre.Next
+    //  pre.Next = next
+    // }
     
     return mid
 }

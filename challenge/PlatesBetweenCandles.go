@@ -1,11 +1,11 @@
 package challenge
 
 //
-//  PlatesBetweenCandles
-//  @Description: 2055. 蜡烛之间的盘子
-//  @param s string
-//  @param queries [][]int
-//  @return []int
+// PlatesBetweenCandles
+// @Description: 2055. 蜡烛之间的盘子
+// @param s string
+// @param queries [][]int
+// @return []int
 //
 func PlatesBetweenCandles(s string, queries [][]int) []int {
     bytes := []byte(s)

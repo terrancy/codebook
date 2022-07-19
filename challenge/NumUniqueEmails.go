@@ -3,10 +3,10 @@ package challenge
 import "strings"
 
 //
-//  NumUniqueEmail
-//  @Description: 929. 独特的电子邮件地址
-//  @param emails
-//  @return int
+// NumUniqueEmail
+// @Description: 929. 独特的电子邮件地址
+// @param emails
+// @return int
 //
 func NumUniqueEmail(emails []string) int {
     dict := map[string]struct{}{}

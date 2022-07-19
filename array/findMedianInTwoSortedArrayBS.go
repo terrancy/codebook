@@ -3,13 +3,13 @@ package array
 import "awesome"
 
 //
-//  findMedianInTwoSortedArray O(N)
-//  @Description:NC36 在两个长度相等的排序数组中找到上中位数
-//  @Description: 求两个数组中所有数的上中位数(假设递增序列长度为n，为第n/2个数)
-//  @Solution: 两个数组从头开始遍历比大小，找到第N小
-//  @param arr1
-//  @param arr2
-//  @return int
+// findMedianInTwoSortedArray O(N)
+// @Description:NC36 在两个长度相等的排序数组中找到上中位数
+// @Description: 求两个数组中所有数的上中位数(假设递增序列长度为n，为第n/2个数)
+// @Solution: 两个数组从头开始遍历比大小，找到第N小
+// @param arr1
+// @param arr2
+// @return int
 //
 func FindMedianInTwoSortedArray(arr1 []int, arr2 []int) int {
     n := len(arr1)
@@ -27,13 +27,13 @@ func FindMedianInTwoSortedArray(arr1 []int, arr2 []int) int {
 }
 
 //
-//  findMedianInTwoSortedArrayBS O(logN)
-//  @Description: NC36 在两个长度相等的排序数组中找到上中位数
-//  @Description: 求两个数组中所有数的上中位数(假设递增序列长度为n，为第n/2个数)
-//  @Description: B 站视频: https://www.bilibili.com/video/BV1BA411N7oe
-//  @param arr1
-//  @param arr2
-//  @return int
+// findMedianInTwoSortedArrayBS O(logN)
+// @Description: NC36 在两个长度相等的排序数组中找到上中位数
+// @Description: 求两个数组中所有数的上中位数(假设递增序列长度为n，为第n/2个数)
+// @Description: B 站视频: https://www.bilibili.com/video/BV1BA411N7oe
+// @param arr1
+// @param arr2
+// @return int
 //
 func FindMedianInTwoSortedArrayBS(arr1 []int, arr2 []int) int {
     n := len(arr1)

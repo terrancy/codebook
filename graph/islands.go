@@ -6,10 +6,10 @@ var directions = [][]int{{1, 0}, {0, 1}, {-1, 0}, {0, -1}}
 var n, m int
 
 //
-//  NumIslands
-//  @Description: NC109 岛屿数量
-//  @param grid
-//  @return int
+// NumIslands
+// @Description: NC109 岛屿数量
+// @param grid
+// @return int
 //
 func NumIslands(grid [][]byte) int {
     n = len(grid)
@@ -27,11 +27,11 @@ func NumIslands(grid [][]byte) int {
 }
 
 //
-//  dfsNumIslands
-//  @Description: 将节点赋值为'0',上下左右都赋值为'0'
-//  @param grid
-//  @param i
-//  @param j
+// dfsNumIslands
+// @Description: 将节点赋值为'0',上下左右都赋值为'0'
+// @param grid
+// @param i
+// @param j
 //
 func dfsNumIslands(grid [][]byte, i int, j int) {
     if i < 0 || i >= n || j < 0 || j >= m || grid[i][j] == '0' {

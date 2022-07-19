@@ -1,10 +1,10 @@
 package array
 
 //
-//  MajorityElement
-//  @Description: NC73 数组中出现次数超过一半的数字
-//  @param nums
-//  @return int
+// MajorityElement
+// @Description: NC73 数组中出现次数超过一半的数字
+// @param nums
+// @return int
 //
 func MajorityElement(nums []int) int {
     n := len(nums)

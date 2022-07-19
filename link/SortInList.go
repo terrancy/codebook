@@ -3,10 +3,10 @@ package link
 import "sort"
 
 //
-//  sortInList
-//  @Description: NC70 单链表的排序
-//  @param head
-//  @return *ListNode
+// sortInList
+// @Description: NC70 单链表的排序
+// @param head
+// @return *ListNode
 //
 func SortInList(head *ListNode) *ListNode {
     data := make([]int, 0)

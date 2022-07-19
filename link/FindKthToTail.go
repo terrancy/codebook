@@ -1,11 +1,11 @@
 package link
 
 //
-//  FindKthToTail
-//  @Description: NC69 链表中倒数最后k个结点
-//  @param pHead
-//  @param k
-//  @return *ListNode
+// FindKthToTail
+// @Description: NC69 链表中倒数最后k个结点
+// @param pHead
+// @param k
+// @return *ListNode
 //
 func FindKthToTail(pHead *ListNode, k int) *ListNode {
     // 快指针走K步

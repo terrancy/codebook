@@ -6,22 +6,22 @@ import (
 )
 
 //
-//  MaxLengthRepeatLess
-//  @Description: NC41 最长无重复子数组
-//  @Solution: 哈希表 + 双指针, l, r := -1, 0
-//  @param nums
-//  @return int
+// MaxLengthRepeatLess
+// @Description: NC41 最长无重复子数组
+// @Solution: 哈希表 + 双指针, l, r := -1, 0
+// @param nums
+// @return int
 //
 func MaxLengthRepeatLess(nums []int) int {
     return array.MaxLengthRepeatLess(nums)
 }
 
 //
-//  LongestPalindrome
-//  @Description: NC17 最长回文子串
-//  @Description: 中心扩散法
-//  @param str
-//  @return string
+// LongestPalindrome
+// @Description: NC17 最长回文子串
+// @Description: 中心扩散法
+// @param str
+// @return string
 //
 func LongestPalindrome(str string) string {
     n := len(str)
@@ -52,10 +52,10 @@ func LongestPalindrome(str string) string {
 }
 
 //
-//  LongestPalindromeSubsequence
-//  @Description: 最长回文子序列
-//  @param str
-//  @return int
+// LongestPalindromeSubsequence
+// @Description: 最长回文子序列
+// @param str
+// @return int
 //
 func LongestPalindromeSubsequence(str string) int {
     n := len(str)

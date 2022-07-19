@@ -1,11 +1,11 @@
 package link
 
 //
-//  removeNthFromEnd
-//  @Description: NC53 删除链表的倒数第n个节点
-//  @param pHead
-//  @param n
-//  @return *ListNode
+// removeNthFromEnd
+// @Description: NC53 删除链表的倒数第n个节点
+// @param pHead
+// @param n
+// @return *ListNode
 //
 func RemoveNthFromEnd(pHead *ListNode, n int) *ListNode {
     if pHead == nil || pHead.Next == nil {

@@ -1,10 +1,10 @@
 package array
 
 //
-//  FindRepeatNumber
-//  @Description: JZ3 数组中重复的数字
-//  @param numbers
-//  @return int
+// FindRepeatNumber
+// @Description: JZ3 数组中重复的数字
+// @param numbers
+// @return int
 //
 func FindRepeatNumber(numbers []int) int {
     n := len(numbers)

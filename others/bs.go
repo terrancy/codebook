@@ -3,12 +3,12 @@ package others
 import "awesome/array"
 
 //
-//  binSearchII
-//  @Description: NC105 二分查找-II
-//  @Description: 重复数字的升序数组的二分查找第一个出现的数字
-//  @param nums
-//  @param target
-//  @return int
+// binSearchII
+// @Description: NC105 二分查找-II
+// @Description: 重复数字的升序数组的二分查找第一个出现的数字
+// @param nums
+// @param target
+// @return int
 //
 func BinSearchII(nums []int, target int) int {
     n := len(nums)
@@ -39,12 +39,12 @@ func BinSearchII(nums []int, target int) int {
 }
 
 //
-//  GetNumberOfK
-//  @Description: NC74 数字在升序数组中出现的次数
-//  @Solution: 1.边界判断 2.左边界 3.有边界 4.返回
-//  @param data
-//  @param k
-//  @return int
+// GetNumberOfK
+// @Description: NC74 数字在升序数组中出现的次数
+// @Solution: 1.边界判断 2.左边界 3.有边界 4.返回
+// @param data
+// @param k
+// @return int
 //
 func GetNumberOfK(nums []int, target int) int {
     n := len(nums)
@@ -90,11 +90,11 @@ func GetNumberOfK(nums []int, target int) int {
 }
 
 //
-//  MinNumberInRotateArray
-//  @Description: NC71 旋转数组的最小数字
-//  @Solution: 非降序数组
-//  @param rotateArray
-//  @return int
+// MinNumberInRotateArray
+// @Description: NC71 旋转数组的最小数字
+// @Solution: 非降序数组
+// @param rotateArray
+// @return int
 //
 func MinNumberInRotateArray(rotateArray []int) int {
     n := len(rotateArray)
@@ -117,11 +117,11 @@ func MinNumberInRotateArray(rotateArray []int) int {
 }
 
 //
-//  TargetNumberInRotateArray
-//  @Description: NC48 在旋转过的有序数组中寻找目标值
-//  @Solution: 遍历
-//  @param nums
-//  @return int
+// TargetNumberInRotateArray
+// @Description: NC48 在旋转过的有序数组中寻找目标值
+// @Solution: 遍历
+// @param nums
+// @return int
 //
 func TargetNumberInRotateArray(nums []int, target int) int {
     n := len(nums)
@@ -143,12 +143,12 @@ func TargetNumberInRotateArray(nums []int, target int) int {
 }
 
 //
-//  TargetNumberInRotateArrayII
-//  @Description: NC48 在旋转过的有序数组中寻找目标值
-//  @Solution: 二分查找.l<r:是否=;mid:是否+-1;mid和谁比;
-//  @param nums
-//  @param target
-//  @return int
+// TargetNumberInRotateArrayII
+// @Description: NC48 在旋转过的有序数组中寻找目标值
+// @Solution: 二分查找.l<r:是否=;mid:是否+-1;mid和谁比;
+// @param nums
+// @param target
+// @return int
 //
 func TargetNumberInRotateArrayII(nums []int, target int) int {
     n := len(nums)
@@ -185,23 +185,23 @@ func TargetNumberInRotateArrayII(nums []int, target int) int {
 }
 
 //
-//  TargetNumberInRotateArrayUnDesOrder
-//  @Description: LC 面试题 10.03. 搜索旋转数组
-//  @Description: 含有重复元素的数组
-//  @param nums
-//  @param target
-//  @return int
+// TargetNumberInRotateArrayUnDesOrder
+// @Description: LC 面试题 10.03. 搜索旋转数组
+// @Description: 含有重复元素的数组
+// @param nums
+// @param target
+// @return int
 //
 func TargetNumberInRotateRepeatedData(nums []int, target int) int {
     return 0
 }
 
 //
-//  FindMedianInTwoSortedArrayBS
-//  @Description: NC36 在两个长度相等的排序数组中找到上中位数
-//  @param arr1
-//  @param arr2
-//  @return int
+// FindMedianInTwoSortedArrayBS
+// @Description: NC36 在两个长度相等的排序数组中找到上中位数
+// @param arr1
+// @param arr2
+// @return int
 //
 func FindMedianInTwoSortedArrayBS(arr1 []int, arr2 []int) int {
     return array.FindMedianInTwoSortedArrayBS(arr1, arr2)

@@ -1,10 +1,10 @@
 package strings
 
 //
-//  CheckBracketValid
-//  @Description: 20. 有效的括号
-//  @param str
-//  @return bool
+// CheckBracketValid
+// @Description: 20. 有效的括号
+// @param str
+// @return bool
 //
 func CheckBracketValid(str string) bool {
     n := len(str)

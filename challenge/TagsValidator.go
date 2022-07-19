@@ -6,10 +6,10 @@ import (
 )
 
 //
-//  TagsValidator
-//  @Description: 591. 标签验证器
-//  @param code
-//  @return bool
+// TagsValidator
+// @Description: 591. 标签验证器
+// @param code
+// @return bool
 //
 func TagsValidator(code string) bool {
     var tags []string

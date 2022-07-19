@@ -1,10 +1,10 @@
 package challenge
 
 //
-//  ConsecutiveNumbersSum
-//  @Description: 829. 连续整数求和
-//  @param num
-//  @return int
+// ConsecutiveNumbersSum
+// @Description: 829. 连续整数求和
+// @param num
+// @return int
 //
 func ConsecutiveNumbersSum(n int) int {
     ans := 0

@@ -1,10 +1,10 @@
 package strings
 
 //
-//  GenerateParenthesis
-//  @Description: NC26 括号生成
-//  @param n
-//  @return []string
+// GenerateParenthesis
+// @Description: NC26 括号生成
+// @param n
+// @return []string
 //
 func GenerateParenthesis(n int) []string {
     res := make([]string, 0)

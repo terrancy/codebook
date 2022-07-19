@@ -1,11 +1,11 @@
 package trees
 
 //
-//  FindTarget
-//  @Description: 剑指 Offer II 056. 二叉搜索树中两个节点之和
-//  @param root
-//  @param k
-//  @return bool
+// FindTarget
+// @Description: 剑指 Offer II 056. 二叉搜索树中两个节点之和
+// @param root
+// @param k
+// @return bool
 //
 func FindTarget(root *TreeNode, k int) bool {
     findTargetFlag := false

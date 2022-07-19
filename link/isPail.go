@@ -1,11 +1,11 @@
 package link
 
 //
-//  isPail
-//  @Description: NC96 判断一个链表是否为回文结构
-//  @solution: 链表翻转 + 遍历对比
-//  @param head
-//  @return bool
+// isPail
+// @Description: NC96 判断一个链表是否为回文结构
+// @solution: 链表翻转 + 遍历对比
+// @param head
+// @return bool
 //
 func isPail(head *ListNode) bool {
     if head == nil || head.Next == nil {
@@ -67,12 +67,12 @@ func isPailII(head *ListNode) bool {
 }
 
 //
-//  isPailIII
-//  @Description: NC96 判断一个链表是否为回文结构
-//  @Solution: 1. 获取前驱节点 2. 链表翻转 3.数据对比
-//  @Warning: 1. pre := dummy 2. if cur!=nil pre = pre.Next
-//  @param head
-//  @return bool
+// isPailIII
+// @Description: NC96 判断一个链表是否为回文结构
+// @Solution: 1. 获取前驱节点 2. 链表翻转 3.数据对比
+// @Warning: 1. pre := dummy 2. if cur!=nil pre = pre.Next
+// @param head
+// @return bool
 //
 func isPailIII(head *ListNode) bool {
     if head == nil || head.Next == nil {

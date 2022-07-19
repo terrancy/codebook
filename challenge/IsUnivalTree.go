@@ -3,10 +3,10 @@ package challenge
 import trees "awesome/tree"
 
 //
-//  IsUniqueTree
-//  @Description: 965. 单值二叉树
-//  @param root
-//  @return bool
+// IsUniqueTree
+// @Description: 965. 单值二叉树
+// @param root
+// @return bool
 //
 func IsUniqueTree(root *trees.TreeNode) bool {
     data := -1

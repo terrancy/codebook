@@ -1,10 +1,10 @@
 package strings
 
 //
-//  LongRepeatedSubstring
-//  @Description: NC142 最长重复子串
-//  @param str
-//  @return int
+// LongRepeatedSubstring
+// @Description: NC142 最长重复子串
+// @param str
+// @return int
 //
 func LongRepeatedSubstring(str string) int {
     n := len(str)

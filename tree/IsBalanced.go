@@ -1,10 +1,10 @@
 package trees
 
 //
-//  IsBalanced
-//  @Description: NC62 判断是不是平衡二叉树
-//  @param root
-//  @return bool
+// IsBalanced
+// @Description: NC62 判断是不是平衡二叉树
+// @param root
+// @return bool
 //
 func IsBalanced(root *TreeNode) bool {
     res := postorderIsBalanced(root)

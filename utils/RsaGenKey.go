@@ -48,7 +48,7 @@ func RsaGenKey(bits int, privatePath, publicPath string) error {
     // derPublicStream, err := x509.MarshalPKIXPublicKey(&publicKey)
     derPublicStream := x509.MarshalPKCS1PublicKey(&publicKey)
     // if err != nil {
-    //     return err
+    //    return err
     // }
     
     block = pem.Block{

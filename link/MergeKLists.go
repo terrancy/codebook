@@ -1,10 +1,10 @@
 package link
 
 //
-//  MergeKLists
-//  @Description: 23. 合并K个升序链表 / NC51 合并k个已排序的链表
-//  @param lists
-//  @return *ListNode
+// MergeKLists
+// @Description: 23. 合并K个升序链表 / NC51 合并k个已排序的链表
+// @param lists
+// @return *ListNode
 //
 func MergeKLists(lists []*ListNode) *ListNode {
     n := len(lists)

@@ -1,10 +1,10 @@
 package challenge
 
 //
-//  CountHighestScoreNodes
-//  @Description: 2049. 统计最高分的节点数目
-//  @param parents
-//  @return int
+// CountHighestScoreNodes
+// @Description: 2049. 统计最高分的节点数目
+// @param parents
+// @return int
 //
 func CountHighestScoreNodes(parents []int) (ans int) {
     maxScore, n, graph := int64(0), len(parents), map[int][]int{}
