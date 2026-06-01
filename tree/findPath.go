@@ -111,3 +111,39 @@ func dspFindPathTotalIII(root *TreeNode, sum int, cnt *int) {
     dspFindPathTotalIII(root.Left, sum, cnt)
     dspFindPathTotalIII(root.Right, sum, cnt)
 }
+
+// findPathIIIPrefixSum
+// @Description: 二叉树中和为某一值的路径(三)的前缀和
+// @param root
+// @param sum
+// @return int
+//
+func findPathIIIPrefixSum(root *TreeNode, sum int) int {
+    cnt = 0
+    dfsFindPathIIIPrefixSum(root, sum, 0, make(map[int]int), &cnt)
+    return cnt
+}
+
+func dfsFindPathIIIPrefixSum(root *TreeNode, sum int, cur int, preSum map[int]int, cnt *int){
+    if root == nil {
+        return
+    }
+
+    // 回溯操作
+    cur += root.Val
+    last := cur - sum
+    lastVal, lastOk := preSum[last]
+    if lastOk && lastVal > 0 {
+        *cnt += lastVal
+    }
+
+    // 回溯模板
+    if _, ok := preSum[cur]; !ok {
+        preSum[cur] = 0
+    }
+     
+    preSum[cur]++
+    dfsFindPathIIIPrefixSum(root.Left, sum, cur, preSum, cnt)
+    dfsFindPathIIIPrefixSum(root.Right, sum, cur, preSum, cnt)
+    preSum[cur]--
+}
