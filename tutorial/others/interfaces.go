@@ -1,14 +1,14 @@
-package tutorial
+package others
 
 type Person interface {
-    GetName() string
+	GetName() string
 }
 
 type Student struct {
-    Name string
-    Age  int
+	Name string
+	Age  int
 }
 
 func (stu *Student) GetName() string {
-    return stu.Name
+	return stu.Name
 }

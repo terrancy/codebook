@@ -1,10 +1,11 @@
 package test
 
 import (
-    "awesome/base"
-    "testing"
+	"testing"
+
+	"awesome/base"
 )
 
 func TestRune(t *testing.T) {
-    base.StructRune()
+	base.StructRune()
 }
