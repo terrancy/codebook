@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"awesome/array"
+	"terrancy/awesome/array"
 )
 
 // TestTwoSum

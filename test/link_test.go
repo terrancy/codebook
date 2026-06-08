@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	"awesome/link"
+	"terrancy/awesome/link"
 )
 
 // TestLinkReverse

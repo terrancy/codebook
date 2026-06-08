@@ -1,8 +1,8 @@
 package backtrack
 
 import (
-	"awesome/array"
-	strings "awesome/string"
+	"terrancy/awesome/array"
+	strings "terrancy/awesome/string"
 )
 
 // Subsets

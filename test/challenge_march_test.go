@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"awesome/challenge"
+	"terrancy/awesome/challenge"
 )
 
 // TestPlatesBetweenCandles

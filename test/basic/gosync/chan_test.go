@@ -1,11 +1,11 @@
-package basic
+package gosync
 
 import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 
-	"awesome/tutorial/gosync"
+	"terrancy/awesome/tutorial/gosync"
 )
 
 func TestChannel(t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	"container/heap"
 	"math"
 
-	"awesome/base"
+	"terrancy/awesome/base"
 )
 
 // NetworkDelayTime

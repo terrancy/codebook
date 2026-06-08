@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"awesome/others"
+	"github.com/stretchr/testify/assert"
+
+	"terrancy/awesome/others"
 )
 
 // ////////////////////////////////////////////////////
@@ -173,7 +175,7 @@ func TestBigNumberProduct(t *testing.T) {
 	source := "11"
 	target := "99"
 	res := others.BigNumberProduct(source, target)
-	fmt.Printf("%s*%s=%s", source, target, res)
+	assert.Equal(t, "1089", res)
 }
 
 // TestSqrt

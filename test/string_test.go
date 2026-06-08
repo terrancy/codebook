@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	strings "awesome/string"
+	strings "terrancy/awesome/string"
 )
 
 // TestKMP

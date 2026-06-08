@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"awesome/dp"
+	"terrancy/awesome/dp"
 )
 
 // TestFib

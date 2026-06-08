@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"awesome/tutorial/others"
+	"terrancy/awesome/tutorial/others"
 )
 
 // =======================================

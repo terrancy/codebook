@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"awesome/queue"
-	"awesome/stack"
+	"terrancy/awesome/queue"
+	"terrancy/awesome/stack"
 )
 
 // TestCalculator

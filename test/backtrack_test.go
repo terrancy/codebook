@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"awesome/backtrack"
+	"terrancy/awesome/backtrack"
 )
 
 // TestMovingCount

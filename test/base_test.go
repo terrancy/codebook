@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	"awesome/base"
+	"terrancy/awesome/base"
 )
 
 func TestRune(t *testing.T) {

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"awesome"
-	"awesome/challenge"
-	trees "awesome/tree"
+	"terrancy/awesome"
+	"terrancy/awesome/challenge"
+	trees "terrancy/awesome/tree"
 )
 
 // TestGetAllElements

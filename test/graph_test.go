@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"awesome/graph"
+	"terrancy/awesome/graph"
 )
 
 // TestNumIslands

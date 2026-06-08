@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"awesome/slide"
+	"terrancy/awesome/slide"
 )
 
 // TestMinWindow

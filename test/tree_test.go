@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"awesome"
-	"awesome/tree"
+	"terrancy/awesome"
+	"terrancy/awesome/tree"
 )
 
 // testSerialize
