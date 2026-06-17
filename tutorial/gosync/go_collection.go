@@ -1,6 +1,8 @@
 package gosync
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //
 // Slice 相关

@@ -1,7 +1,9 @@
 package gosence
 
 import (
+	"context"
 	"fmt"
+	"hash/fnv"
 	"sync"
 	"time"
 )
@@ -24,8 +26,8 @@ type RWMutexMap struct {
 	data map[string]interface{}
 }
 
-func (m RWMutexMap) Get(key string) (interface{}, bool) {
-	m.RLocker()
+func (m *RWMutexMap) Get(key string) (interface{}, bool) {
+	m.RLock()
 	defer m.RUnlock()
 	if val, ok := m.data[key]; ok {
 		return val, true
@@ -33,13 +35,13 @@ func (m RWMutexMap) Get(key string) (interface{}, bool) {
 	return nil, false
 }
 
-func (m RWMutexMap) Set(key string, value interface{}) {
+func (m *RWMutexMap) Set(key string, value interface{}) {
 	m.Lock()
 	defer m.Unlock()
 	m.data[key] = value
 }
 func NewRwMutexMap() ISyncMap {
-	return RWMutexMap{
+	return &RWMutexMap{
 		data: make(map[string]interface{}, 4),
 	}
 }
@@ -79,23 +81,119 @@ func NewMutexMap() ISyncMap {
 
 // 方案3、分片锁
 
-type ShardedMap struct{}
-
-func (s ShardedMap) Get(key string) (interface{}, bool) {
-	//TODO implement me
-	panic("implement me")
+type ShardedMap struct {
+	shards []*shard
+	cnt    int
 }
 
-func (s ShardedMap) Set(key string, value interface{}) {
-	//TODO implement me
-	panic("implement me")
+type shard struct {
+	sync.RWMutex
+	data map[string]interface{}
+}
+
+func (s *ShardedMap) getShard(key string) *shard {
+	hash := fnv.New32()
+	hash.Write([]byte(key))
+	return s.shards[hash.Sum32()%uint32(s.cnt)]
+}
+
+func (s *ShardedMap) Get(key string) (interface{}, bool) {
+	shard := s.getShard(key)
+	shard.RLocker()
+	defer shard.RUnlock()
+	if val, ok := shard.data[key]; ok {
+		return val, true
+	}
+	return nil, false
+}
+
+func (s *ShardedMap) Set(key string, value interface{}) {
+	shard := s.getShard(key)
+	shard.Lock()
+	defer shard.Unlock()
+	shard.data[key] = value
 }
 
 func NewShardedMap() ISyncMap {
-	return ShardedMap{}
+	shards := make([]*shard, 4)
+	for i := range shards {
+		shards[i] = &shard{
+			data: make(map[string]interface{}),
+		}
+	}
+	return &ShardedMap{
+		shards: shards,
+		cnt:    len(shards),
+	}
 }
 
 // 场景题
+
+// GoAsyncSlice
+// title: 多协程查询切片问题
+// desc: 假设有一个超长的切片，切片的元素类型为int，切片中的元素为乱序排序。
+// 限时5秒，使用多个goroutine查找切片中是否存在给定的值，在查找到目标值或者超时后立刻结束所有goroutine的执行多协程查询切片问题,
+// 会导致切片长度和容量不一致
+// link: https://interview.disign.me/#/question/q017
+// params: data [23,32,78,43,76,65,345,762,......915,86]
+// return:
+func GoAsyncSlice(data []int, target int) (found bool, err error) {
+	var (
+		n            = len(data)
+		chunkSize    = 100
+		wg           sync.WaitGroup
+		ch           = make(chan bool, 1)
+		searchTarget func(i, j int)
+	)
+
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	searchTarget = func(i, j int) {
+		defer wg.Done()
+		for idx := range data[i:j] {
+			// 监听上下文取消信号
+			select {
+			case <-ctx.Done():
+				return
+			default:
+			}
+			if data[idx] != target {
+				continue
+			}
+			// 通道缓冲1，避免阻塞
+			select {
+			case ch <- true:
+				return
+			default:
+			}
+			return
+		}
+	}
+
+	for i := 0; i < n; i += chunkSize {
+		j := i + chunkSize
+		if j > n {
+			j = n
+		}
+		wg.Add(1)
+		go searchTarget(i, j)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	select {
+	case <-ctx.Done():
+		return false, ctx.Err()
+	case found = <-ch:
+		return found, nil
+	}
+
+	return
+}
 
 // 场景题：要求实现一个map：
 // 1、面向高并发
@@ -123,19 +221,28 @@ func (m *ConcurrentMutexMap) Get(key string, maxWaitingDuration time.Duration) (
 	m.Unlock()
 
 	// 大量使用会导致大量僵尸定时器占用内存
-	timer := time.NewTicker(maxWaitingDuration)
+	timer := time.NewTimer(maxWaitingDuration)
 	defer timer.Stop()
 
 	// 多路复用
 	select {
 	case <-timer.C:
+		// 清理超时的channel(需要再次加锁保护)
+		m.Lock()
+		if ch == m.keyToCh[key] {
+			delete(m.keyToCh, key)
+		}
+		m.Unlock()
 		return nil, fmt.Errorf("超时了：%v", maxWaitingDuration)
 	case <-ch:
 		// 不操作，程序往下走
 	}
 	m.Lock()
-	val := m.data[key]
+	val, ok := m.data[key]
 	m.Unlock()
+	if !ok {
+		return nil, fmt.Errorf("key %s 已删除", key)
+	}
 	return val, nil
 }
 
