@@ -195,6 +195,32 @@ func GoAsyncSlice(data []int, target int) (found bool, err error) {
 	return
 }
 
+// GoAsyncMapVipVisited 高并发vip限流
+// 场景：在一个高并发的web服务器中，要限制IP的频繁访问。现模拟100个IP同时并发访问服务器，每个IP要重复访问1000次。
+// 每个IP三分钟之内只能访问一次。修改以下代码完成该过程，要求能成功输出 success:100
+// link：https://interview.disign.me/#/question/q011
+func GoAsyncMapVipVisited() {
+
+}
+
+type Ban struct {
+	visitIPs map[string]time.Time
+}
+
+func NewBan() *Ban {
+	return &Ban{
+		visitIPs: make(map[string]time.Time, 4),
+	}
+}
+
+func (b *Ban) visit(ip string) bool {
+	if _, ok := b.visitIPs[ip]; ok {
+		return true
+	}
+	b.visitIPs[ip] = time.Now()
+	return false
+}
+
 // 场景题：要求实现一个map：
 // 1、面向高并发
 // 2、只存在插入和查询操作 O（1）

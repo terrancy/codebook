@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/stretchr/testify/assert"
+
 	"terrancy/awesome"
 	"terrancy/awesome/tree"
 )
@@ -157,4 +159,50 @@ func TestBstFromPreorder(t *testing.T) {
 	root := trees.BstFromPreorder(data)
 	res := trees.Serialize(root)
 	fmt.Println(res)
+}
+
+// DFS 相关问题
+
+// 前缀和III
+
+var findPathIIICases = []struct {
+	name     string
+	data     []int
+	k        int
+	expected int
+}{
+	{
+		name:     "test_case_1",
+		data:     []int{10, 5, -3, 3, 2, awesome.INF, 11, 3, -2, awesome.INF, 1},
+		k:        8,
+		expected: 3,
+	},
+	{
+		name:     "test_case_2",
+		data:     []int{5, 4, 8, 11, awesome.INF, 13, 4, 7, 2, awesome.INF, awesome.INF, 5, 1},
+		k:        22,
+		expected: 3,
+	},
+}
+
+// TestFindPathIII LC437.路径总和III
+func TestFindPathIII(t *testing.T) {
+	for _, tt := range findPathIIICases {
+		t.Run(tt.name, func(t *testing.T) {
+			root := trees.BuildTreeNode(tt.data)
+			res := trees.FindPathIII(root, tt.k)
+			assert.Equal(t, tt.expected, res)
+		})
+	}
+}
+
+// TestFindPathIIIPrefixSum LC437.路径总和III(前缀和)
+func TestFindPathIIIPrefixSum(t *testing.T) {
+	for _, tt := range findPathIIICases {
+		t.Run(tt.name, func(t *testing.T) {
+			root := trees.BuildTreeNode(tt.data)
+			res := trees.FindPathIIIPrefixSum(root, tt.k)
+			assert.Equal(t, tt.expected, res)
+		})
+	}
 }

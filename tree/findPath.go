@@ -2,7 +2,6 @@ package trees
 
 // 这里主要介绍二叉树中关于和为某一个值的路径的问题。分为三类
 
-//
 // hasPathSum
 // @Description: 二叉树中和为某一值的路径(一)
 // @Description: 给定一个二叉树root和一个值 sum ，判断是否有从根节点到叶子节点的节点值之和等于 sum 的路径
@@ -11,23 +10,21 @@ package trees
 // @param root
 // @param sum
 // @return bool
-//
 func hasPathSum(root *TreeNode, sum int) bool {
-    return hasPathSum(root, sum)
+	return hasPathSum(root, sum)
 }
 
 func dspHasPathSum(root *TreeNode, sum int) bool {
-    if root == nil {
-        return false
-    }
-    if root.Left == nil && root.Right == nil && root.Val == sum {
-        return true
-    }
-    sum -= root.Val
-    return dspHasPathSum(root, sum) || dspHasPathSum(root, sum)
+	if root == nil {
+		return false
+	}
+	if root.Left == nil && root.Right == nil && root.Val == sum {
+		return true
+	}
+	sum -= root.Val
+	return dspHasPathSum(root, sum) || dspHasPathSum(root, sum)
 }
 
-//
 // findPathII
 // @Description: 输入一颗二叉树的根节点root和一个整数expectNumber，找出二叉树中结点值的和为expectNumber的所有路径
 // @Description: 该题路径定义为从树的根结点开始往下一直到叶子结点所经过的结点
@@ -36,114 +33,98 @@ func dspHasPathSum(root *TreeNode, sum int) bool {
 // @param root
 // @param sum
 // @return [][]int
-//
 func findPathII(root *TreeNode, sum int) [][]int {
-    res := make([][]int, 0)
-    dspFindPathII(root, sum, []int{}, &res)
-    return res
+	res := make([][]int, 0)
+	dspFindPathII(root, sum, []int{}, &res)
+	return res
 }
 
 func dspFindPathII(root *TreeNode, sum int, path []int, res *[][]int) {
-    if root == nil {
-        return
-    }
-    
-    // 先序遍历
-    path = append(path, root.Val)
-    if root.Left == nil && root.Right == nil && root.Val == sum {
-        tmp := make([]int, len(path))
-        copy(tmp, path)
-        *res = append(*res, tmp)
-        return
-    }
-    dspFindPathII(root.Left, sum-root.Val, path, res)
-    dspFindPathII(root.Right, sum-root.Val, path, res)
+	if root == nil {
+		return
+	}
+
+	// 先序遍历
+	path = append(path, root.Val)
+	if root.Left == nil && root.Right == nil && root.Val == sum {
+		tmp := make([]int, len(path))
+		copy(tmp, path)
+		*res = append(*res, tmp)
+		return
+	}
+	dspFindPathII(root.Left, sum-root.Val, path, res)
+	dspFindPathII(root.Right, sum-root.Val, path, res)
 }
 
-//
-// treeSumIII
-// @Description: 二叉树中和为某一值的路径(三)
+// FindPathIII
+// @title: LC437.路径总和III
 // @Description: 给定一个二叉树root和一个整数值 sum ，求该树有多少路径的的节点值之和等于 sum
 // @Description: 该题路径定义不需要从根节点开始，也不需要在叶子节点结束，但是一定是从父亲节点往下到孩子节点
 // @Description: 总节点数目为n，保证最后返回的路径个数在整形范围内
 // @Link: https://www.nowcoder.com/practice/965fef32cae14a17a8e86c76ffe3131f?tpId=117&&tqId=39297&rp=1&ru=/activity/oj&qru=/ta/job-code-high/question-ranking
 // @param root
-// @param sum
+// @param k
 // @return int
-//
-func findPathIII(root *TreeNode, sum int) int {
-    cnt := 0
-    dspFindPathTotalIII(root, sum, &cnt)
-    return cnt
+func FindPathIII(root *TreeNode, k int) int {
+	var (
+		cnt     = 0
+		dfs     func(root *TreeNode, x int)
+		dfsPath func(root *TreeNode, x int)
+	)
+
+	dfs = func(root *TreeNode, x int) {
+		if root == nil {
+			return
+		}
+		if x == root.Val {
+			cnt++
+		}
+		dfs(root.Left, x-root.Val)
+		dfs(root.Right, x-root.Val)
+	}
+
+	dfsPath = func(root *TreeNode, k int) {
+		if root == nil {
+			return
+		}
+		dfs(root, k)
+		dfsPath(root.Left, k)
+		dfsPath(root.Right, k)
+	}
+
+	dfsPath(root, k)
+	return cnt
 }
 
-//
-// dspFindPathIII
-// @Description: 以树的根节点起始向下遍历
+// FindPathIIIPrefixSum
+// @title: LC437.路径总和III(前缀和)
+// @Description: 给定一个二叉树的根节点 root ，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。
+// @link: https://leetcode.cn/problems/path-sum-iii/
 // @param root
-// @param sum
-// @param cnt
-//
-func dspFindPathIII(root *TreeNode, sum int, cnt *int) {
-    if root == nil {
-        return
-    }
-    if root.Val == sum {
-        *cnt++
-    }
-    sum -= root.Val
-    dspFindPathIII(root.Left, sum, cnt)
-    dspFindPathIII(root.Right, sum, cnt)
-}
-
-//
-// dspFindPathTotalIII
-// @Description: 先根遍历各个节点
-// @param root
-// @param sum
-// @param cnt
-//
-func dspFindPathTotalIII(root *TreeNode, sum int, cnt *int) {
-    if root == nil {
-        return
-    }
-    dspFindPathIII(root, sum, cnt)
-    dspFindPathTotalIII(root.Left, sum, cnt)
-    dspFindPathTotalIII(root.Right, sum, cnt)
-}
-
-// findPathIIIPrefixSum
-// @Description: 二叉树中和为某一值的路径(三)的前缀和
-// @param root
-// @param sum
+// @param k
 // @return int
-//
-func findPathIIIPrefixSum(root *TreeNode, sum int) int {
-    cnt = 0
-    dfsFindPathIIIPrefixSum(root, sum, 0, make(map[int]int), &cnt)
-    return cnt
-}
+func FindPathIIIPrefixSum(root *TreeNode, k int) int {
+	var (
+		cnt    = 0
+		preSum = map[int]int{0: 1}
+		dfs    func(root *TreeNode, total int)
+	)
 
-func dfsFindPathIIIPrefixSum(root *TreeNode, sum int, cur int, preSum map[int]int, cnt *int){
-    if root == nil {
-        return
-    }
+	dfs = func(root *TreeNode, total int) {
+		if root == nil {
+			return
+		}
 
-    // 回溯操作
-    cur += root.Val
-    last := cur - sum
-    lastVal, lastOk := preSum[last]
-    if lastOk && lastVal > 0 {
-        *cnt += lastVal
-    }
+		total += root.Val
+		if val, ok := preSum[total-k]; ok {
+			cnt += val
+		}
+		preSum[total] += 1
+		dfs(root.Left, total)
+		dfs(root.Right, total)
+		preSum[total]--
+	}
 
-    // 回溯模板
-    if _, ok := preSum[cur]; !ok {
-        preSum[cur] = 0
-    }
-     
-    preSum[cur]++
-    dfsFindPathIIIPrefixSum(root.Left, sum, cur, preSum, cnt)
-    dfsFindPathIIIPrefixSum(root.Right, sum, cur, preSum, cnt)
-    preSum[cur]--
+	dfs(root, 0)
+	return cnt
 }
