@@ -5,7 +5,10 @@ import (
 )
 
 // WidthOfBinaryTree
-// @Description: NC204 二叉树的最大宽度
+// @Title: LC662.二叉树最大宽度
+// @Description: 给你一棵二叉树的根节点root，返回树的最大宽度
+// @Description: 树的最大宽度是所有层中最大的宽度，每一层的宽度被定义为该层最左和最右的非空节点之间的长度
+// @Link: https://leetcode.cn/problems/maximum-width-of-binary-tree/
 // @param root
 // @return int
 func WidthOfBinaryTree(root *TreeNode) int {
