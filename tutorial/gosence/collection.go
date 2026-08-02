@@ -79,7 +79,7 @@ func NewMutexMap() ISyncMap {
 	}
 }
 
-// 方案3、分片锁
+// 方案3、分片锁 https://github.com/orcaman/concurrent-map
 
 type ShardedMap struct {
 	shards []*shard
