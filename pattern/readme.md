@@ -30,6 +30,8 @@ pattern/
 
 #### 创建型 `creational/`（5）—— 解决对象创建的问题
 
+创工原, 单抽建
+
 | 模式 | 意图 | 文件 |
 | --- | --- | --- |
 | 单例 Singleton | 全局唯一实例 | `creational/singleton.go` |
@@ -39,6 +41,8 @@ pattern/
 | 原型 Prototype | 通过拷贝原型创建新对象 | `creational/prototype.go` |
 
 #### 结构型 `structural/`（7）—— 解决类/对象的组合问题
+
+结享外组, 适代装桥
 
 | 模式 | 意图 | 文件 |
 | --- | --- | --- |
@@ -51,6 +55,8 @@ pattern/
 | 享元 Flyweight | 共享细粒度对象，节省内存 | `structural/flyweight.go` |
 
 #### 行为型 `behavioral/`（11）—— 解决对象间的职责与通信问题
+
+形状责中模访,解备观策命迭
 
 | 模式 | 意图 | 文件 |
 | --- | --- | --- |
