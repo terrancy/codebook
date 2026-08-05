@@ -1,5 +1,7 @@
 package strings
 
+import "strings"
+
 // FullJustify
 // @Title: LC68.文本左右对齐
 // @Description: 给定一个单词数组和一个长度 maxWidth，重新排版单词，使其成为每行恰好有 maxWidth 个字符、且左右两端对齐的文本。
@@ -125,37 +127,34 @@ func FullJustifyV2(words []string, maxWidth int) []string {
 			for j := begin + 1; j < i; j++ {
 				line += " " + words[j]
 			}
-			for len(line) < maxWidth {
-				line += " "
-			}
+			line += strings.Repeat(" ", maxWidth-len(line))
 			res = append(res, line)
-		} else {
-			// 两端对齐: (i-begin) 个单词, (i-begin-1) 个间隔, (maxWidth-totalChars) 个空格
-			// base = 空格总数 / 间隔数, extra = 空格总数 % 间隔数
-			// 前 extra 个间隔各多 1 个空格 (左多右少)
-			gaps := i - begin - 1
-			spaces := maxWidth - totalChars
-			base := spaces / gaps
-			extra := spaces % gaps
-
-			// 例: line=["This","is","an"], totalChars=9, maxWidth=16
-			// spaces=7, gaps=2, base=3, extra=1
-			// j=1: 3 + (1 <= 1 ? 1 : 0) = 4
-			// j=2: 3 + (2 <= 1 ? 1 : 0) = 3
-			// 结果: "This    is    an" (4+3=7 空格, 总长 9+7=16)
-			line := words[begin]
-			for j := begin + 1; j < i; j++ {
-				need := base
-				if j-begin <= extra {
-					need++
-				}
-				for k := 0; k < need; k++ {
-					line += " "
-				}
-				line += words[j]
-			}
-			res = append(res, line)
+			continue
 		}
+
+		// 两端对齐: (i-begin) 个单词, (i-begin-1) 个间隔, (maxWidth-totalChars) 个空格
+		// base = 空格总数 / 间隔数, extra = 空格总数 % 间隔数
+		// 前 extra 个间隔各多 1 个空格 (左多右少)
+		gaps := i - begin - 1
+		spaces := maxWidth - totalChars
+		base := spaces / gaps
+		extra := spaces % gaps
+
+		// 例: line=["This","is","an"], totalChars=9, maxWidth=16
+		// spaces=7, gaps=2, base=3, extra=1
+		// j=1: 3 + (1 <= 1 ? 1 : 0) = 4
+		// j=2: 3 + (2 <= 1 ? 1 : 0) = 3
+		// 结果: "This    is    an" (4+3=7 空格, 总长 9+7=16)
+		line := words[begin]
+		for j := begin + 1; j < i; j++ {
+			need := base
+			if j-begin <= extra {
+				need++
+			}
+			line += strings.Repeat(" ", need)
+			line += words[j]
+		}
+		res = append(res, line)
 	}
 
 	return res
