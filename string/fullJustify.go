@@ -102,31 +102,27 @@ func formatLine(line []string, lineLen, maxWidth int) string {
 func FullJustifyV2(words []string, maxWidth int) []string {
 	var (
 		n   = len(words)
-		i   = 0
 		res = make([]string, 0, 4)
 	)
 
-	for i < n {
-		begin := i
+	for r := 0; r < n; {
+		l := r
 		totalChars := 0
 
 		// 当前行可容纳的单词数: 字符总长 + 间隔数(=单词数-1) <= maxWidth
 		// 例: words=["This","is","an"], maxWidth=16
-		// i=0: totalChars=4, 4+0+4=8<=16
-		// i=1: totalChars=6, 6+1+2=9<=16
-		// i=2: totalChars=8, 8+2+2=12<=16
-		// i=3: totalChars=13, 13+3+4=20>16 -> 停止
-		for i < n && totalChars+len(words[i])+(i-begin) <= maxWidth {
-			totalChars += len(words[i])
-			i++
+		// r=0: totalChars=4, 4+0+4=8<=16
+		// r=1: totalChars=6, 6+1+2=9<=16
+		// r=2: totalChars=8, 8+2+2=12<=16
+		// r=3: totalChars=13, 13+3+4=20>16 -> 停止
+		for r < n && totalChars+len(words[r])+(r-l) <= maxWidth {
+			totalChars += len(words[r])
+			r++
 		}
 
 		// 最后一行 或 单单词行: 左对齐, 尾部补空格
-		if i == n || i-begin == 1 {
-			line := words[begin]
-			for j := begin + 1; j < i; j++ {
-				line += " " + words[j]
-			}
+		if r == n || r-l == 1 {
+			line := strings.Join(words[l:r], " ")
 			line += strings.Repeat(" ", maxWidth-len(line))
 			res = append(res, line)
 			continue
@@ -135,25 +131,21 @@ func FullJustifyV2(words []string, maxWidth int) []string {
 		// 两端对齐: (i-begin) 个单词, (i-begin-1) 个间隔, (maxWidth-totalChars) 个空格
 		// base = 空格总数 / 间隔数, extra = 空格总数 % 间隔数
 		// 前 extra 个间隔各多 1 个空格 (左多右少)
-		gaps := i - begin - 1
+		gaps := r - l - 1
 		spaces := maxWidth - totalChars
-		base := spaces / gaps
+		basic := spaces / gaps
 		extra := spaces % gaps
+		spacesBasic := strings.Repeat(" ", basic)
+		spacesExtra := strings.Repeat(" ", basic+1)
 
 		// 例: line=["This","is","an"], totalChars=9, maxWidth=16
 		// spaces=7, gaps=2, base=3, extra=1
 		// j=1: 3 + (1 <= 1 ? 1 : 0) = 4
 		// j=2: 3 + (2 <= 1 ? 1 : 0) = 3
 		// 结果: "This    is    an" (4+3=7 空格, 总长 9+7=16)
-		line := words[begin]
-		for j := begin + 1; j < i; j++ {
-			need := base
-			if j-begin <= extra {
-				need++
-			}
-			line += strings.Repeat(" ", need)
-			line += words[j]
-		}
+		first := strings.Join(words[l:l+extra+1], spacesExtra)
+		second := strings.Join(words[l+extra+1:r], spacesBasic)
+		line := first + spacesBasic + second
 		res = append(res, line)
 	}
 

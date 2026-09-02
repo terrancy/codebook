@@ -204,3 +204,77 @@ func TestMyPow(t *testing.T) {
 	res := others.MyPow(x, n)
 	fmt.Println(res)
 }
+
+// ////////////////////////////////////////////////////
+// LC211.添加与搜索单词 - 数据结构设计
+// ////////////////////////////////////////////////////
+
+type wordDictionaryOp struct {
+	op      string
+	word    string
+	wantAdd bool
+}
+
+var wordDictionaryCases = []struct {
+	name string
+	ops  []wordDictionaryOp
+}{
+	{
+		name: "LC211示例",
+		ops: []wordDictionaryOp{
+			{"add", "bad", true},
+			{"add", "dad", true},
+			{"add", "mad", true},
+			{"search", "pad", false},
+			{"search", "bad", true},
+			{"search", ".ad", true},
+			{"search", "b..", true},
+		},
+	},
+	{
+		name: "通配符全匹配",
+		ops: []wordDictionaryOp{
+			{"add", "abc", true},
+			{"search", "abc", true},
+			{"search", "a.c", true},
+			{"search", "ab.", true},
+			{"search", "...", true},
+			{"search", "....", false},
+		},
+	},
+	{
+		name: "空字典搜索",
+		ops: []wordDictionaryOp{
+			{"search", "a", false},
+			{"search", ".", false},
+		},
+	},
+	{
+		name: "单词不存在",
+		ops: []wordDictionaryOp{
+			{"add", "abc", true},
+			{"search", "abd", false},
+			{"search", "acb", false},
+			{"search", "abcd", false},
+			{"search", "ab", false},
+		},
+	},
+}
+
+// TestWordDictionary LC211.添加与搜索单词
+func TestWordDictionary(t *testing.T) {
+	for _, tt := range wordDictionaryCases {
+		t.Run(tt.name, func(t *testing.T) {
+			wd := others.WordDictionaryConstructor()
+			for _, op := range tt.ops {
+				switch op.op {
+				case "add":
+					wd.AddWord(op.word)
+				case "search":
+					got := wd.Search(op.word)
+					assert.Equal(t, op.wantAdd, got, "search(%s)", op.word)
+				}
+			}
+		})
+	}
+}
