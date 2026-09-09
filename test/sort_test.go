@@ -164,6 +164,56 @@ func TestQuickSortII(t *testing.T) {
 	}
 }
 
+// —— 归并排序（递归版） ——
+
+var mergeSortCases = []struct {
+	name     string
+	nums     []int
+	expected []int
+}{
+	{"test_case_1", []int{5, 2, 3, 1, 4}, []int{1, 2, 3, 4, 5}},
+	{"test_case_2", []int{}, []int{}},
+	{"test_case_3", []int{1}, []int{1}},
+	{"test_case_4", []int{1, 2, 3}, []int{1, 2, 3}},
+	{"test_case_5", []int{3, 2, 1}, []int{1, 2, 3}},
+	{"test_case_6", []int{2, 1, 2, 1}, []int{1, 1, 2, 2}},
+	{"test_case_7", []int{5, 2, 1, 3, 4, 3, 3}, []int{1, 2, 3, 3, 3, 4, 5}},
+}
+
+func TestMergeSort(t *testing.T) {
+	for _, tt := range mergeSortCases {
+		t.Run(tt.name, func(t *testing.T) {
+			res := base.MergeSort(tt.nums)
+			assert.Equal(t, tt.expected, res)
+		})
+	}
+}
+
+// —— 归并排序（迭代版） ——
+
+var mergeSortBottomUpCases = []struct {
+	name     string
+	nums     []int
+	expected []int
+}{
+	{"test_case_1", []int{5, 2, 3, 1, 4}, []int{1, 2, 3, 4, 5}},
+	{"test_case_2", []int{}, []int{}},
+	{"test_case_3", []int{1}, []int{1}},
+	{"test_case_4", []int{1, 2, 3}, []int{1, 2, 3}},
+	{"test_case_5", []int{3, 2, 1}, []int{1, 2, 3}},
+	{"test_case_6", []int{2, 1, 2, 1}, []int{1, 1, 2, 2}},
+	{"test_case_7", []int{5, 2, 1, 3, 4, 3, 3}, []int{1, 2, 3, 3, 3, 4, 5}},
+}
+
+func TestMergeSortBottomUp(t *testing.T) {
+	for _, tt := range mergeSortBottomUpCases {
+		t.Run(tt.name, func(t *testing.T) {
+			res := base.MergeSortBottomUp(tt.nums)
+			assert.Equal(t, tt.expected, res)
+		})
+	}
+}
+
 // —— 堆排序（升序） ——
 
 var heapSortASCCases = []struct {

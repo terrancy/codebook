@@ -3,7 +3,6 @@ package gosence
 import (
 	"context"
 	"fmt"
-	"hash/fnv"
 	"sync"
 	"time"
 )
@@ -91,10 +90,16 @@ type shard struct {
 	data map[string]interface{}
 }
 
+// getShard 根据 key 定位分片
+// 使用手写 FNV-1a 32位哈希，避免 fnv.New32a + []byte(key) 的逃逸分配，零 GC 压力
+// FNV-1a 算法：hash = FNV_offset_basis，每字节 hash ^= byte，hash *= FNV_prime
 func (s *ShardedMap) getShard(key string) *shard {
-	hash := fnv.New32()
-	hash.Write([]byte(key))
-	return s.shards[hash.Sum32()%uint32(s.cnt)]
+	h := uint32(2166136261) // FNV-1a 32位 offset basis
+	for i := 0; i < len(key); i++ {
+		h ^= uint32(key[i])  // 异或当前字节
+		h *= 16777619        // 乘 FNV-1a 32位 prime
+	}
+	return s.shards[h%uint32(s.cnt)]
 }
 
 func (s *ShardedMap) Get(key string) (interface{}, bool) {

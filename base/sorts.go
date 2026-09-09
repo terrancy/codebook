@@ -219,6 +219,90 @@ func threeSumMedian(a, b, c int) int {
 }
 
 // ////////////////////////////////////////////////////
+// 归并排序
+// ////////////////////////////////////////////////////
+
+// MergeSort
+// @Description: 归并排序 O(NlogN) 稳定
+// @Solution: 分治拆小数组 + 合并有序数组
+func MergeSort(nums []int) []int {
+	n := len(nums)
+	if n < 2 {
+		return nums
+	}
+	mid := n >> 1
+	left := MergeSort(nums[:mid])
+	right := MergeSort(nums[mid:])
+	return merge(left, right)
+}
+
+// merge
+// @Description: 合并两个有序数组
+func merge(left, right []int) []int {
+	res := make([]int, 0, len(left)+len(right))
+	i, j := 0, 0
+	for i < len(left) && j < len(right) {
+		if left[i] <= right[j] {
+			res = append(res, left[i])
+			i++
+		} else {
+			res = append(res, right[j])
+			j++
+		}
+	}
+	res = append(res, left[i:]...)
+	res = append(res, right[j:]...)
+	return res
+}
+
+// MergeSortBottomUp
+// @Description: 迭代版归并排序（自底向上, 无递归栈）
+// @Solution: 按 1,2,4,8... 的步长两两合并
+func MergeSortBottomUp(nums []int) []int {
+	n := len(nums)
+	if n < 2 {
+		return nums
+	}
+	tmp := make([]int, n)
+	for step := 1; step < n; step <<= 1 {
+		for i := 0; i < n-step; i += step << 1 {
+			left, mid, right := i, i+step-1, min(i+2*step-1, n-1)
+			mergeRange(nums, tmp, left, mid, right)
+		}
+	}
+	return nums
+}
+
+// mergeRange
+// @Description: 合并 nums[left:mid+1] 和 nums[mid+1:right+1] (两子段各自有序)
+func mergeRange(nums, tmp []int, left, mid, right int) {
+	copy(tmp[left:right+1], nums[left:right+1])
+	i, j := left, mid+1
+	for k := left; k <= right; k++ {
+		if i > mid {
+			nums[k] = tmp[j]
+			j++
+		} else if j > right {
+			nums[k] = tmp[i]
+			i++
+		} else if tmp[i] <= tmp[j] {
+			nums[k] = tmp[i]
+			i++
+		} else {
+			nums[k] = tmp[j]
+			j++
+		}
+	}
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+// ////////////////////////////////////////////////////
 // 堆排序
 // ////////////////////////////////////////////////////
 
