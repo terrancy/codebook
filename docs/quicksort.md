@@ -42,6 +42,10 @@ func QuickSortOld(nums []int) []int {
 ```go
 func QuickSort(nums []int, left int, right int) {
     for left < right {
+        if right-left < 10 {
+            InsertSort(nums[left : right+1])
+            return
+        }
         pivot := selectPivot(nums, left, right)
         mid := partitionLomuto(nums, left, right, pivot)
         if mid-left < right-mid {
@@ -89,7 +93,16 @@ if mid-left < right-mid {   // mid-left = 左子数组长度, right-mid = 右子
 
 对比普通双递归在**已排序数组**的最坏情况：每次 partition 后基准都在最左，右子数组长度 = n-1，递归嵌套 n 层 → 栈溢出。优化版在同样场景下短子数组为空，递归直接返回，栈深度始终 O(1)。
 
-#### 3. 总结
+#### 3. 小数组优化：为什么插在 for 循环入口
+
+当子数组长度 < 10 时，快排递归的函数调用开销 + partition 开销反而比简单的插入排序更贵。因为：
+- 插入排序对**近似有序小数组**性能很好
+- 快排在小数组上 partition 的常数因子太高
+- 实测阈值在 7~15 之间效果最佳，通常取 10
+
+放在 for 循环入口（而不是函数开头 `if left >= right` 之前），是因为快排的调度流程本身就是 for 循环，统一在一处处理边界情况更简洁。
+
+#### 4. 总结
 
 | 方案 | 栈深度（平均） | 栈深度（最坏） |
 |---|---|---|
@@ -178,36 +191,123 @@ func partitionLomuto(nums []int, left int, right int, pivot int) int {
 [小于 pivot | 等于 pivot | 大于 pivot]
 ```
 
-### 调度代码
+### 调度代码（含尾递归优化 + 小数组优化）
 
 ```go
 func QuickSortII(nums []int, left int, right int) {
-    if left >= right {
-        return
+    for left < right {
+        if right-left < 10 {
+            InsertSort(nums[left : right+1])
+            return
+        }
+        pivot := selectPivot(nums, left, right)
+        leftMid, rightMid := threeWayPartition(nums, left, right, pivot)
+        if leftMid-left < right-rightMid {
+            QuickSortII(nums, left, leftMid)
+            left = rightMid
+        } else {
+            QuickSortII(nums, rightMid, right)
+            right = leftMid
+        }
     }
-    pivot := selectPivot(nums, left, right)
-    leftMid, rightMid := threeWayPartition(nums, left, right, pivot)
-    QuickSortII(nums, left, leftMid)
-    QuickSortII(nums, rightMid, right)
 }
 ```
 
-只递归左右两段，中间相等的直接跳过，大量重复值场景下效率显著提升。
+和双路快排同样的尾递归优化思路：选短的那一段递归，长的留给 for 循环。只递归左右两段，中间相等的直接跳过。
 
-### 三路分区核心思路
+### 三路分区（DNF 荷兰国旗算法）
 
-1. 双向扫描时，遇到等于 pivot 的元素暂存到两端
-2. 扫描结束后基准归位，再把两端暂存的等于 pivot 的元素收拢到基准两侧
-3. 返回等于 pivot 区间的左右边界 `(leftMid, rightMid)`
+#### 完整代码
+
+```go
+func threeWayPartition(nums []int, left int, right int, pivot int) (int, int) {
+    lt, i, gt := left, left, right
+    for i <= gt {
+        if nums[i] < pivot {
+            nums[lt], nums[i] = nums[i], nums[lt]
+            lt++
+            i++
+        } else if nums[i] > pivot {
+            nums[i], nums[gt] = nums[gt], nums[i]
+            gt--
+        } else {
+            i++
+        }
+    }
+    return lt - 1, gt + 1
+}
+```
+
+三个指针的含义：
+
+```
+[left ......... lt-1] [lt ......... i-1] [i ......... gt] [gt+1 ......... right]
+       < pivot              == pivot        待扫描            > pivot
+       (已确定)              (已确定)       (当前扫描点)      (已确定)
+```
+
+- `lt`：**小于段的下一个写入位置**。`[left, lt-1]` 全是 `< pivot` 的
+- `i`：**当前扫描位置**。`[lt, i-1]` 全是 `== pivot` 的
+- `gt`：**大于段的上一个写入位置**。`[gt+1, right]` 全是 `> pivot` 的
+
+#### 三种情况的处理逻辑
+
+| 扫描到 nums[i] | 操作 | 指针移动 |
+|---|---|---|
+| `< pivot` | 和 `nums[lt]` 交换（塞到小于段末尾） | `lt++`, `i++`（lt 位置原来要么是等于的，要么是刚交换过来的 i 自己，都处理过了） |
+| `> pivot` | 和 `nums[gt]` 交换（塞到大于段开头） | **只有 `gt--`**（交换来的 gt 位置的元素还没扫描过，不能 `i++`） |
+| `== pivot` | 不动 | 只有 `i++`（等于段自然向右扩展一格） |
+
+#### 举例走一遍
+
+```
+nums = [2, 1, 3, 2, 1, 3, 2], pivot = 2
+初始: lt=0, i=0, gt=6
+
+i=0: nums[0]=2 == pivot → i++ → lt=0 i=1 gt=6
+i=1: nums[1]=1 < pivot → 交换 nums[0]↔nums[1] → [1,2,3,2,1,3,2]
+                         lt=1, i=2
+i=2: nums[2]=3 > pivot → 交换 nums[2]↔nums[6] → [1,2,2,2,1,3,3]
+                         gt=5 (注意 i 不动！交换来的 2 还没处理)
+i=2: nums[2]=2 == pivot → i++ → lt=1 i=3 gt=5
+i=3: nums[3]=2 == pivot → i++ → lt=1 i=4 gt=5
+i=4: nums[4]=1 < pivot → 交换 nums[1]↔nums[4] → [1,1,2,2,2,3,3]
+                         lt=2, i=5
+i=5: nums[5]=3 > pivot → 交换 nums[5]↔nums[5] → gt=4
+                         (i=5 > gt=4, 循环退出！)
+
+结果: [1, 1, 2, 2, 2, 3, 3]
+       ^lt=2      ^gt=4
+       等于pivot区间 [2,4]
+```
+
+返回值 `(lt-1, gt+1) = (1, 5)`：
+- `QuickSortII(nums, 0, 1)` → 递归小于段 `[1, 1]`
+- `QuickSortII(nums, 5, 6)` → 递归大于段 `[3, 3]`
+- 中间 `[2, 2, 2]` 直接跳过 ✓
+
+#### DNF vs 旧暂存实现
+
+| | DNF（当前实现） | 旧暂存+二次归位 |
+|---|---|---|
+| 代码行数 | 15 行 | 60 行 |
+| 扫描次数 | 1 次 | 2 次（阶段一 + 阶段二归位） |
+| 辅助变量 | lt/i/gt 共 3 个 | first/last/leftPos/rightPos/leftLen/rightLen 共 6 个 |
+| 依赖 pivot 预先移到首位 | 不需要 | 需要 |
+| 交换次数 | 少（每次比较最多一次交换） | 多（暂存交换 + 归位交换） |
 
 ---
 
 ## 七、整体流程图
 
+### 双路快排流程图
+
 ```
 QuickSort(nums, left, right)
 │
 ├─ for left < right:
+│   │
+│   ├─ right-left < 10? → InsertSort 处理, return  ← 小数组优化
 │   │
 │   ├─ selectPivot(nums, left, right)   ← 三数取中选基准, 交换到首位
 │   │
@@ -225,4 +325,40 @@ QuickSort(nums, left, right)
 │   │            right = mid - 1               长的左边留给 for
 │   │
 │   └─ 继续 for 循环...直到 left >= right, 排序完成
+```
+
+### 三路快排流程图
+
+```
+QuickSortII(nums, left, right)
+│
+├─ for left < right:
+│   │
+│   ├─ right-left < 10? → InsertSort 处理, return  ← 小数组优化
+│   │
+│   ├─ selectPivot(nums, left, right)   ← 三数取中选基准, 交换到首位
+│   │
+│   ├─ threeWayPartition(nums, left, right, pivot)   ← DNF 一次遍历
+│   │   │
+│   │   ├─ 初始化: lt=left, i=left, gt=right
+│   │   │
+│   │   ├─ for i <= gt:
+│   │   │   ├─ nums[i] < pivot:
+│   │   │   │   └─ 交换 nums[lt]↔nums[i], lt++, i++
+│   │   │   ├─ nums[i] > pivot:
+│   │   │   │   └─ 交换 nums[i]↔nums[gt], gt-- (i 不动!)
+│   │   │   └─ nums[i] == pivot:
+│   │   │       └─ i++ (自然归入等于段)
+│   │   │
+│   │   └─ 返回 (lt-1, gt+1)  ← 小于段右端、大于段左端, 中间 [lt,gt] 全等于 pivot
+│   │
+│   ├─ leftMid-left < right-rightMid?   ← 选短的递归
+│   │   ├─ YES: QuickSortII(nums, left, leftMid)  递归短的左边 (< pivot)
+│   │   │        left = rightMid                  长的右边留给 for
+│   │   └─ NO:  QuickSortII(nums, rightMid, right) 递归短的右边 (> pivot)
+│   │            right = leftMid                   长的左边留给 for
+│   │
+│   └─ 中间 [leftMid+1, rightMid-1] 全等于 pivot, 直接跳过 ✓
+│
+└─ for 循环直到 left >= right, 排序完成
 ```

@@ -95,6 +95,10 @@ func QuickSortOld(nums []int) []int {
 // @Solution: 三数取中选基准 + 尾递归 + 双路分区
 func QuickSort(nums []int, left int, right int) {
 	for left < right {
+		if right-left < 10 {
+			InsertSort(nums[left : right+1])
+			return
+		}
 		pivot := selectPivot(nums, left, right)
 		mid := partitionLomuto(nums, left, right, pivot)
 		if mid-left < right-mid {
@@ -109,15 +113,23 @@ func QuickSort(nums []int, left int, right int) {
 
 // QuickSortII
 // @Description: 三路快排（处理重复值,减少无效分区）
-// @Solution: 三数取中选基准 + 三路分区（荷兰国旗）
+// @Solution: 三数取中选基准 + 三路分区（荷兰国旗）+ 尾递归优化 + 小数组插入排序
 func QuickSortII(nums []int, left int, right int) {
-	if left >= right {
-		return
+	for left < right {
+		if right-left < 10 {
+			InsertSort(nums[left : right+1])
+			return
+		}
+		pivot := selectPivot(nums, left, right)
+		leftMid, rightMid := threeWayPartition(nums, left, right, pivot)
+		if leftMid-left < right-rightMid {
+			QuickSortII(nums, left, leftMid)
+			left = rightMid
+		} else {
+			QuickSortII(nums, rightMid, right)
+			right = leftMid
+		}
 	}
-	pivot := selectPivot(nums, left, right)
-	leftMid, rightMid := threeWayPartition(nums, left, right, pivot)
-	QuickSortII(nums, left, leftMid)
-	QuickSortII(nums, rightMid, right)
 }
 
 // —— 优化组件一: 基准选择（三数取中） ——
@@ -158,59 +170,24 @@ func partitionLomuto(nums []int, left int, right int, pivot int) int {
 // —— 优化组件三: 三路分区（荷兰国旗问题） ——
 
 // threeWayPartition
-// @Description: 三路分区（荷兰国旗问题）
-// @Solution: 将数组划分为 小于基准 | 等于基准 | 大于基准 三部分
-// @return (int, int) 左右边界,使得 nums[left:right+1] 全等于 pivot
+// @Description: 三路分区（荷兰国旗 DNF 算法）
+// @Solution: 一次遍历, 将数组划分为 [小于基准 | 等于基准 | 大于基准] 三部分
+// @return (int, int) 小于段的右端、大于段的左端, 中间 [lt, gt] 全等于 pivot
 func threeWayPartition(nums []int, left int, right int, pivot int) (int, int) {
-	first, last := left, right
-	leftLen, rightLen := 0, 0
-	leftPos, rightPos := left, right
-
-	// —— 阶段一: 双向扫描分区 ——
-	// 右指针从右向左: 跳过 >= pivot 的元素,遇到 ==pivot 的暂存到 rightPos
-	// 左指针从左向右: 跳过 <= pivot 的元素,遇到 ==pivot 的暂存到 leftPos
-	// 扫描结束后: [==pivot | <pivot | >pivot | ==pivot]
-	for left < right {
-		for left < right && pivot <= nums[right] {
-			if pivot == nums[right] {
-				nums[rightPos], nums[right] = nums[right], nums[rightPos]
-				rightPos--
-				rightLen++
-			}
-			right--
+	lt, i, gt := left, left, right
+	for i <= gt {
+		if nums[i] < pivot {
+			nums[lt], nums[i] = nums[i], nums[lt]
+			lt++
+			i++
+		} else if nums[i] > pivot {
+			nums[i], nums[gt] = nums[gt], nums[i]
+			gt--
+		} else {
+			i++
 		}
-		nums[left] = nums[right]
-		for left < right && pivot >= nums[left] {
-			if pivot == nums[left] {
-				nums[leftPos], nums[left] = nums[left], nums[leftPos]
-				leftPos++
-				leftLen++
-			}
-			left++
-		}
-		nums[right] = nums[left]
 	}
-	nums[left] = pivot
-
-	// —— 阶段二: 基准归位 + 重复值归位 ——
-	// 将基准放到最终位置,然后将两侧暂存的 ==pivot 元素移到基准左右
-	// 左侧归位: 将 [first, leftPos) 区间的 ==pivot 元素交换到基准左边
-	i, j := left-1, first
-	for j < leftPos && nums[i] != pivot {
-		nums[i], nums[j] = nums[j], nums[i]
-		i--
-		j++
-	}
-	// 右侧归位: 将 (rightPos, last] 区间的 ==pivot 元素交换到基准右边
-	i, j = left+1, last
-	for j > rightPos && nums[i] != pivot {
-		nums[i], nums[j] = nums[j], nums[i]
-		i++
-		j--
-	}
-
-	// 返回等于基准区间的左右边界: nums[left-1-leftLen ... left+1+rightLen] 全等于 pivot
-	return left - 1 - leftLen, left + 1 + rightLen
+	return lt - 1, gt + 1
 }
 
 // —— 辅助函数 ——
@@ -268,16 +245,19 @@ func HeapSortASC(nums []int) []int {
 // @param n
 // @param pos
 func adjustHeap(nums []int, n int, pos int) {
-	largeIndex := pos
-	if 2*pos+1 < n && nums[2*pos+1] > nums[largeIndex] {
-		largeIndex = 2*pos + 1
-	}
-	if 2*pos+2 < n && nums[2*pos+2] > nums[largeIndex] {
-		largeIndex = 2*pos + 2
-	}
-	if largeIndex != pos {
+	for {
+		largeIndex := pos
+		if 2*pos+1 < n && nums[2*pos+1] > nums[largeIndex] {
+			largeIndex = 2*pos + 1
+		}
+		if 2*pos+2 < n && nums[2*pos+2] > nums[largeIndex] {
+			largeIndex = 2*pos + 2
+		}
+		if largeIndex == pos {
+			break
+		}
 		nums[pos], nums[largeIndex] = nums[largeIndex], nums[pos]
-		adjustHeap(nums, n, largeIndex)
+		pos = largeIndex
 	}
 }
 
