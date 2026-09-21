@@ -278,3 +278,95 @@ func TestWordDictionary(t *testing.T) {
 		})
 	}
 }
+
+// ////////////////////////////////////////////////////
+// LC1206.设计跳表
+// ////////////////////////////////////////////////////
+
+type skipListOp struct {
+	op      string
+	val     int
+	wantAdd bool
+}
+
+var skipListCases = []struct {
+	name string
+	ops  []skipListOp
+}{
+	{
+		name: "LC1206示例",
+		ops: []skipListOp{
+			{"add", 1, true},
+			{"add", 2, true},
+			{"add", 3, true},
+			{"search", 0, false},
+			{"add", 4, true},
+			{"search", 1, true},
+			{"erase", 0, false},
+			{"erase", 1, true},
+			{"search", 1, false},
+		},
+	},
+	{
+		name: "重复插入删除",
+		ops: []skipListOp{
+			{"add", 5, true},
+			{"add", 5, true},
+			{"add", 5, true},
+			{"search", 5, true},
+			{"erase", 5, true},
+			{"search", 5, true},
+			{"erase", 5, true},
+			{"search", 5, true},
+			{"erase", 5, true},
+			{"search", 5, false},
+			{"erase", 5, false},
+		},
+	},
+	{
+		name: "大跨度跳跃",
+		ops: []skipListOp{
+			{"add", 10, true},
+			{"add", 50, true},
+			{"add", 100, true},
+			{"add", 500, true},
+			{"add", 1000, true},
+			{"search", 50, true},
+			{"search", 200, false},
+			{"erase", 1000, true},
+			{"search", 1000, false},
+		},
+	},
+	{
+		name: "单元素操作",
+		ops: []skipListOp{
+			{"search", 1, false},
+			{"erase", 1, false},
+			{"add", 1, true},
+			{"search", 1, true},
+			{"erase", 1, true},
+			{"search", 1, false},
+		},
+	},
+}
+
+// TestSkipList LC1206.设计跳表
+func TestSkipList(t *testing.T) {
+	for _, tt := range skipListCases {
+		t.Run(tt.name, func(t *testing.T) {
+			sl := others.SkipListConstructor()
+			for _, op := range tt.ops {
+				switch op.op {
+				case "add":
+					sl.Add(op.val)
+				case "search":
+					got := sl.Search(op.val)
+					assert.Equal(t, op.wantAdd, got, "search(%d)", op.val)
+				case "erase":
+					got := sl.Erase(op.val)
+					assert.Equal(t, op.wantAdd, got, "erase(%d)", op.val)
+				}
+			}
+		})
+	}
+}
