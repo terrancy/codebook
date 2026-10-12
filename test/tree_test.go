@@ -426,3 +426,56 @@ func TestWidthOfBinaryTree(t *testing.T) {
 		})
 	}
 }
+// ////////////////////////////////////////////////////
+// LC173.二叉搜索树迭代器
+// ////////////////////////////////////////////////////
+
+var bstIteratorCases = []struct {
+	name     string
+	treeData []int
+	expected []int
+}{
+	{
+		name:     "LC173示例",
+		treeData: []int{7, 3, 15, awesome.INF, awesome.INF, 9, 20},
+		expected: []int{3, 7, 9, 15, 20},
+	},
+	{
+		name:     "单节点",
+		treeData: []int{42},
+		expected: []int{42},
+	},
+	{
+		name:     "左偏树(只有左子树)",
+		treeData: []int{5, 3, awesome.INF, 2, awesome.INF, awesome.INF, awesome.INF},
+		expected: []int{2, 3, 5},
+	},
+	{
+		name:     "完整BST",
+		treeData: []int{5, 3, 7, 2, 4, 6, 8},
+		expected: []int{2, 3, 4, 5, 6, 7, 8},
+	},
+	{
+		name:     "空树",
+		treeData: []int{},
+		expected: []int{},
+	},
+}
+
+// TestBSTIterator LC173.二叉搜索树迭代器
+func TestBSTIterator(t *testing.T) {
+	for _, tt := range bstIteratorCases {
+		t.Run(tt.name, func(t *testing.T) {
+			var root *trees.TreeNode
+			if len(tt.treeData) > 0 {
+				root = trees.BuildTreeNode(tt.treeData)
+			}
+			iter := trees.BSTIteratorConstructor(root)
+			got := make([]int, 0)
+			for iter.HasNext() {
+				got = append(got, iter.Next())
+			}
+			assert.Equal(t, tt.expected, got)
+		})
+	}
+}
