@@ -2,6 +2,7 @@ package structural
 
 import "testing"
 
+// Adapter 适配器模式：将不兼容接口转换为目标接口
 func TestAdapter(t *testing.T) {
 	var target Target = NewAdapter(Adaptee{})
 	if got := target.Request(); got != "adapter:adaptee specific" {
@@ -9,6 +10,7 @@ func TestAdapter(t *testing.T) {
 	}
 }
 
+// Decorator 装饰器模式：动态为对象添加职责
 func TestDecorator(t *testing.T) {
 	base := SimpleCoffee{}
 	c := NewSugar(NewMilk(base))
@@ -20,6 +22,7 @@ func TestDecorator(t *testing.T) {
 	}
 }
 
+// Proxy 代理模式：为对象提供代理以控制访问
 func TestProxy(t *testing.T) {
 	p := NewProxy(false)
 	if got := p.Do(); got != "proxy: access denied" {
@@ -31,6 +34,7 @@ func TestProxy(t *testing.T) {
 	}
 }
 
+// Bridge 桥接模式：分离抽象与实现，使其独立变化
 func TestBridge(t *testing.T) {
 	a := NewAbstraction(EmailSender{})
 	if got := a.Operation("hi"); got != "email:hi" {
@@ -42,6 +46,7 @@ func TestBridge(t *testing.T) {
 	}
 }
 
+// Composite 组合模式：将对象组织为树形结构，统一处理单个与组合对象
 func TestComposite(t *testing.T) {
 	root := NewDirectory("root")
 	root.Add(NewFile("a.txt", 10))
@@ -56,6 +61,7 @@ func TestComposite(t *testing.T) {
 	}
 }
 
+// Facade 外观模式：为子系统提供统一的简化接口
 func TestFacade(t *testing.T) {
 	f := NewOrderFacade()
 	if got := f.PlaceOrder("sku1", 100); got != "dispatched:sku1" {
@@ -69,6 +75,7 @@ func TestFacade(t *testing.T) {
 	}
 }
 
+// Flyweight 享元模式：共享对象以减少内存占用
 func TestFlyweight(t *testing.T) {
 	f := NewGlyphFactory()
 	g1 := f.Get('A')

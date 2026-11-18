@@ -2,6 +2,7 @@ package behavioral
 
 import "testing"
 
+// Strategy 策略模式：定义一系列可互换的算法，运行时选择其一
 func TestStrategy(t *testing.T) {
 	n := &Navigator{}
 	n.SetStrategy(WalkStrategy{})
@@ -14,6 +15,7 @@ func TestStrategy(t *testing.T) {
 	}
 }
 
+// Observer 观察者模式：一对多依赖，状态变化自动通知所有观察者
 func TestObserver(t *testing.T) {
 	pub := &NewsPublisher{}
 	r1 := &Reader{Name: "alice"}
@@ -35,6 +37,7 @@ func TestObserver(t *testing.T) {
 	}
 }
 
+// Template Method 模板方法模式：定义算法骨架，子类实现可变步骤
 func TestTemplateMethod(t *testing.T) {
 	b := &Beverage{}
 	b.SetSteps(Tea{})
@@ -47,6 +50,7 @@ func TestTemplateMethod(t *testing.T) {
 	}
 }
 
+// Chain of Responsibility 责任链模式：沿处理器链传递请求，直到被处理
 func TestChainOfResponsibility(t *testing.T) {
 	auth := &AuthHandler{}
 	log := &LogHandler{}
@@ -60,6 +64,7 @@ func TestChainOfResponsibility(t *testing.T) {
 	}
 }
 
+// Command 命令模式：将请求封装为对象，支持执行、撤销等操作
 func TestCommand(t *testing.T) {
 	r := &Remote{}
 	r.SetCommand(TurnOnCommand{light: Light{}})
@@ -71,6 +76,7 @@ func TestCommand(t *testing.T) {
 	}
 }
 
+// Iterator 迭代器模式：顺序访问集合元素而不暴露内部结构
 func TestIterator(t *testing.T) {
 	c := NewNameCollection([]string{"a", "b", "c"})
 	it := c.Iterator()
@@ -83,6 +89,7 @@ func TestIterator(t *testing.T) {
 	}
 }
 
+// Mediator 中介者模式：对象间通过中介者通信，降低耦合
 func TestMediator(t *testing.T) {
 	room := NewChatRoom()
 	u1 := NewUser("alice", room)
@@ -96,6 +103,7 @@ func TestMediator(t *testing.T) {
 	}
 }
 
+// Memento 备忘录模式：保存对象状态以便后续恢复
 func TestMemento(t *testing.T) {
 	o := &Originator{}
 	caretaker := &Caretaker{}
@@ -111,6 +119,7 @@ func TestMemento(t *testing.T) {
 	}
 }
 
+// State 状态模式：对象行为随状态改变而改变
 func TestState(t *testing.T) {
 	ctx := NewContext(PendingState{})
 	if got := ctx.Request(); got != "pending -> paid" {
@@ -124,6 +133,7 @@ func TestState(t *testing.T) {
 	}
 }
 
+// Visitor 访问者模式：分离数据结构与数据操作，新增操作无需改结构
 func TestVisitor(t *testing.T) {
 	els := []Element{&FileElement{Name: "a"}, &DirElement{Name: "d"}}
 	sv := SizeVisitor{}
@@ -138,6 +148,7 @@ func TestVisitor(t *testing.T) {
 	}
 }
 
+// Interpreter 解释器模式：定义语言文法的解释器
 func TestInterpreter(t *testing.T) {
 	expr := NewAnd(NewTerminal(true), NewOr(NewTerminal(false), NewTerminal(true)))
 	if !expr.Interpret() {

@@ -2,6 +2,7 @@ package creational
 
 import "testing"
 
+// Singleton 单例模式：确保一个类只有一个实例，并提供全局访问点
 func TestSingleton(t *testing.T) {
 	a := GetInstance()
 	b := GetInstance()
@@ -13,6 +14,7 @@ func TestSingleton(t *testing.T) {
 	}
 }
 
+// Factory Method 工厂方法模式：定义创建对象的接口，由子类决定实例化哪个类
 func TestFactoryMethod(t *testing.T) {
 	var c Creator = ConsoleCreator{}
 	if got := c.Log("hi"); got != "[console] hi" {
@@ -24,6 +26,7 @@ func TestFactoryMethod(t *testing.T) {
 	}
 }
 
+// Abstract Factory 抽象工厂模式：创建产品族的接口，无需指定具体类
 func TestAbstractFactory(t *testing.T) {
 	wf := NewGUIFactory("windows")
 	if wf.CreateButton().Render() != "WinButton" || wf.CreateTextBox().Render() != "WinTextBox" {
@@ -35,6 +38,7 @@ func TestAbstractFactory(t *testing.T) {
 	}
 }
 
+// Builder 建造者模式：将复杂对象的构建与其表示分离
 func TestBuilder(t *testing.T) {
 	pc := NewComputerBuilder().
 		SetCPU("i9").
@@ -47,6 +51,7 @@ func TestBuilder(t *testing.T) {
 	}
 }
 
+// Prototype 原型模式：通过克隆现有对象创建新对象
 func TestPrototype(t *testing.T) {
 	orig := &Resume{Name: "tom", Age: 30, Skills: []string{"go", "java"}}
 	clone := orig.Clone().(*Resume)
